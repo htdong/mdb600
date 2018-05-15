@@ -1,0 +1,86 @@
+// FIXME: Input validation
+.inputVal {
+  top: 40px !important;
+}
+
+.view {
+  height: 100vh !important;
+  overflow: hidden;
+}
+
+.intro {
+  min-height: 100vh;
+  position: relative;
+}
+
+.intro-2 {
+  background: url("http://mdbootstrap.com/img/Photos/Others/forest1.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.hm-gradient .full-bg-img {
+  background: linear-gradient(98deg,rgba(22,91,231,.5),rgba(255,32,32,.5) 100%);
+}
+
+.view .full-bg-img {
+  // , .view .mask
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.top-nav-collapse {
+    background-color: #3f51b5 !important;
+}
+.navbar:not(.top-nav-collapse) {
+    background: transparent !important;
+}
+@media (max-width: 768px) {
+    .navbar:not(.top-nav-collapse) {
+        background: #3f51b5 !important;
+    }
+}
+
+@media (max-width: 425px) {
+    .features-small {
+      display: none;
+    }
+}
+
+.rgba-gradient .full-bg-img {
+    background: linear-gradient(45deg, rgba(83, 125, 210, 0.4), rgba(178, 30, 123, 0.4) 100%);
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.md-form {
+  position: relative;
+  margin-top: 2.5rem;
+}
+
+.md-form .prefix {
+  font-size: 1.5rem;
+  // margin-top: 1rem;
+}
+
+.md-form label {
+  color: #4f4f4f!important;
+}
+
+.action-corner {
+  margin-top: 2em;
+}
+
+@media (max-width: 740px) {
+    .full-height,
+    .full-height body,
+    .full-height header,
+    .full-height header .view {
+        height: 1040px;
+    }
+}

@@ -1,0 +1,42 @@
+<h1>{{'setting'|translate}}</h1>
+
+<div class="row mt-5 wow fadeInUp" data-wow-delay="0.25s">
+  <div class="col-lg-12 col-md-12">
+    <div class="card card-cascade narrower">
+
+      <div class="view gradient-card-header {{cardColors.color}} {{cardColors.ext}}">
+        <h4 class="h4-responsive">{{'setting'|translate}}</h4>
+      </div>
+
+      <div class="card-body ">
+
+        <form [formGroup]="form">
+          <div class="row mt-4">
+            <div class="col-md-12">
+                <mdb-select [options]="styleList" formControlName="style" placeholder="Choose your option"></mdb-select>
+                <label>{{'style'|translate}}</label>
+            </div>
+
+            <div class="col-md-12">
+              <div class="md-form">
+                <mdb-completer label="{{'time_zone'|translate}}" formControlName="locale" name="autocomplete" initialValue="{{'time_zone'|translate}}" [inputClass]="'red-text'" [datasource]="dataService"
+                  [minSearchLength]="0" (selected) = "onAddTag($event)">
+                </mdb-completer>
+              </div>
+            </div>
+          </div>
+
+          <div class="row text-center mt-3 mb-3">
+            <div class="col-12">
+                <button [disabled]="!form.valid" class="btn {{buttonStyle.fill}}-primary {{buttonStyle.shape}} waves-light" (click)="save()" mdbWavesEffect>{{'save'|translate}}</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div style="height: 400px"></div>

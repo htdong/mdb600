@@ -1,0 +1,203 @@
+<h1>{{'themes'|translate}}</h1>
+
+<div class="row mt-3 wow fadeInRight" data-wow-delay="0.5s">
+  <div class="col-lg-12 col-md-12">
+    <div class="card card-cascade narrower">
+
+      <div class="view gradient-card-header {{cardColors.color}} {{cardColors.ext}}">
+        <h4 class="h4-responsive">{{'toast'|translate}}</h4>
+      </div>
+
+      <div class="card-body ">
+        <form [formGroup]="form">
+          <div class="row pt-4 pl-4 pr-4">
+
+            <div class="col-3">
+              <label>{{'type'|translate}}</label>
+              <section>
+                  <div class="form-check">
+                    <input name="toast_type" formControlName="type"  name="type" type="radio" class="with-gap" id="radio11" value="success">
+                    <label for="radio11">{{'success'|translate}}</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input name="toast_type" formControlName="type"  name="type" type="radio" class="with-gap" id="radio12" value="info">
+                    <label for="radio12">{{'info'|translate}}</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input name="toast_type" formControlName="type"  name="type" type="radio" class="with-gap" id="radio13" value="warning">
+                    <label for="radio13">{{'warning'|translate}}</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input name="toast_type" formControlName="type"  name="type" type="radio" class="with-gap" id="radio14" value="error">
+                    <label for="radio14">{{'error'|translate}}</label>
+                  </div>
+              </section>
+            </div>
+
+            <div class="col-3">
+                <label>{{'position'|translate}}</label>
+                <section>
+                  <div class="form-check">
+                    <input name="toast_position" formControlName="position" name="position" type="radio" class="with-gap" id="radio21" value="toast-top-right">
+                    <label for="radio21">{{'top_right'|translate}}</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input name="toast_position" formControlName="position" name="position" type="radio" class="with-gap" id="radio22" value="toast-top-left">
+                    <label for="radio22">{{'top_left'|translate}}</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input name="toast_position" formControlName="position" name="position" type="radio" class="with-gap" id="radio23" value="toast-top-center">
+                    <label for="radio23">{{'top_center'|translate}}</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input name="toast_position" formControlName="position" name="position" type="radio" class="with-gap" id="radio24" value="toast-top-full-width">
+                    <label for="radio24">{{'top_full_width'|translate}}</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input name="toast_position" formControlName="position" name="position" type="radio" class="with-gap" id="radio25" value="toast-bottom-left">
+                    <label for="radio25">{{'bottom_left'|translate}}</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input name="toast_position" formControlName="position" name="position" type="radio" class="with-gap" id="radio26" value="toast-bottom-right">
+                    <label for="radio26">{{'bottom_right'|translate}}</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input name="toast_position" formControlName="position" name="position" type="radio" class="with-gap" id="radio27" value="toast-bottom-center">
+                    <label for="radio27">{{'bottom_center'|translate}}</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input name="toast_position" formControlName="position" name="position" type="radio" class="with-gap" id="radio28" value="toast-bottom-full-width">
+                    <label for="radio28">{{'bottom_full_width'|translate}}</label>
+                  </div>
+                </section>
+            </div>
+
+            <div class="col-3">
+
+              <div class="md-form form-sm">
+                  <input mdbInputDirective [mdbValidate]="false" type="text" formControlName="timeOut" id="input11" class="form-control form-control-sm">
+                  <label for="input11" class="">{{'time_out'|translate}}</label>
+              </div>
+
+              <div class="md-form form-sm">
+                  <input mdbInputDirective [mdbValidate]="false" type="text" formControlName="extendedTimeOut" id="input12" class="form-control form-control-sm">
+                  <label for="input12" class="">{{'time_out_extended'|translate}}</label>
+              </div>
+
+              <div class="form-check mt-3">
+                  <input class="form-check-input" type="checkbox" formControlName="closeButton" id="checkbox11">
+                  <label class="form-check-label" for="checkbox11">{{'close_button'|translate}}</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" formControlName="progressBar" id="checkbox12">
+                  <label class="form-check-label" for="checkbox12">{{'progress_bar'|translate}}</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" formControlName="tapToDismiss" id="checkbox13">
+                  <label class="form-check-label" for="checkbox13">{{'tap_to_dismiss'|translate}}</label>
+              </div>
+            </div>
+            <div class="col-3">
+
+              <div class="row">
+
+                <div class="col-md-12">
+                  <div class="md-form">
+                    <input [mdbValidate]="false" formControlName="title" mdbInputDirective type="text" id="title" name="title" class="form-control">
+                    <label for="title">{{'title'|translate}}</label>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="md-form">
+                      <textarea [mdbValidate]="false" formControlName="message" mdbInputDirective type="text" id="message" name="message" class="md-textarea form-control" rows="4" ></textarea>
+                      <label for="message">{{'message'|translate}}</label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-12">
+                <button class="btn {{buttonStyle.fill}}-secondary {{buttonStyle.shape}} btn-sm waves-light" (click)="openToast()" mdbWavesEffect>{{'test'|translate}}</button>
+                <button class="btn {{buttonStyle.fill}}-primary {{buttonStyle.shape}} btn-sm waves-light" (click)="saveToast()" mdbWavesEffect>{{'save'|translate}}</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="row mt-5 wow fadeInLeft" data-wow-delay="1s">
+    <div class="col-lg-12 col-md-12">
+      <div class="card card-cascade narrower">
+
+        <div class="view gradient-card-header {{cardColors.color}} {{cardColors.ext}}">
+          <h4 class="h4-responsive">{{'btn'|translate}}</h4>
+        </div>
+
+        <div class="card-body ">
+            <div class="col-md-12">
+                <div class="text-center">
+                  <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                  <button type="button" class="btn {{buttonStyle.fill}}-primary {{buttonStyle.shape}} waves-light" mdbWavesEffect>Primary</button>
+
+                  <!-- Default button -->
+                  <button type="button" class="btn {{buttonStyle.fill}}-default {{buttonStyle.shape}} waves-light" mdbWavesEffect>Default</button>
+
+                  <!-- Secondary button -->
+                  <button type="button" class="btn {{buttonStyle.fill}}-secondary {{buttonStyle.shape}} waves-light" mdbWavesEffect>Secondary</button>
+
+                  <!-- Indicates a successful or positive action -->
+                  <button type="button" class="btn {{buttonStyle.fill}}-success {{buttonStyle.shape}} waves-light" mdbWavesEffect>Success</button>
+
+                  <!-- Contextual button for informational alert messages -->
+                  <button type="button" class="btn {{buttonStyle.fill}}-info {{buttonStyle.shape}} waves-light" mdbWavesEffect>Info</button>
+
+                  <!-- Indicates caution should be taken with this action -->
+                  <button type="button" class="btn {{buttonStyle.fill}}-warning {{buttonStyle.shape}} waves-light" mdbWavesEffect>Warning</button>
+
+                  <!-- Indicates a dangerous or potentially negative action -->
+                  <button type="button" class="btn {{buttonStyle.fill}}-danger {{buttonStyle.shape}} waves-light" mdbWavesEffect>Danger</button>
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+</div>
+
+<div *ngIf="debug" class="row mt-5 wow fadeInUp" data-wow-delay="0.25s">
+  <div class="col-lg-12 col-md-12">
+    <div class="card card-cascade narrower">
+
+      <div class="view gradient-card-header {{cardColors.color}} {{cardColors.ext}}">
+        <h4 class="h4-responsive">{{'debug'|translate}}</h4>
+      </div>
+
+      <div class="card-body ">
+          <div class="col-md-12">
+              <div class="text-center">
+                <h4>Debug is there!</h4>
+              </div>
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div style="height: 400px"></div>

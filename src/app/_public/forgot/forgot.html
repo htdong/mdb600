@@ -1,0 +1,62 @@
+<main class="py-0 px-0 my-0 mx-0">
+  <header>
+
+    <section class="view intro intro-2 hm-stylish-strong">
+      <div class="full-bg-img flex-center">
+
+        <div class="container">
+          <div class="col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto mt-lg-5">
+
+            <div class="card wow fadeInRight" data-wow-delay="0.4s">
+	            <div class="card-body">
+
+	              <div class="form-header aqua-gradient">
+	                <h3><i class="fa fa-user mt-2 mb-2"></i> {{'forgot_password'|translate}}</h3>
+
+                  <p *ngIf="!message" class="white-text">{{'getResetPasswordViaEmail'|translate}}</p>
+                  <p *ngIf="message" class="red-text">{{message|translate}}</p>
+	              </div>
+
+                <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+
+                  <div class="md-form">
+                    <i class="fa fa-envelope prefix white-text"></i>
+                    <input type="email" [formControl]="email" [(ngModel)]="model.email" id="email" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
+                    <label for="email">{{'email'|translate}}</label>
+                    <span *ngIf="email.invalid && (email.dirty || email.touched)" class="inputVal text-danger">{{'invalid_email'|translate}}</span>
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fa fa-envelope prefix white-text"></i>
+                    <input type="text" [formControl]="token" [(ngModel)]="model.token" id="token" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
+                    <label for="token">{{'token'|translate}}</label>
+                    <span *ngIf="token.invalid && (token.dirty || token.touched)" class="inputVal text-danger">{{'invalid_min_char'|translate:"{value: 4}" }}</span>
+                  </div>
+
+                  <div class="text-center action-corner">
+                    <button [disabled]="!form.valid" class="btn aqua-gradient btn-lg btn-rounded waves-light" mdbWavesEffect>
+                      <i class="fa fa-address-book mr-1 white-text"></i> {{'reset'|translate}}
+                    </button>
+                     <hr class="hr-light mb-3 mt-4">
+
+                    <button class="btn blue-gradient btn-sm btn-rounded waves-light" (click)="gotoPage('login'); false;" mdbWavesEffect>{{'havePassword'|translate}}</button>
+                    <button class="btn purple-gradient btn-sm btn-rounded waves-light" (click)="gotoPage('register'); false" mdbWavesEffect>{{'sign_up'|translate}}</button>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <button class="btn btn-floating btn-large green waves-light wow zoomIn" data-wow-delay="0.4s" mdbPageScroll (click)="gotoPage('/')" mdbWavesEffect style="right:35px; top:35px;">
+        <i class="fa fa-home fa-2x"></i>
+    </button>
+
+  </header>
+</main>

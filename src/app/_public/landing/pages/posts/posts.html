@@ -1,0 +1,456 @@
+<!-- NAV BAR -->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+
+  <!-- Logo -->
+  <logo class="wow fadeInLeft">
+    <a class="logo navbar-brand waves-light" mdbWavesEffect href="#"><strong>GK|</strong> {{'consult'|translate}}</a>
+  </logo>
+
+  <links>
+
+    <!-- Left nav -->
+    <ul class="navbar-nav mr-auto wow fadeInDown" data-wow-delay="0.5s">
+      <li class="nav-item waves-light" [ngClass]="{'active': selectedNavItem==='intro'}" (click)="selectNavItem('intro')" mdbWavesEffect>
+        <a class="nav-link" mdbPageScroll href="#intro">{{'intro'|translate}} <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item waves-light" [ngClass]="{'active': selectedNavItem==='objectives'}" (click)="selectNavItem('objectives')" mdbWavesEffect>
+        <a class="nav-link" mdbPageScroll href="#objectives">{{'objectives'|translate}}</a>
+      </li>
+      <li class="nav-item waves-light" [ngClass]="{'active': selectedNavItem==='features'}" (click)="selectNavItem('features')" mdbWavesEffect>
+        <a class="nav-link" mdbPageScroll href="#features">{{'features'|translate}}</a>
+      </li>
+      <li class="nav-item waves-light" [ngClass]="{'active': selectedNavItem==='solutions'}" (click)="selectNavItem('solutions')" mdbWavesEffect>
+        <a class="nav-link" mdbPageScroll href="#solutions">{{'solutions'|translate}}</a>
+      </li>
+      <li class="nav-item waves-light" [ngClass]="{'active': selectedNavItem==='testimonials'}" (click)="selectNavItem('testimonials')" mdbWavesEffect>
+        <a class="nav-link" mdbPageScroll href="#testimonials">{{'testimonials'|translate}}</a>
+      </li>
+      <li class="nav-item waves-light" [ngClass]="{'active': selectedNavItem==='contact'}" (click)="selectNavItem('contact')" mdbWavesEffect>
+        <a class="nav-link" mdbPageScroll href="#contact">{{'contact'|translate}}</a>
+      </li>
+    </ul>
+
+    <!-- Right nav -->
+    <ul class="navbar-nav ml-auto wow fadeInDown" data-wow-delay="0.5s">
+      <li class="nav-item dropdown btn-group" dropdown>
+        <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          <i class="fa fa-language"></i> <span class="clearfix d-none d-sm-inline-block"> {{'language'|translate}}</span>
+        </a>
+        <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+          <a class="dropdown-item" (click)="changeLanguage('en'); false">{{'langEnglish'|translate}}</a>
+          <a class="dropdown-item" (click)="changeLanguage('vn'); false">{{'langVietnamese'|translate}}</a>
+          <a class="dropdown-item" (click)="changeLanguage('jp'); false">{{'langJapanese'|translate}}</a>
+          <a class="dropdown-item" (click)="changeLanguage('kr'); false">{{'langKorean'|translate}}</a>
+          <a class="dropdown-item" (click)="changeLanguage('ch'); false">{{'langChinese'|translate}}</a>
+          <a class="dropdown-item" (click)="changeLanguage('fr'); false">{{'langFrench'|translate}}</a>
+        </div>
+      </li>
+      <li class="nav-item waves-light" mdbWavesEffect>
+        <a class="nav-link" (click)="gotoLogin(); false;">{{'login'|translate}}</a>
+      </li>
+    </ul>
+  </links>
+</mdb-navbar>
+
+<main class="py-0 px-0 my-0 mx-0">
+  <div class="container">
+
+    <!-- POST -->
+    <section class="pt-5 mt-4 pb-3">
+
+      <!--Grid row-->
+      <div class="row mt-5">
+        <div class="col-md-12">
+          <!--Featured image-->
+          <div class="card card-cascade wider reverse">
+            <div class="view overlay waves-light" mdbWavesEffect>
+                <img src="assets/images/mdb/slides/img%20(142).jpg" alt="Wide sample post image" class="img-fluid">
+                <a>
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+
+            <!--Post data-->
+            <div class="card-body text-center">
+                <h2>
+                    <a class="font-weight-bold">This is title of the news.</a>
+                </h2>
+                <p>Written by <a>Abby Madison</a>, 26/08/2018</p>
+
+                <!--Social shares-->
+                <div class="social-counters ">
+
+                    <!--Facebook-->
+                    <a class="btn btn-fb waves-light" mdbWavesEffect>
+                        <i class="fa fa-facebook left "></i>
+                        <span class="clearfix d-none d-md-inline-block">Facebook</span>
+                    </a>
+                    <span class="counter ">46</span>
+
+                    <!--Twitter-->
+                    <a class="btn btn-tw waves-light" mdbWavesEffect>
+                        <i class="fa fa-twitter left "></i>
+                        <span class="clearfix d-none d-md-inline-block">Twitter</span>
+                    </a>
+                    <span class="counter ">22</span>
+
+                    <!--Google+-->
+                    <a class="btn btn-gplus waves-light" mdbWavesEffect>
+                        <i class="fa fa-google-plus left "></i>
+                        <span class="clearfix d-none d-md-inline-block">Google+</span>
+                    </a>
+                    <span class="counter ">31</span>
+
+                    <!--Comments-->
+                    <a class="btn btn-default waves-light" mdbWavesEffect>
+                        <i class="fa fa-comments-o left "></i>
+                        <span class="clearfix d-none d-md-inline-block">Comments</span>
+                    </a>
+                    <span class="counter ">18</span>
+
+                </div>
+                <!--Social shares-->
+
+            </div>
+            <!--Post data-->
+          </div>
+
+          <!--Excerpt-->
+          <div class="excerpt mt-5">
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+                atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
+                sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum
+                facilis est et expedita distinctio.
+            </p>
+
+            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat
+                facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et
+                aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae
+                non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores
+                alias consequatur aut perferendis doloribus.</p>
+          </div>
+
+          <div class="excerpt mt-5 wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s;">
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+                deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate
+                non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum
+                et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+            </p>
+
+            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod
+                maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
+                autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates
+                repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
+                ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus.</p>
+
+            <blockquote class="blockquote mt-4 mb-4">
+                <p class="mb-0"><em>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.</em></p>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            </blockquote>
+
+
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+                vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.
+            </p>
+
+            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+                sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+                voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
+                laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
+                qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+
+          </div>
+        </div>
+      </div>
+      <!--Grid row-->
+
+    </section>
+
+    <hr class="mb-5 mt-4">
+
+    <!-- RECENT POSTS -->
+    <section class="text-center py-2">
+
+        <!--Section heading-->
+        <h1 class="h1 font-weight-bold text-center mb-5 pt-2">Recent posts</h1>
+        <!--Section description-->
+        <p class="text-center mb-5 pb-3">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <!--Grid row-->
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-4">
+                <!--Featured image-->
+                <div class="view overlay rounded z-depth-2 mb-2 waves-light" mdbWavesEffect>
+                    <img src="assets/images/mdb/others/81.jpg" class="img-fluid" alt="First sample image">
+                    <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+
+                <!--Excerpt-->
+                <a href="" class="pink-text">
+                    <h6 class="mb-3 mt-4">
+                        <i class="fa fa-map "></i>
+                        <strong> Adventure</strong>
+                    </h6>
+                </a>
+                <h4 class="mb-3 font-weight-bold dark-grey-text">
+                    <strong>This is title of the news</strong>
+                </h4>
+                <p>by
+                    <a class="font-weight-bold dark-grey-text">Billy Forester</a>, 15/07/2018</p>
+                <p class="grey-text">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat
+                    facere possimus voluptas.</p>
+                <a class="btn btn-pink btn-rounded btn-md waves-light" mdbWavesEffect>Read more</a>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <!--Featured image-->
+                <div class="view overlay rounded z-depth-2 mb-2 waves-light" mdbWavesEffect>
+                    <img src="assets/images/mdb/others/43.jpg" class="img-fluid" alt="Second sample image">
+                    <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+
+                <!--Excerpt-->
+                <a href="" class="deep-orange-text">
+                    <h6 class="mb-3 mt-4">
+                        <i class="fa fa-graduation-cap"></i>
+                        <strong> Education</strong>
+                    </h6>
+                </a>
+                <h4 class="mb-3 font-weight-bold dark-grey-text">
+                    <strong>This is title of the news</strong>
+                </h4>
+                <p>by
+                    <a class="font-weight-bold dark-grey-text">Billy Forester</a>, 15/07/2018</p>
+                <p class="grey-text">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat
+                    facere possimus voluptas.</p>
+                <a class="btn btn-deep-orange btn-rounded btn-md waves-light" mdbWavesEffect>Read more</a>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <!--Featured image-->
+                <div class="view overlay rounded z-depth-2 mb-2 waves-light" mdbWavesEffect>
+                    <img src="assets/images/mdb/others/13.jpg" class="img-fluid" alt="Thrid sample image">
+                    <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+
+                <!--Excerpt-->
+                <a href="" class="cyan-text">
+                    <h6 class="mb-3 mt-4">
+                        <i class="fa fa-fire "></i>
+                        <strong> Culture</strong>
+                    </h6>
+                </a>
+                <h4 class="mb-3 font-weight-bold dark-grey-text">
+                    <strong>This is title of the news</strong>
+                </h4>
+                <p>by
+                    <a class="font-weight-bold dark-grey-text">Billy Forester</a>, 15/07/2018</p>
+                <p class="grey-text">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat
+                    facere possimus voluptas.</p>
+                <a class="btn btn-info btn-rounded btn-md waves-light" mdbWavesEffect>Read more</a>
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+    </section>
+
+    <hr class="mb-5 mt-4">
+
+    <!--Author box-->
+    <div class="author-box mb-5">
+        <!--Name-->
+        <h3 class="h3-responsive text-center">About author</h3>
+        <hr>
+        <div class="row">
+            <!--Avatar-->
+            <div class="col-12 col-sm-2">
+                <img src="assets/images/mdb/avatars/img%20(3).jpg" class="img-fluid rounded-circle z-depth-2">
+            </div>
+            <!--Author Data-->
+            <div class=" col-12 col-sm-10">
+                <p><strong>John Doe</strong></p>
+                <div class="personal-sm">
+                    <a class="email-ic"><i class="fa fa-home"> </i></a>
+                    <a class="fb-ic"><i class="fa fa-facebook"> </i></a>
+                    <a class="tw-ic"><i class="fa fa-twitter"> </i></a>
+                    <a class="gplus-ic"><i class="fa fa-google-plus"> </i></a>
+                    <a class="li-ic"><i class="fa fa-linkedin"> </i></a>
+                    <a class="email-ic"><i class="fa fa-envelope-o"> </i></a>
+                </div>
+                <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+                <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint esse nulla quia quam veniam commodi dicta, iusto inventore. Voluptatum pariatur eveniet ea, officiis vitae praesentium beatae quas libero, esse facere.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="mb-5 mt-4">
+
+    <!--Main wrapper-->
+    <div class="comments-list text-left mt-4">
+        <div class="section-heading">
+            <h3>Comments <span class="badge blue">3</span></h3>
+        </div>
+        <!--First row-->
+        <div class="row">
+            <!--Image column-->
+            <div class="col-sm-2 col-12">
+                <img src="assets/images/mdb/avatars/avatar-1.jpg" class="avatar rounded-circle z-depth-1-half">
+            </div>
+            <!--/.Image column-->
+            <!--Content column-->
+            <div class="col-sm-10 col-12">
+                <a><h3 class="user-name">John Doe</h3></a>
+                <div class="card-data">
+                    <ul class="pl-0 list-unstyled">
+                        <li class="comment-date"><i class="fa fa-clock-o"></i> 05/10/2015</li>
+                    </ul>
+                </div>
+                <p class="comment-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+            </div>
+            <!--/.Content column-->
+        </div>
+        <!--/.First row-->
+        <!--Second row-->
+        <div class="row">
+            <!--Image column-->
+            <div class="col-sm-2 col-12">
+                <img src="assets/images/mdb/avatars/avatar-2.jpg" class="avatar rounded-circle z-depth-1-half">
+            </div>
+            <!--/.Image column-->
+            <!--Content column-->
+            <div class="col-sm-10 col-12">
+                <a><h3 class="user-name">Marta Tev</h3></a>
+                <div class="card-data">
+                    <ul class="pl-0 list-unstyled">
+                        <li class="comment-date"><i class="fa fa-clock-o"></i> 08/10/2015</li>
+                    </ul>
+                </div>
+                <p class="comment-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p>
+            </div>
+            <!--/.Content column-->
+        </div>
+        <!--/.Second row-->
+        <!--Third row-->
+        <div class="row">
+            <!--Image column-->
+            <div class="col-sm-2 col-12">
+                <img src="assets/images/mdb/avatars/avatar-5.jpg" class="avatar rounded-circle z-depth-1-half">
+            </div>
+            <!--/.Image column-->
+            <!--Content column-->
+            <div class="col-sm-10 col-12">
+                <a><h3 class="user-name">Anna Maria</h3></a>
+                <div class="card-data">
+                    <ul class="pl-0 list-unstyled">
+                        <li class="comment-date"><i class="fa fa-clock-o"></i> 17/10/2015</li>
+                    </ul>
+                </div>
+                <p class="comment-text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia.
+                </p>
+            </div>
+            <!--/.Content column-->
+        </div>
+        <!--/.Third row-->
+    </div>
+    <!--/.Main wrapper-->
+
+    <hr class="mb-5 mt-4">
+
+    <!--Section: Leave a reply (Not Logged In User)-->
+    <section>
+
+        <!--Leave a reply form-->
+        <div class="reply-form">
+            <h1 class="section-heading">Leave a reply </h1>
+            <p class="text-center">(Not Logged In User)</p>
+
+            <h4 class="text-center">Sign up with: <span>
+                <!--Facebook-->
+            <a type="button" class="btn-floating btn-small btn-fb waves-light" mdbWavesEffect><i class="fa fa-facebook"></i></a>
+            <!--Twitter-->
+            <a type="button" class="btn-floating btn-small btn-tw waves-light" mdbWavesEffect><i class="fa fa-twitter"></i></a>
+            <!--Google +-->
+            <a type="button" class="btn-floating btn-small btn-gplus waves-light" mdbWavesEffect><i class="fa fa-google-plus"></i></a>
+
+            </span> <br><br>or:</h4>
+
+            <div class="md-form">
+                <i class="fa fa-user prefix"></i>
+                <input type="text" id="form22" class="form-control" mdbInputDirective>
+                <label for="form22">Your name</label>
+            </div>
+
+            <div class="md-form">
+                <i class="fa fa-envelope prefix"></i>
+                <input type="text" id="form32" class="form-control" mdbInputDirective>
+                <label for="form32">Your email</label>
+            </div>
+
+            <div class="md-form">
+                <i class="fa fa-home prefix"></i>
+                <input type="text" id="form33" class="form-control" mdbInputDirective>
+                <label for="form33">Your website</label>
+            </div>
+
+            <div class="md-form">
+                <i class="fa fa-pencil prefix"></i>
+                <textarea type="text" id="form18" class="md-textarea form-control" mdbInputDirective></textarea>
+                <label for="form18">Your message</label>
+            </div>
+
+            <div class="text-center mx-auto">
+                <button class="btn btn-primary waves-light" mdbWavesEffect >Submit</button>
+            </div>
+        </div>
+        <!--/.Leave a reply form-->
+
+    </section>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="page-footer center-on-small-only pt-0">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 wow fadeIn" data-wow-delay="0.3s">
+                <div class="text-center d-flex justify-content-center my-4">
+
+                    <a class="icons-sm fb-ic"><i class="fa fa-facebook white-text fa-lg pr-md-4"> </i></a>
+                    <a class="icons-sm tw-ic"><i class="fa fa-twitter white-text fa-lg pr-md-4"> </i></a>
+                    <a class="icons-sm gplus-ic"><i class="fa fa-google-plus white-text fa-lg pr-md-4"> </i></a>
+                    <a class="icons-sm li-ic"><i class="fa fa-linkedin white-text fa-lg pr-md-4"> </i></a>
+                    <a class="icons-sm ins-ic"><i class="fa fa-instagram white-text fa-lg pr-md-4"> </i></a>
+                    <a class="icons-sm pin-ic"><i class="fa fa-pinterest white-text fa-lg pr-md-4"> </i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-copyright wow fadeIn" data-wow-delay="0.3s">
+        <div class="container-fluid">
+          {{'copyright1'|translate}}:<a href="https://www.gkconsult.vn"> GKC.vn. </a> {{'copyright2'|translate}}
+        </div>
+    </div>
+
+</footer>

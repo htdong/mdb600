@@ -1,0 +1,55 @@
+<main class="py-0 px-0 my-0 mx-0">
+  <header>
+
+    <section class="view intro intro-2 hm-stylish-strong">
+      <div class="full-bg-img flex-center">
+
+        <div class="container">
+          <div class="row">
+
+            <div class="col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto mt-lg-5">
+              <div class="modal-dialog cascading-modal modal-avatar modal-sm wow fadeInLeft" data-wow-delay="0.4s" role="document">
+
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <img class="rounded-circle img-responsive" [src]="avatar">
+                    <!-- src="./assets/images/test-avatar.jpg" -->
+                    <!-- [src]="avatar" -->
+                  </div>
+
+                  <div class="modal-body text-center mb-1">
+                    <h5 class="mt-1 mb-2">{{name}}</h5>
+                    <span *ngIf="message" class="message text-danger">{{message|translate}}</span>
+                    <span *ngIf="!message" class="message grey-text">{{'retrieve_session'|translate}}</span>
+
+                    <form class="lockscreen-credentials" (keydown)="keyDownFunction($event)">
+                      <div class="md-form ml-0 mr-0 text-left">
+                        <input type="password" [formControl]="password" [(ngModel)]="model.password" id="password" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="new-password">
+                        <label class="ml-0 grey-text" for="password">{{'password'|translate}}</label>
+
+                        <span *ngIf="password.invalid && (password.dirty || password.touched)" class="inputVal ml-0 text-danger text-left">{{'invalid_min_char'|translate:"{value: 8}" }}</span>
+                      </div>
+
+                      <div class="text-center action-corner">
+                        <a class="btn-floating blue-gradient waves-light" mdbWavesEffect (click)="gotoPage('login')"><i class="fa fa-key"></i></a>
+                        <a class="btn-floating purple-gradient waves-light" mdbWavesEffect (click)="returnSession()"><i class="fa fa-sign-in"></i></a>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <button class="btn btn-floating btn-large green waves-light wow zoomIn" data-wow-delay="0.4s" mdbPageScroll (click)="gotoPage('/')" mdbWavesEffect style="right:35px; top:35px;">
+        <i class="fa fa-home fa-2x"></i>
+    </button>
+
+  </header>
+</main>

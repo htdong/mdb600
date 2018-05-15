@@ -1,0 +1,40 @@
+<main class="py-0 px-0 my-0 mx-0">
+  <header>
+
+    <section class="view intro intro-2 hm-stylish-strong">
+      <div class="full-bg-img flex-center">
+
+        <div class="container">
+          <div class="col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto mt-lg-5">
+
+            <div class="card wow fadeInDown" data-wow-delay="0.4s">
+	            <div class="card-body">
+
+	              <div class="form-header purple-gradient">
+                  <p class="mr-auto ml-auto z-depth-5" id="icon" style="text-shadow: rgb(144, 103, 151) 0px 0px 0px, rgb(147, 105, 154) 1px 1px 0px, rgb(150, 107, 158) 2px 2px 0px, rgb(153, 110, 161) 3px 3px 0px, rgb(157, 112, 164) 4px 4px 0px, rgb(160, 114, 167) 5px 5px 0px, rgb(163, 116, 171) 6px 6px 0px, rgb(166, 118, 174) 7px 7px 0px, rgb(169, 121, 177) 8px 8px 0px, rgb(172, 123, 180) 9px 9px 0px, rgb(175, 125, 184) 10px 10px 0px, rgb(178, 127, 187) 11px 11px 0px, rgb(181, 129, 190) 12px 12px 0px, rgb(184, 132, 193) 13px 13px 0px, rgb(187, 134, 197) 14px 14px 0px, rgb(191, 136, 200) 15px 15px 0px, rgb(194, 138, 203) 16px 16px 0px, rgb(197, 140, 206) 17px 17px 0px, rgb(200, 143, 210) 18px 18px 0px, rgb(203, 145, 213) 19px 19px 0px; font-size: 90px; color: rgb(255, 255, 255); height: 200px; width: 200px; line-height: 200px; border-radius: 50%; text-align: center; background-color: rgb(206, 147, 216);"> 404 </p>
+	                <h3><i class="fa fa-search mt-2 mb-2"></i> {{'404'|translate}}</h3>
+                  <p *ngIf="!message" class="white-text">{{'404Msg'|translate}}</p>
+	              </div>
+
+                <form (keydown)="keyDownFunction($event)">
+                  <div class="md-form">
+                    <input type="text" id="token" [(ngModel)]="tcodeExecution" name="tcode" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
+                    <label for="token">{{'transactionCode'|translate}}</label>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <button class="btn btn-floating btn-large green waves-light wow zoomIn" data-wow-delay="0.4s" mdbPageScroll (click)="gotoPage('/')" mdbWavesEffect style="right:35px; top:35px;">
+      <i class="fa fa-home fa-2x"></i>
+    </button>
+
+  </header>
+</main>

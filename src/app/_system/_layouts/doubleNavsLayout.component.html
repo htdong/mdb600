@@ -1,0 +1,231 @@
+<!-- HEADER -->
+<header>
+
+  <!-- Sidebar navigation -->
+  <mdb-sidenav #sidenav class="{{sideNavBg}} {{textColor}}" [fixed]="isFixed" [ngClass]="{'fixed': isFixed}" [fixed]="isFixed">
+    <!-- fixed -->
+
+    <logo>
+      <li>
+        <div class="logo-wrapper waves-light">
+          <a href="#" (click)="toggleMode(); false"><img src="/assets/images/mdb/landing/mdb-transparent.png" class="img-fluid flex-center"></a>
+        </div>
+      </li>
+    </logo>
+
+    <links>
+
+      <!-- Profile -->
+      <div class="container">
+        <div class="row mt-4 ">
+          <div class="col-lg-12 flex-center">
+            <img [src]="avatar" class="rounded-circle img-thumbnail" style="max-width:130px;"/>
+            <!-- [src="../../assets/images/test-avatar.jpg"] -->
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-lg-12 text-center"><b>{{name}}</b></div>
+        </div>
+      </div>
+
+      <!-- Shortcuts -->
+      <li>
+        <ul class="social">
+          <li mdbTooltip="{{'profile'|translate}}" placement="right"><a class="icons-sm" (click)="gotoTcode('profile')"><i class="fa fa-user"> </i></a></li>
+          <li mdbTooltip="{{'themes'|translate}}" placement="right"><a class="icons-sm" (click)="gotoTcode('theme')"><i class="fa fa-paint-brush"> </i></a></li>
+          <li mdbTooltip="{{'setting'|translate}}" placement="left"><a class="icons-sm" (click)="gotoTcode('setting')"><i class="fa fa-cogs"> </i></a></li>
+          <li mdbTooltip="{{'lock_system'|translate}}" placement="left"><a class="icons-sm" (click)="gotoTcode('lockscreen')"><i class="fa fa-lock"> </i></a></li>
+          <li mdbTooltip="{{'logout'|translate}}" placement="left"><a class="icons-sm" (click)="logOut(); false"><i class="fa fa-sign-out"> </i></a></li>
+        </ul>
+      </li>
+
+      <!--Transaction Form-->
+      <li>
+        <form class="search-form" role="search" (keydown)="keyDownFunction($event)">
+          <div class="form-group md-form mt-0 pt-1 waves-light" mdbWavesEffect>
+            <input type="text" class="form-control" placeholder="{{'transactionCode'|translate}}" [(ngModel)]="tcodeExecution" name="tcode">
+          </div>
+        </form>
+      </li>
+
+      <!-- Menu items -->
+      <li>
+        <ul class="collapsible collapsible-accordion">
+          <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
+            <!-- *ngIf="menu"  -->
+            <mdb-item *ngFor="let item of menu" [ngClass]="{'no-collase': !item.children}">
+              <mdb-item-head (click)="selectMenu($event, item)" mdbWavesEffect><i class="fa fa-{{item.data.icon}}"></i> {{item.data.label|translate}}</mdb-item-head>
+              <mdb-item-body>
+                <ul *ngIf="item.children">
+                  <li *ngFor="let item1 of item.children">
+                    <a (click)="selectMenu($event, item1)" class="waves-effect" mdbWavesEffect translate><i class="fa fa-{{item1.data.icon}}"></i> {{item1.data.label|translate}}</a>
+                  </li>
+                </ul>
+              </mdb-item-body>
+            </mdb-item>
+          </mdb-squeezebox>
+        </ul>
+      </li>
+
+    </links>
+
+    <div class="sidenav-bg mask-strong"></div>
+
+  </mdb-sidenav>
+
+
+  <!-- Navbar -->
+  <mdb-navbar SideClass="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav  wow fadeInDown" [containerInside]="false">
+
+    <!-- SideNav slide-out button -->
+    <navlinks class="navbar-container">
+      <div class="nav-item">
+        <a (click)="showSideNav()" class="button-collapse"><i class="fa fa-bars"></i></a>
+      </div>
+    </navlinks>
+
+    <!-- Breadcrumb-->
+    <logo style="margin-left: -20px;">
+      <div class="breadcrumbs breadcrumb-dn mr-auto breadcrumb">
+        <p>
+          <i class="fa fa-home"></i><i class="fa fa-angle-right"></i>
+          <ng-container *ngFor="let item of this.breadcrumbs; let i=index;">
+            <span *ngIf="i===0" class="clearfix d-none d-sm-inline-block" [routerLink]="['/home']"> {{item.label.title|translate}}</span>
+            <span *ngIf="item.label.title && (i>0)" class="clearfix d-none d-sm-inline-block" [routerLink]="item.url"> {{item.label.title|translate}}</span>
+            <i *ngIf="item.label.title" class="fa fa-angle-right"></i>
+          </ng-container>
+        </p>
+      </div>
+    </logo>
+
+    <!-- Menu bar = Notifications + Messages + Language -->
+    <navlinks>
+      <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav">
+        <li class="nav-item dropdown btn-group" dropdown>
+          <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            <i class="fa fa-comments-o"></i> <span class="clearfix d-none d-sm-inline-block"> {{'notifications'|translate}}</span>
+            <span class="badge badge-danger btn-rounded">{{notificationCount}}</span>
+          </a>
+          <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+            <ng-container *ngFor="let item of notificationsList">
+              <a class="dropdown-item text-truncate" (click)="openNotification(item);">{{item.desc}}</a>
+            </ng-container>
+            <a class="dropdown-item text-center" (click)="gotoTcode('notification');"><b>{{'view_all'|translate}}</b></a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown btn-group" dropdown>
+          <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            <i class="fa fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block"> {{'messages'|translate}}</span>
+            <span class="badge badge-danger btn-rounded">{{notificationCount}}</span>
+          </a>
+          <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+            <ng-container *ngFor="let item of notificationsList">
+              <a class="dropdown-item text-truncate" (click)="openNotification(item);">{{item.desc}}</a>
+            </ng-container>
+            <a class="dropdown-item text-center" (click)="gotoTcode('notification');"><b>{{'view_all'|translate}}</b></a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown btn-group" dropdown>
+          <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            <i class="fa fa-language"></i> <span class="clearfix d-none d-sm-inline-block"> {{'language'|translate}}</span>
+          </a>
+          <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+            <a class="dropdown-item" (click)="changeLanguage('en'); false">{{'langEnglish'|translate}}</a>
+            <a class="dropdown-item" (click)="changeLanguage('vn'); false">{{'langVietnamese'|translate}}</a>
+            <a class="dropdown-item" (click)="changeLanguage('jp'); false">{{'langJapanese'|translate}}</a>
+            <a class="dropdown-item" (click)="changeLanguage('kr'); false">{{'langKorean'|translate}}</a>
+            <a class="dropdown-item" (click)="changeLanguage('ch'); false">{{'langChinese'|translate}}</a>
+            <a class="dropdown-item" (click)="changeLanguage('fr'); false">{{'langFrench'|translate}}</a>
+          </div>
+        </li>
+      </ul>
+    </navlinks>
+  </mdb-navbar>
+
+</header>
+
+<!-- HELP -->
+<div class="switch-version d-none d-md-block text-center">
+  <li><a href="#" (click)="returnPrevious(); false"><i class="fa fa-2x fa-arrow-circle-left mt-2"></i></a></li>
+  <li><a href="#" (click)="helpModal.show(); false"><i class="fa fa-2x fa-question-circle mt-2"></i></a></li>
+  <li><a href="#" (click)="toggleWkBar(); false"><i class="fa fa-2x fa-wordpress mt-2 mb-2"></i></a></li>
+</div>
+
+<div mdbModal #helpModal="mdb-modal" class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="heading lead">{{'help'|translate}}</p>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="helpModal.hide()">
+            <span aria-hidden="true" class="white-text">×</span>
+        </button>
+      </div>
+      <div class="modal-body" [innerHTML]="helpContext"></div>
+      <div class="modal-footer justify-content-center">
+          <a type="button" class="btn btn-primary waves-light" mdbWavesEffect>Get it now <i class="fa fa-diamond ml-1"></i></a>
+          <a type="button" class="btn btn-outline-secondary" data-dismiss="modal" (click)="helpModal.hide()" mdbWavesEffect>{{'close'|translate}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- Working -->
+  <section id="workingBar" *ngIf="wkBarStatus" class="wow fadeInDown mb-5">
+    <div class="card z-depth-5">
+      <div class="card-body pb-4">
+        <p text-center>
+          <strong>Do not miss any important update. Subscribe to our newsletter.</strong>
+        </p>
+        <form>
+          <div class="row mt-5">
+            <div class="col-lg-6 col-md-6 mb-3">
+              <mdb-select [options]="lges" [(ngModel)]="selectedLge" [ngModelOptions]="{standalone: true}" (selected)="changeLge()" placeholder="{{'working_lge_select'|translate}}" class="colorful-select dropdown-primary"></mdb-select>
+              <label>{{'working_lge'|translate}}</label>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-3">
+              <mdb-select [options]="years" [(ngModel)]="selectedYear" [ngModelOptions]="{standalone: true}" (selected)="changeYear()" placeholder="{{'working_year_select'|translate}}" class="colorful-select dropdown-primary"></mdb-select>
+              <label>{{'working_year'|translate}}</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <div id="gkOutlet" class="container-fluid mt-5 pl-5 pr-5 wow {{effects[selectedEffect]}}" >
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red waves-light" mdbWavesEffect (click)="fixed.toggle($event)">
+        <i class="fa fa-pencil"></i>
+    </a>
+    <div class="fixed_collapse" [mdbCollapse]="isCollapsed" #fixed="bs-collapse">
+      <a class="btn-floating red waves-light" mdbWavesEffect><i class="fa fa-star"></i></a>
+      <a class="btn-floating yellow darken-1 waves-light" mdbWavesEffect><i class="fa fa-user"></i></a>
+      <a class="btn-floating green waves-light" mdbWavesEffect><i class="fa fa-envelope"></i></a>
+      <a class="btn-floating blue waves-light" mdbWavesEffect><i class="fa fa-shopping-cart"></i></a>
+    </div>
+  </div> -->
+</main>
+
+<!-- FOOTER -->
+<footer class="page-footer mdb-color text-center text-md-left pt-4 mt-4">
+  <div class="text-center mb-3">
+    <a class="btn-floating btn-small btn-fb waves-light" mdbWavesEffect><i class="fa fa-facebook"> </i></a>
+    <a class="btn-floating btn-small btn-tw waves-light" mdbWavesEffect><i class="fa fa-twitter"> </i></a>
+    <a class="btn-floating btn-small btn-gplus waves-light" mdbWavesEffect><i class="fa fa-google-plus"> </i></a>
+    <a class="btn-floating btn-small btn-li waves-light" mdbWavesEffect><i class="fa fa-linkedin"> </i></a>
+  </div>
+
+  <div class="footer-copyright text-center py-3">
+    <div class="container-fluid">{{'copyright1'|translate}}:<a href="https://www.gkconsult.vn"> GKC.vn. </a> {{'copyright2'|translate}}</div>
+  </div>
+</footer>

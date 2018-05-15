@@ -4,6 +4,9 @@
 /dist
 /tmp
 /out-tsc
+Access Tokens.pdf
+package-lock.json
+package.json
 
 # dependencies
 /node_modules
@@ -25,6 +28,7 @@
 !.vscode/extensions.json
 
 # misc
+/e2e
 /.sass-cache
 /connect.lock
 /coverage

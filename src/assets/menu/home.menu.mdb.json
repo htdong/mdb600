@@ -1,0 +1,34 @@
+[
+  {"data": { "label": "my_tasks", "icon": "tasks", "url": ""},
+    "children": [
+      { "data": { "label": "inbox", "icon": "inbox", "url": "/inbox" }},
+      { "data": { "label": "outbox", "icon": "check", "url": "/outbox" }}
+    ]
+  },
+  { "data": { "label": "my_documents", "icon": "briefcase", "url": ""},
+    "children": [
+      { "data": { "label": "draft", "icon": "file", "url": "/draft" }},
+      { "data": { "label": "in_progress", "icon": "spinner", "url": "/inprogress" }},
+      { "data": { "label": "completed", "icon": "check", "url": "/completed" }}
+    ]
+  },
+  { "data": { "label": "systems", "icon": "window-maximize", "url": "" },
+    "children": [
+      { "data": { "label": "workflows", "icon": "exchange", "url": "/tray/tray00" }},
+      { "data": { "label": "modules", "icon": "cubes", "url": "/systems" }},
+      { "data": { "label": "master_data", "icon": "database", "url": "/masterdata" }}
+    ]
+  },
+  { "data": { "label": "application", "icon": "desktop", "url": "" },
+    "children": [
+      { "data": { "label": "about", "icon": "info-circle", "url": "/about" }},
+      { "data": { "label": "profile", "icon": "user-circle", "url": "/profile" }},
+      { "data": { "label": "policy", "icon": "universal-access", "url": "/policy" }},
+      { "data": { "label": "my_favourites", "icon": "heart", "url": "/fav" }},
+      { "data": { "label": "themes", "icon": "paint-brush", "url": "/theme" }},
+      { "data": { "label": "settings", "icon": "cogs", "url": "/setting" }},
+      { "data": { "label": "lock_system", "icon": "lock", "url": "/lockscreen" }},
+      { "data": { "label": "logout", "icon": "sign-out", "url": "/login" }}
+    ]
+  }
+]

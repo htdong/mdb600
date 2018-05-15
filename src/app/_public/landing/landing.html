@@ -1,0 +1,797 @@
+<!-- NAV BAR -->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+
+  <!-- Logo -->
+  <logo class="wow fadeInLeft">
+    <a class="logo navbar-brand waves-light" mdbWavesEffect href="#"><strong>GK|</strong> {{'consult'|translate}}</a>
+  </logo>
+
+  <links>
+
+    <!-- Left nav -->
+    <ul class="navbar-nav mr-auto wow fadeInDown" data-wow-delay="0.3s">
+      <li class="nav-item waves-light" [ngClass]="{'active': selectedNavItem==='intro'}" (click)="selectNavItem('intro')" mdbWavesEffect>
+        <a class="nav-link" mdbPageScroll href="#intro">{{'intro'|translate}} <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item waves-light" [ngClass]="{'active': selectedNavItem==='objectives'}" (click)="selectNavItem('objectives')" mdbWavesEffect>
+        <a class="nav-link" mdbPageScroll href="#objectives">{{'objectives'|translate}}</a>
+      </li>
+      <li class="nav-item waves-light" [ngClass]="{'active': selectedNavItem==='features'}" (click)="selectNavItem('features')" mdbWavesEffect>
+        <a class="nav-link" mdbPageScroll href="#features">{{'features'|translate}}</a>
+      </li>
+      <li class="nav-item waves-light" [ngClass]="{'active': selectedNavItem==='solutions'}" (click)="selectNavItem('solutions')" mdbWavesEffect>
+        <a class="nav-link" mdbPageScroll href="#solutions">{{'solutions'|translate}}</a>
+      </li>
+      <li class="nav-item waves-light" [ngClass]="{'active': selectedNavItem==='testimonials'}" (click)="selectNavItem('testimonials')" mdbWavesEffect>
+        <a class="nav-link" mdbPageScroll href="#testimonials">{{'testimonials'|translate}}</a>
+      </li>
+      <li class="nav-item waves-light" [ngClass]="{'active': selectedNavItem==='contact'}" (click)="selectNavItem('contact')" mdbWavesEffect>
+        <a class="nav-link" mdbPageScroll href="#contact">{{'contact'|translate}}</a>
+      </li>
+    </ul>
+
+    <!-- Right nav -->
+    <ul class="navbar-nav ml-auto wow fadeInDown" data-wow-delay="0.3s">
+      <li class="nav-item dropdown btn-group" dropdown>
+        <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          <i class="fa fa-language"></i> <span class="clearfix d-none d-sm-inline-block"> {{'language'|translate}}</span>
+        </a>
+        <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+          <a class="dropdown-item" (click)="changeLanguage('en'); false">{{'langEnglish'|translate}}</a>
+          <a class="dropdown-item" (click)="changeLanguage('vn'); false">{{'langVietnamese'|translate}}</a>
+          <a class="dropdown-item" (click)="changeLanguage('jp'); false">{{'langJapanese'|translate}}</a>
+          <a class="dropdown-item" (click)="changeLanguage('kr'); false">{{'langKorean'|translate}}</a>
+          <a class="dropdown-item" (click)="changeLanguage('ch'); false">{{'langChinese'|translate}}</a>
+          <a class="dropdown-item" (click)="changeLanguage('fr'); false">{{'langFrench'|translate}}</a>
+        </div>
+      </li>
+      <li class="nav-item waves-light" mdbWavesEffect>
+        <a class="nav-link" (click)="gotoLogin(); false;">{{'login'|translate}}</a>
+      </li>
+    </ul>
+  </links>
+
+</mdb-navbar>
+
+<!--Intro Section-->
+<section id="intro" class="view intro-2 hm-gradient">
+  <div class="full-bg-img mask">
+    <div class="container flex-center">
+      <div class="row flex-center pt-5 mt-5">
+
+        <div class="col-md-6 text-center text-md-left margins">
+          <div class="white-text">
+            <h1 class="h1-responsive wow fadeInLeft" data-wow-delay="0.3s">{{'landing_home_title'|translate}} </h1>
+            <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+            <h6 class="wow fadeInLeft" data-wow-delay="0.3s">{{'landing_home_desc'|translate}}</h6>
+            <br>
+            <a class="btn btn-outline-white wow fadeInLeft waves-light" data-wow-delay="0.3s" mdbWavesEffect>{{'learn_more'|translate}}</a>
+            <a class="btn btn-outline-white wow fadeInLeft waves-light" data-wow-delay="0.3s" mdbWavesEffect>{{'available'|translate}}
+                <i class="fa fa-windows left right" aria-hidden="true"></i>
+                <i class="fa fa-linux left" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 wow fadeInRight d-flex justify-content-center" data-wow-delay="0.3s">
+          <img src="./assets/images/mdb/landing/test-mobile-features.png" alt="" class="img-responsive">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+
+    <!-- Opening -->
+    <div id="objectives"class="row py-5">
+      <div class="col-md-12 text-center">
+        <h1 class="py-5 font-weight-bold text-center wow zoomIn" data-wow-delay="0.3s"> <i class="fa fa-heart red-text mr-1"></i> {{'objectives'|translate}}</h1>
+        <p class="wow zoomIn" data-wow-delay="0.3s">{{'landing_opening_body_1'|translate}}</p>
+        <p class="wow zoomIn" data-wow-delay="0.3s"><b>{{'landing_opening_body_2'|translate}}</b></p>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-leanpub blue-text mr-1"></i> {{'lean'|translate}}
+        </div>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-fighter-jet black-text mr-1"></i> {{'agility'|translate}}
+        </div>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-expand pink-text mr-1"></i> {{'scalability'|translate}}
+        </div>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-globe deep-blue-text mr-1"></i> {{'standard'|translate}}
+        </div>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-star indigo-text mr-1"></i> {{'core'|translate}}
+        </div>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-spinner blue-grey-text mr-1"></i> {{'supporting'|translate}}
+        </div>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-check-circle brown-text mr-1"></i> {{'policies'|translate}}
+        </div>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-exchange teal-text mr-1"></i> {{'processes'|translate}}
+        </div>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-file green-text mr-1"></i> {{'procedures'|translate}}
+        </div>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-sitemap light-green-text mr-1"></i> {{'governance'|translate}}
+        </div>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-bomb red-text mr-1"></i> {{'risks'|translate}}
+        </div>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-gavel blue-text mr-1"></i> {{'controls'|translate}}
+        </div>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-flag amber-text mr-1"></i> {{'compliance'|translate}}
+        </div>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-university orange-text mr-1"></i> {{'regulations'|translate}}
+        </div>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-list deep-orange-text mr-1"></i> {{'audit'|translate}}
+        </div>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-undo lime-text mr-1"></i> {{'bcp'|translate}}
+        </div>
+        <div class="chip wow zoomIn" data-wow-delay="0.3s">
+            <i class="fa fa-fire blue-text mr-1"></i> {{'icm'|translate}}
+        </div>
+
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- FEATURES -->
+    <section id="features">
+
+      <h1 class="py-5 font-weight-bold text-center wow fadeInDown">{{'landing_features_header'|translate}}</h1>
+      <p class="px-5 mb-5 pb-3 lead grey-text text-center wow zoomIn" data-wow-delay="0.3s">{{'landing_features_body_0'|translate}}</p>
+
+      <div class="row">
+
+        <div class="col-md-4">
+
+          <div class="row mb-2 wow fadeInLeft" data-wow-delay="0.3s">
+            <div class="col-2">
+              <i class="fa fa-2x fa-flag-checkered deep-purple-text"></i>
+            </div>
+            <div class="col-10 text-left">
+              <h5 class="font-weight-bold">{{'landing_features_body_1'|translate}}</h5>
+              <p class="grey-text">{{'landing_features_body_1_details'|translate}}</p>
+            </div>
+          </div>
+
+          <div class="row mb-2 wow fadeInLeft" data-wow-delay="0.3s">
+            <div class="col-2">
+              <i class="fa fa-2x fa-arrows-h orange-text"></i>
+            </div>
+            <div class="col-10 text-left">
+              <h5 class="font-weight-bold">{{'landing_features_body_2'|translate}}</h5>
+              <p class="grey-text">{{'landing_features_body_2_details'|translate}}</p>
+            </div>
+          </div>
+
+          <div class="row mb-2 wow fadeInLeft" data-wow-delay="0.3s">
+            <div class="col-2">
+              <i class="fa fa-2x fa-magic blue-text"></i>
+            </div>
+            <div class="col-10 text-left">
+              <h5 class="font-weight-bold">{{'landing_features_body_3'|translate}}</h5>
+              <p class="grey-text">{{'landing_features_body_3_details'|translate}}</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-4 mb-2 center-on-small-only flex-center wow zoomIn" data-wow-delay="0.3s">
+            <img src="./assets/images/mdb/landing/test-mobile-features-1.png" alt="" class="z-depth-0">
+        </div>
+
+        <div class="col-md-4">
+
+          <div class="row mb-2 wow fadeInRight" data-wow-delay="0.3s">
+            <div class="col-2">
+              <i class="fa fa-2x fa-money green-text"></i>
+            </div>
+            <div class="col-10 text-left">
+              <h5 class="font-weight-bold">{{'landing_features_body_4'|translate}}</h5>
+              <p class="grey-text">{{'landing_features_body_4_details'|translate}}</p>
+            </div>
+          </div>
+
+          <div class="row mb-2 wow fadeInRight" data-wow-delay="0.3s">
+            <div class="col-2">
+              <i class="fa fa-2x fa-cogs deep-orange-text"></i>
+            </div>
+            <div class="col-10 text-left">
+              <h5 class="font-weight-bold">{{'landing_features_body_5'|translate}}</h5>
+              <p class="grey-text">{{'landing_features_body_5_details'|translate}}</p>
+            </div>
+          </div>
+
+          <div class="row mb-2 wow fadeInRight" data-wow-delay="0.3s">
+            <div class="col-2">
+              <i class="fa fa-2x fa-puzzle-piece light-green-text"></i>
+            </div>
+            <div class="col-10 text-left">
+              <h5 class="font-weight-bold">{{'landing_features_body_6'|translate}}</h5>
+              <p class="grey-text">{{'landing_features_body_6_details'|translate}}</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- SOLUTIONS -->
+    <section id="solutions" class="text-center pb-3">
+
+      <h2 class="font-weight-bold h1 py-5 wow fadeInDown" data-wow-delay="0.3s"><strong>{{'landing_solutions_header'|translate}}</strong></h2>
+      <p class="grey-text pb-5 text-center wow fadeInDown" data-wow-delay="0.3s">{{'landing_solutions_body_0'|translate}}</p>
+
+      <div class="row">
+
+        <div class="col-md-12 mb-4 wow zoomIn" data-wow-delay="0.3s">
+          <div class="card card-image" style="background-image: url(assets/images/mdb/landing/test-project-wide.jpg);">
+            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 rounded">
+              <div>
+                <h6 class="amber-text"><i class="fa fa-bullseye"></i><strong> {{'landing_solutions_00_icon'|translate}}</strong></h6>
+                <h3 class="py-3 font-weight-bold"><strong>{{'landing_solutions_00_title'|translate}}</strong></h3>
+                <p class="pb-3">{{'landing_solutions_00_desc'|translate}}</p>
+                <a class="btn btn-amber btn-rounded btn-md  waves-light" mdbWavesEffect><i class="fa fa-clone left"></i> {{'view_solution'|translate}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4 wow fadeInLeft" data-wow-delay="0.3s">
+          <div class="card card-image" style="background-image: url(assets/images/mdb/landing/test-project-1.jpg);">
+            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 rounded">
+              <div>
+                <h6 class="red-text"><i class="fa fa-database"></i><strong> {{'landing_solutions_10_icon'|translate}}</strong></h6>
+                <h3 class="py-3 font-weight-bold"><strong>{{'landing_solutions_10_title'|translate}}</strong></h3>
+                <p class="pb-3">{{'landing_solutions_10_desc'|translate}}</p>
+                <a class="btn btn-red btn-rounded btn-md waves-light" mdbWavesEffect><i class="fa fa-clone left"></i> {{'view_solution'|translate}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4 wow fadeInRight" data-wow-delay="0.3s">
+          <div class="card card-image" style="background-image: url(assets/images/mdb/landing/test-project-2.jpg);">
+            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 rounded">
+              <div>
+                <h6 class="pink-text"><i class="fa fa-bank"></i><strong> {{'landing_solutions_20_icon'|translate}}</strong></h6>
+                <h3 class="py-3 font-weight-bold"><strong>{{'landing_solutions_20_title'|translate}}</strong></h3>
+                <p class="pb-3">{{'landing_solutions_20_desc'|translate}}</p>
+                <a class="btn btn-pink btn-rounded btn-md  waves-light" mdbWavesEffect><i class="fa fa-clone left"></i> {{'view_solution'|translate}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4 wow fadeInLeft" data-wow-delay="0.3s">
+          <div class="card card-image" style="background-image: url(assets/images/mdb/landing/test-project-3.jpg);">
+            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 rounded">
+              <div>
+                <h6 class="green-text"><i class="fa fa-group"></i><strong> {{'landing_solutions_30_icon'|translate}}</strong></h6>
+                <h3 class="py-3 font-weight-bold"><strong>{{'landing_solutions_30_title'|translate}}</strong></h3>
+                <p class="pb-3">{{'landing_solutions_30_desc'|translate}}</p>
+                <a class="btn btn-green btn-rounded btn-md  waves-light" mdbWavesEffect><i class="fa fa-clone left"></i> {{'view_solution'|translate}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4 wow fadeInRight" data-wow-delay="0.3s">
+          <div class="card card-image" style="background-image: url(assets/images/mdb/landing/test-project-4.jpg);">
+            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 rounded">
+              <div>
+                <h6 class="blue-text"><i class="fa fa-money"></i><strong> {{'landing_solutions_40_icon'|translate}}</strong></h6>
+                <h3 class="py-3 font-weight-bold"><strong>{{'landing_solutions_40_title'|translate}}</strong></h3>
+                <p class="pb-3">{{'landing_solutions_40_desc'|translate}}</p>
+                <a class="btn btn-blue btn-rounded btn-md  waves-light" mdbWavesEffect><i class="fa fa-clone left"></i> {{'view_solution'|translate}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4 wow fadeInLeft" data-wow-delay="0.3s">
+          <div class="card card-image" style="background-image: url(assets/images/mdb/landing/test-project-5.jpg);">
+            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 rounded">
+              <div>
+                <h6 class="indigo-text"><i class="fa fa-shopping-basket"></i><strong> {{'landing_solutions_50_icon'|translate}}</strong></h6>
+                <h3 class="py-3 font-weight-bold"><strong>{{'landing_solutions_50_title'|translate}}</strong></h3>
+                <p class="pb-3">{{'landing_solutions_50_desc'|translate}}</p>
+                <a class="btn btn-indigo btn-rounded btn-md  waves-light" mdbWavesEffect><i class="fa fa-clone left"></i> {{'view_solution'|translate}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4 wow fadeInRight" data-wow-delay="0.3s">
+          <div class="card card-image" style="background-image: url(assets/images/mdb/landing/test-project-6.jpg);">
+            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 rounded">
+              <div>
+                <h6 class="light-blue-text"><i class="fa fa-truck"></i><strong> {{'landing_solutions_60_icon'|translate}}</strong></h6>
+                <h3 class="py-3 font-weight-bold"><strong>{{'landing_solutions_60_title'|translate}}</strong></h3>
+                <p class="pb-3">{{'landing_solutions_60_desc'|translate}}</p>
+                <a class="btn btn-light-blue btn-rounded btn-md  waves-light" mdbWavesEffect><i class="fa fa-clone left"></i> {{'view_solution'|translate}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4 wow fadeInLeft" data-wow-delay="0.3s">
+          <div class="card card-image" style="background-image: url(assets/images/mdb/landing/test-project-7.jpg);">
+            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 rounded">
+              <div>
+                <h6 class="cyan-text"><i class="fa fa-comments-o"></i><strong> {{'landing_solutions_70_icon'|translate}}</strong></h6>
+                <h3 class="py-3 font-weight-bold"><strong>{{'landing_solutions_70_title'|translate}}</strong></h3>
+                <p class="pb-3">{{'landing_solutions_70_desc'|translate}}</p>
+                <a class="btn btn-cyan btn-rounded btn-md  waves-light" mdbWavesEffect><i class="fa fa-clone left"></i> {{'view_solution'|translate}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4 wow fadeInRight" data-wow-delay="0.3s">
+          <div class="card card-image" style="background-image: url(assets/images/mdb/landing/test-project-8.jpg);">
+            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 rounded">
+              <div>
+                <h6 class="lime-text"><i class="fa fa-industry"></i><strong> {{'landing_solutions_80_icon'|translate}}</strong></h6>
+                <h3 class="py-3 font-weight-bold"><strong>{{'landing_solutions_80_title'|translate}}</strong></h3>
+                <p class="pb-3">{{'landing_solutions_80_desc'|translate}}</p>
+                <a class="btn btn-lime btn-rounded btn-md  waves-light" mdbWavesEffect><i class="fa fa-clone left"></i> {{'view_solution'|translate}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--Grid row-->
+
+    </section>
+
+    <hr/>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="text-center pb-4">
+      <h1 class="py-5 h1 pt-4 wow zoomIn" data-wow-delay="0.3s">{{'landing_testimonials_header'|translate}}</h1>
+      <p class="grey-text pb-5 text-center wow fadeInDown" data-wow-delay="0.3s">{{'landing_testimonials_body_0'|translate}}</p>
+
+      <div class="row">
+        <mdb-carousel
+          class="carousel no-flex testimonial-carousel carousel-multi-item multi-animation slide wow zoomIn mb-5" data-wow-delay="0.3s"
+          [type]="'carousel-multi-item'"
+          [animation]="'slide'">
+
+          <mdb-slide>
+            <div class="col-md-4">
+              <div class="testimonial">
+                <div class="avatar mx-auto">
+                  <img src="assets/images/mdb/avatars/img%20(26).jpg" class="rounded-circle img-fluid">
+                </div>
+                <h4>Anna Deynah</h4>
+                <h6 class="blue-text font-bold">Web Designer</h6>
+                <p><i class="fa fa-quote-left"></i> {{'landing_testimonials_1_comment'|translate}}</p>
+                <div class="grey-text">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star-half-full"> </i>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="testimonial">
+                <div class="avatar mx-auto">
+                  <img src="assets/images/mdb/avatars/img%20(27).jpg" class="rounded-circle img-fluid">
+                </div>
+                <h4>John Doe</h4>
+                <h6 class="blue-text font-bold">Web Developer</h6>
+                <p><i class="fa fa-quote-left"></i> {{'landing_testimonials_2_comment'|translate}}</p>
+                <div class="grey-text">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="testimonial">
+                <div class="avatar mx-auto">
+                  <img src="assets/images/mdb/avatars/img%20(31).jpg" class="rounded-circle img-fluid">
+                </div>
+                <h4>Abbey Clark</h4>
+                <h6 class="blue-text font-bold">Photographer</h6>
+                <p><i class="fa fa-quote-left"></i> {{'landing_testimonials_3_comment'|translate}}</p>
+                <div class="grey-text">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star-o"> </i>
+                </div>
+              </div>
+            </div>
+          </mdb-slide>
+
+          <mdb-slide>
+            <div class="col-md-4">
+              <div class="testimonial">
+                <div class="avatar mx-auto">
+                  <img src="assets/images/mdb/avatars/img%20(4).jpg" class="rounded-circle img-fluid">
+                </div>
+                <h4>Blake Dabney</h4>
+                <h6 class="blue-text font-bold">Web Designer</h6>
+                <p><i class="fa fa-quote-left"></i> {{'landing_testimonials_4_comment'|translate}}</p>
+                <div class="grey-text">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star-half-full"> </i>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="testimonial">
+                <div class="avatar mx-auto">
+                  <img src="assets/images/mdb/avatars/img%20(6).jpg" class="rounded-circle img-fluid">
+                </div>
+                <h4>Andrea Clay</h4>
+                <h6 class="blue-text font-bold">Front-end developer</h6>
+                <p><i class="fa fa-quote-left"></i> {{'landing_testimonials_5_comment'|translate}}</p>
+                <div class="grey-text">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="testimonial">
+                <div class="avatar mx-auto">
+                  <img src="assets/images/mdb/avatars/img%20(7).jpg" class="rounded-circle img-fluid">
+                </div>
+                <h4>Cami Gosse</h4>
+                <h6 class="blue-text font-bold">Phtographer</h6>
+                <p><i class="fa fa-quote-left"></i> {{'landing_testimonials_6_comment'|translate}}</p>
+                <div class="grey-text">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star-o"> </i>
+                </div>
+              </div>
+            </div>
+          </mdb-slide>
+
+          <mdb-slide>
+            <div class="col-md-4">
+              <div class="testimonial">
+                <div class="avatar mx-auto">
+                    <img src="assets/images/mdb/avatars/img%20(8).jpg" class="rounded-circle img-fluid">
+                </div>
+                <h4>Bobby Haley</h4>
+                <h6 class="blue-text font-bold">Web Developer</h6>
+                <p><i class="fa fa-quote-left"></i> {{'landing_testimonials_7_comment'|translate}}</p>
+                <div class="grey-text">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="testimonial">
+                <div class="avatar mx-auto">
+                  <img src="assets/images/mdb/avatars/img%20(10).jpg" class="rounded-circle img-fluid">
+                </div>
+                <h4>Elisa Janson</h4>
+                <h6 class="blue-text font-bold">Marketer</h6>
+                <p><i class="fa fa-quote-left"></i> {{'landing_testimonials_8_comment'|translate}}</p>
+                <div class="grey-text">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star-half-full"> </i>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="testimonial">
+                <div class="avatar mx-auto">
+                  <img src="assets/images/mdb/avatars/img%20(9).jpg" class="rounded-circle img-fluid">
+                </div>
+                <h4>Robert Jacobs</h4>
+                <h6 class="blue-text font-bold">Front-end developer</h6>
+                <p><i class="fa fa-quote-left"></i> {{'landing_testimonials_9_comment'|translate}}</p>
+                <div class="grey-text">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star-o"> </i>
+                </div>
+              </div>
+            </div>
+          </mdb-slide>
+
+        </mdb-carousel>
+      </div>
+
+    </section>
+
+    <hr />
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-5">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card wow zoomIn" data-wow-delay="0.3s">
+            <div class="row">
+
+              <div class="col-lg-8">
+                <div class="card-body form">
+                  <div class="formHeader mb-1 pt-3">
+                    <h3><i class="fa fa-envelope"></i> {{'write_to_us'|translate}}:</h3>
+                  </div>
+
+                  <br>
+
+                  <form [formGroup]="form">
+                    <div class="row mb-3">
+
+                      <div class="col-md-6">
+                        <div class="md-form">
+                          <input type="text" [formControl]="name" [(ngModel)]="model.name" id="name" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
+                          <label for="name">{{'name'|translate}}</label>
+                          <span *ngIf="name.invalid && (name.dirty || name.touched)" class="inputVal text-danger">{{'required'|translate}}</span>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="md-form">
+                          <input type="text" [formControl]="email" [(ngModel)]="model.email" id="email" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
+                          <label for="email">{{'email'|translate}}</label>
+                          <span *ngIf="email.invalid && (email.dirty || email.touched)" class="inputVal text-danger">{{'invalid_email'|translate}}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <div class="md-form">
+                          <input type="text" [formControl]="phone" [(ngModel)]="model.phone" id="phone" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
+                          <label for="phone" class="">{{'phone'|translate}}</label>
+                          <span *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="inputVal text-danger">{{'numeric'|translate}}</span>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="md-form">
+                          <input type="text" [formControl]="company" [(ngModel)]="model.company" id="company" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
+                          <label for="company" class="">{{'company'|translate}}</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12">
+
+                        <div class="md-form">
+                          <textarea type="text" [formControl]="message" [(ngModel)]="model.message" id="message" class="form-control md-textarea" rows="3"></textarea>
+                          <label for="message" class="">{{'message'|translate}}</label>
+                          <a [disabled]="!form.valid" class="btn-floating btn-lg blue waves-light" mdbWavesEffect (click)="onSubmit()"><i class="fa fa-send-o"></i></a>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="card-body contact text-center">
+                  <div class="mb-5">
+                    <h3>{{'contact'|translate}}</h3>
+                  </div>
+
+                  <ul class="contact-icons list-unstyled ml-4">
+                    <li>
+                      <i class="fa fa-map-marker"></i>
+                      <p>{{'gk_address'|translate}}</p>
+                    </li>
+
+                    <li>
+                      <i class="fa fa-phone"></i>
+                      <p>{{'gk_phone'|translate}}</p>
+                    </li>
+
+                    <li>
+                      <i class="fa fa-envelope"></i>
+                      <p>{{'gk_email'|translate}}</p>
+                    </li>
+                  </ul>
+
+                  <hr class="hr-light mb-4 mt-4">
+
+                  <ul class="list-inline text-center list-unstyled">
+                    <li class="list-inline-item">
+                      <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="icons-sm ins-ic"><i class="fa fa-instagram"> </i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+
+<!-- FOOTER -->
+<footer class="page-footer mdb-color text-center text-md-left pt-4 mt-4">
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-3 offset-md-1">
+        <h5 class="title"><strong>GK| </strong>{{'consult'|translate}} </h5>
+        <p>{{'landing_home_title'|translate}}</p>
+      </div>
+
+      <hr class="hidden-md-up">
+
+      <div class="col-md-3 offset-md-1">
+        <h5 class="title">{{'core_solutions'|translate}}</h5>
+        <ul class="list-unstyled">
+          <li>
+              <a href="#!">{{'landing_solutions_00_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_10_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_20_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_30_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_40_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_50_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_60_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_70_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_80_title'|translate}}</a>
+          </li>
+        </ul>
+      </div>
+
+      <hr class="hidden-md-up">
+
+      <div class="col-md-3">
+        <h5 class="title">{{'pheripheral_solutions'|translate}}</h5>
+        <ul class="list-unstyled">
+          <li>
+              <a href="#!">{{'landing_solutions_21_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_22_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_23_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_24_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_25_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_26_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_27_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_28_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_41_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_42_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_43_title'|translate}}</a>
+          </li>
+          <li>
+              <a href="#!">{{'landing_solutions_44_title'|translate}}</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="text-center mb-3">
+
+    <a class="btn-floating btn-small btn-fb waves-light" mdbWavesEffect>
+      <i class="fa fa-facebook"> </i>
+    </a>
+    <a class="btn-floating btn-small btn-tw waves-light" mdbWavesEffect>
+      <i class="fa fa-twitter"> </i>
+    </a>
+    <a class="btn-floating btn-small btn-gplus waves-light" mdbWavesEffect>
+      <i class="fa fa-google-plus"> </i>
+    </a>
+    <a class="btn-floating btn-small btn-li waves-light" mdbWavesEffect>
+      <i class="fa fa-linkedin"> </i>
+    </a>
+    <a class="btn-floating btn-small btn-git waves-light" mdbWavesEffect>
+      <i class="fa fa-github"> </i>
+    </a>
+    <a class="btn-floating btn-small btn-pin waves-light" mdbWavesEffect>
+      <i class="fa fa-pinterest"> </i>
+    </a>
+    <a class="btn-floating btn-small btn-ins waves-light" mdbWavesEffect>
+      <i class="fa fa-instagram"> </i>
+    </a>
+
+  </div>
+
+  <div class="footer-copyright text-center py-3">
+      <div class="container-fluid">
+        {{'copyright1'|translate}}:<a href="https://www.gkconsult.vn"> GKC.vn. </a> {{'copyright2'|translate}}
+      </div>
+  </div>
+
+</footer>

@@ -1,0 +1,29 @@
+.breadcrumb {
+  i {
+    margin-left: 5px;
+    right: 5px;
+  }
+  span {
+    margin-left: 5px;
+    right: 5px;
+    text-decoration: none;
+  }
+  span:hover {
+    font-weight: bold;
+    text-decoration:underline;
+    cursor: pointer;
+  }
+}
+
+.switch-version {
+  position:fixed;
+  width:40px;
+  background:#fff;
+  right:0;
+  top: 200px;
+  border-radius: 6px 0 0 6px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+  li {
+    list-style-type: none;
+  }
+}
