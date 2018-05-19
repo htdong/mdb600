@@ -45,7 +45,9 @@ import { Injectable } from '@angular/core';
 * @function checkTcodeInMana
 * @function checkTcodeInEncodeArray
 */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class TcodeService {
 
   // Below Tcodes shall not be under any module

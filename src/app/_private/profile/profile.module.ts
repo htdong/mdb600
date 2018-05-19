@@ -2,8 +2,10 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { ImageCropperModule } from 'ngx-image-cropper';
 import { MDBBootstrapModules } from 'ng-mdb-pro';
 
 import { ProfileRoutingModule } from './profile-routing.module';
@@ -15,8 +17,10 @@ import { ProfileComponent } from './profile.component';
     ReactiveFormsModule,
     FormsModule,
 
+    LazyLoadImageModule,
     TranslateModule,
 
+    ImageCropperModule,
     MDBBootstrapModules,
 
     ProfileRoutingModule,

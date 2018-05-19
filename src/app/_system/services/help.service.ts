@@ -12,7 +12,9 @@ import { LocalStorageService } from './localStorage.service';
 *
 * @function getHelpFromHTMLFile
 */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class HelpService {
 
   constructor(
@@ -30,7 +32,8 @@ export class HelpService {
   */
   getHelpFromHTMLFile(HTMLFile): Observable<any> {
     const lang = this.localStorageService.getLang();
-    const file = 'assets/help/' + HTMLFile + '.' + lang + '.html';
+    const app = 'mdb';
+    const file = 'assets/help/' + HTMLFile + '.' + app + '.' + lang + '.html';
 
     return this.httpClient.get(file, { responseType: 'text' })
       .map((res) => {

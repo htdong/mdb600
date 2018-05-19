@@ -29,6 +29,12 @@
               },
               {
                 "input": "node_modules/font-awesome/scss/font-awesome.scss"
+              },              
+              {
+                "input": "node_modules/primeng/resources/themes/bootstrap/theme.css"
+              },
+              {
+                "input": "node_modules/primeng/resources/primeng.min.css"
               },
               {
                 "input": "node_modules/ng-mdb-pro/assets/scss/bootstrap/bootstrap.scss"
@@ -43,7 +49,7 @@
             "scripts": [
               {
                 "input": "node_modules/document-register-element/build/document-register-element.js"
-              },
+              },              
               {
                 "input": "node_modules/chart.js/dist/Chart.js"
               },

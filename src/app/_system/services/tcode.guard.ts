@@ -11,7 +11,9 @@ import { TcodeService } from './tcode.service';
 *
 * @function canActivate
 */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class TcodeGuard implements CanActivate {
 
   constructor(

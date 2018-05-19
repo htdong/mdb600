@@ -5,7 +5,6 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { EmailValidator } from '../../_system/validators';
 
-import { BodyBackgroundService } from '../../_system/services/bodyBackground.service';
 import { LocalStorageService } from '../../_system/services/localStorage.service';
 import { SecurityService } from '../../_system/services/security.service';
 import { TcodeService } from '../../_system/services/tcode.service';
@@ -35,20 +34,19 @@ export class LandingComponent implements OnInit, OnDestroy {
 
   model: any = {};
 
-  selectedNavItem ='';
+  selectedNavItem = '';
 
   constructor(
     private fb: FormBuilder,
 
     private localStorageService: LocalStorageService,
-    private bodyBackgroundService: BodyBackgroundService,
     private securityService: SecurityService,
     private tcodeService: TcodeService,
     private translate: TranslateService,
   ) {
     this.form = fb.group(
       {
-        'name': [this.model.name, Validators.compose([Validators.required, Validators.minLength(1)])],
+        'name': ['', Validators.compose([Validators.required, Validators.minLength(1)])],
         'email': ['', Validators.compose([Validators.required, EmailValidator.validate])],
         'phone': ['', Validators.compose([Validators.required])],
         'company': ['', Validators.compose([Validators.required])],

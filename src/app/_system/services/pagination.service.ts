@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import * as _ from 'underscore';
-
+// import * as _ from 'underscore';
+import * as _ from 'lodash';
 /**
 * @module PaginationService
 * Service to paginate data

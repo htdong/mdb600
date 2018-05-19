@@ -8,7 +8,9 @@ import { TranslateService } from '@ngx-translate/core';
 * @function processAPIResult
 * @function trackError
 */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class APIResultHandlingService {
 
   constructor(

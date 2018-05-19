@@ -10,7 +10,9 @@ import { Subject } from 'rxjs/Subject';
 * @function show
 * @function hide
 */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class LoaderService {
 
   private loaderSubject = new Subject<any>();

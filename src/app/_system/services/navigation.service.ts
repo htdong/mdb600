@@ -21,7 +21,9 @@ import { TcodeService } from './tcode.service';
 * @function goto404
 * @function goto500
 */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class NavigationService {
 
   allowedHistory = 10;

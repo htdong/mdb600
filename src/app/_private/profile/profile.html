@@ -1,13 +1,3 @@
-
-<!-- <h2 class="wow fadeInUp">Advanced Double Navigation with fixed SideNav & fixed Navbar:</h2>
-<br>
-<h5 class="wow fadeInRight">1. Hidden side menu. Click "hamburger" icon in the top left corner to open it.</h5>
-<h5 class="wow fadeInLeft">2. Fixed navbar. It will always stay visible on the top, even when you scroll down.</h5>
-<div style="height: 1000px">
-  <a class="btn btn-success waves-light" (click)="showSuccess()" mdbWavesEffect>Success message</a>
-  <a class="btn btn-danger waves-light" (click)="showError()" mdbWavesEffect>Error message</a>
-</div> -->
-
 <div class="container-fluid">
 
   <section class="section team-section">
@@ -44,7 +34,7 @@
                             <div class="md-form">
                               <input [mdbValidate]="false" formControlName="firstname" mdbInputDirective type="text" id="firstname" name="firstname" class="form-control">
                               <label for="firstname">{{'firstname'|translate}}</label>
-                              <span *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="inputVal text-danger">{{'required'|translate}}</span>
+                              <span *ngIf="form.get('firstname').invalid && (form.get('firstname').dirty || form.get('firstname').touched)" class="inputVal text-danger">{{'required'|translate}}</span>
                             </div>
                           </div>
 
@@ -52,7 +42,7 @@
                             <div class="md-form">
                               <input [mdbValidate]="false" formControlName="lastname" mdbInputDirective type="text" id="lastname" name="lastname" class="form-control">
                               <label for="lastname">{{'lastname'|translate}}</label>
-                              <span *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="inputVal text-danger">{{'required'|translate}}</span>
+                              <span *ngIf="form.get('lastname').invalid && (form.get('lastname').dirty || form.get('lastname').touched)" class="inputVal text-danger">{{'required'|translate}}</span>
                             </div>
                           </div>
                         </div>
@@ -62,7 +52,7 @@
                             <div class="md-form">
                               <input [mdbValidate]="false" formControlName="address_first" mdbInputDirective type="text" id="address_first" name="address_first" class="form-control">
                               <label for="address_first">{{'line'|translate}} 1 ({{'address'|translate}})</label>
-                              <span *ngIf="address_first.invalid && (address_first.dirty || address_first.touched)" class="inputVal text-danger">{{'required'|translate}}</span>
+                              <span *ngIf="form.get('address_first').invalid && (form.get('address_first').dirty || form.get('address_first').touched)" class="inputVal text-danger">{{'required'|translate}}</span>
                             </div>
                           </div>
 
@@ -80,7 +70,7 @@
                             <div class="md-form">
                               <input [mdbValidate]="false" formControlName="city" mdbInputDirective type="text" id="city" name="city" class="form-control">
                               <label for="city">{{'city'|translate}}</label>
-                              <span *ngIf="city.invalid && (city.dirty || city.touched)" class="inputVal text-danger">{{'required'|translate}}</span>
+                              <span *ngIf="form.get('city').invalid && (form.get('city').dirty || form.get('city').touched)" class="inputVal text-danger">{{'required'|translate}}</span>
                             </div>
                           </div>
 
@@ -95,7 +85,7 @@
                             <div class="md-form">
                               <input [mdbValidate]="false" formControlName="country" mdbInputDirective type="text" id="country" name="country" class="form-control">
                               <label for="country">{{'country'|translate}}</label>
-                              <span *ngIf="country.invalid && (country.dirty || country.touched)" class="inputVal text-danger">{{'required'|translate}}</span>
+                              <span *ngIf="form.get('country').invalid && (form.get('country').dirty || form.get('country').touched)" class="inputVal text-danger">{{'required'|translate}}</span>
                             </div>
                           </div>
                         </div>
@@ -129,11 +119,7 @@
                           <div class="row">
 
                             <div class="col-md-6">
-                              <div class="md-form">
-                                <!-- <input mdbInputDirective type="text" id="email" class="form-control" placeholder="{{email}}" disabled>
-                                <label for="email">{{'email'|translate}} ({{'primary'|translate}})</label> -->
-                                <!-- <i class="fa fa-envelope prefix dark-grey-text"></i>
-                                <span *ngIf="email.invalid && (email.dirty || email.touched)" class="inputVal text-danger">{{'invalid_email'|translate}}</span> -->
+                              <div class="md-form">                                
                                 <input type="text" formControlName="email" id="email" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
                                 <label for="email">{{'email'|translate}}</label>
                               </div>
@@ -143,7 +129,7 @@
                               <div class="md-form">
                                 <input type="text" formControlName="alt_email" id="alt_email" name="alt_email" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
                                 <label for="alt_email">{{'email'|translate}} ({{'alternate'|translate}})</label>
-                                <span *ngIf="alt_email.invalid && (alt_email.dirty || alt_email.touched)" class="inputVal text-danger">{{'invalid_email'|translate}}</span>
+                                <span *ngIf="form.get('alt_email').invalid && (form.get('alt_email').dirty || form.get('alt_email').touched)" class="inputVal text-danger">{{'invalid_email'|translate}}</span>
                               </div>
                             </div>
                           </div>
@@ -153,7 +139,7 @@
                               <div class="md-form">
                                 <input type="text" formControlName="phone" id="phone" name="phone" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
                                 <label for="phone">{{'phone'|translate}} ({{'primary'|translate}})</label>
-                                <span *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="inputVal text-danger">{{'required'|translate}} {{'numeric'|translate}}</span>
+                                <span *ngIf="form.get('phone').invalid && (form.get('phone').dirty || form.get('phone').touched)" class="inputVal text-danger">{{'required'|translate}} {{'numeric'|translate}}</span>
                               </div>
                             </div>
 
@@ -161,7 +147,7 @@
                               <div class="md-form">
                                 <input type="text" formControlName="alt_phone" id="alt_phone" name="alt_phone" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
                                 <label for="alt_phone">{{'phone'|translate}} ({{'alternate'|translate}})</label>
-                                <span *ngIf="alt_phone.invalid && (alt_phone.dirty || alt_phone.touched)" class="inputVal text-danger">{{'numeric'|translate}}</span>
+                                <span *ngIf="form.get('alt_phone').invalid && (form.get('alt_phone').dirty || form.get('alt_phone').touched)" class="inputVal text-danger">{{'numeric'|translate}}</span>
                               </div>
                             </div>
                           </div>
@@ -212,23 +198,19 @@
 
                           <div class="col-md-6">
                             <div class="md-form">
-                              <!-- <input [mdbValidate]="false" mdbInputDirective type="text" id="password" class="form-control">
-                              <label for="password">{{'password'|translate}}</label> -->
                               <i class="fa fa-lock prefix dark-grey-text"></i>
-                              <input type="password" formControlName="password" [(ngModel)]="model.password" id="password" name="password" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="new-password">
+                              <input type="password" formControlName="password" id="password" name="password" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="new-password">
                               <label for="password">{{'password'|translate}}</label>
-                              <span *ngIf="password.invalid && (password.dirty || password.touched)" class="inputVal text-danger">{{'invalid_min_char'|translate:"{value: 8}" }}</span>
+                              <span *ngIf="formPassword.get('password').invalid && (formPassword.get('password').dirty || formPassword.get('password').touched)" class="inputVal text-danger">{{'invalid_min_char'|translate:"{value: 8}" }}</span>
                             </div>
                           </div>
 
                           <div class="col-md-6">
                             <div class="md-form">
-                              <!-- <input [mdbValidate]="false" mdbInputDirective type="text" id="repeatPassword" class="form-control">
-                              <label for="repeatPassword">{{'password'|translate}}</label> -->
                               <i class="fa fa-lock prefix dark-grey-text"></i>
-                              <input type="password" formControlName="repeatPassword" [(ngModel)]="model.repeatPassword" id="repeatPassword" name="repeatPassword" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="new-password">
+                              <input type="password" formControlName="repeatPassword" id="repeatPassword" name="repeatPassword" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="new-password">
                               <label for="repeatPassword">{{'password'|translate}}</label>
-                              <span *ngIf="repeatPassword.invalid && (repeatPassword.dirty || repeatPassword.touched)" class="inputVal text-danger">{{'invalid_repeat_password'|translate}}</span>
+                              <span *ngIf="formPassword.get('repeatPassword').invalid && (formPassword.get('repeatPassword').dirty || formPassword.get('repeatPassword').touched)" class="inputVal text-danger">{{'invalid_repeat_password'|translate}}</span>
                             </div>
                           </div>
                         </div>
@@ -252,8 +234,7 @@
         <div class="card profile-card">
 
           <div class="avatar z-depth-1-half mb-4">
-            <img alt="First sample avatar image" class="rounded-circle" [src]="avatar">
-            <!-- src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" -->
+            <img mdbTooltip="{{'profile'|translate}}" alt="Avatar" class="rounded-circle" [lazyLoad]="avatar" [defaultImage]="'http://via.placeholder.com/130x130'" (click)="formAvatar.show()" mdbWavesEffect>
           </div>
 
           <div class="card-body pt-0 mt-0">
@@ -270,7 +251,7 @@
               <li><strong>{{'company'|translate}}:</strong> The Company, Inc</li>
             </ul>
 
-            <!-- <div class="text-center">
+            <div class="text-center">
               <a class="btn-floating btn-small btn-fb waves-light" mdbrippleradius="" type="button">
                 <i class="fa fa-facebook"></i>
               </a>
@@ -282,8 +263,9 @@
               <a class="btn-floating btn-small btn-tw waves-light" mdbrippleradius="" type="button">
                 <i class="fa fa-twitter"></i>
               </a>
-            </div> -->
+            </div>
 
+            
           </div>
 
         </div>
@@ -294,4 +276,45 @@
 
 </div>
 
+<div mdbModal #formAvatar="mdb-modal" class="modal fade" id="modalLoginAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog cascading-modal modal-avatar modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+          <img class="rounded-circle img-responsive" [lazyLoad]="croppedImage" [defaultImage]="'http://via.placeholder.com/130x130'"/>                  
+      </div>
+
+      <div class="modal-body text-center">
+        <image-cropper
+          [imageChangedEvent]="imageChangedEvent"
+          [maintainAspectRatio]="true"
+          [aspectRatio]="1 / 1"
+          [resizeToWidth]="128"
+          format="png"
+          (imageCropped)="imageCropped($event)"
+          (imageLoaded)="imageLoaded()"
+          (loadImageFailed)="loadImageFailed()">
+        </image-cropper>
+        
+        <form>
+          <div class="file-field md-form">
+            <div class="btn btn-primary btn-sm waves-light" mdbWavesEffect>
+              <span>Choose file</span>
+              <input type="file" mdbFileSelect (change)="fileChangeEvent($event)" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
+              <!--   -->
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path" type="text" placeholder="Upload your file" [value]="showFiles()">                      
+            </div>
+          </div>
+        </form>
+        
+        <div class="text-center">
+            <button type="button" (click)="startUpload()" class="btn blue-gradient {{buttonStyle.shape}} waves-light" mdbWavesEffect>{{'save'|translate}}</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+                
 <div style="height: 300px"></div>

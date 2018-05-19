@@ -13,7 +13,9 @@ import { LocalStorageService } from './localStorage.service';
 * @function changeLanguage
 * @function getLanguage
 */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class LanguageService {
 
   private lang = new Subject<any>();

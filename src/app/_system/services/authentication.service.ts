@@ -14,7 +14,9 @@ import { SecurityService } from './security.service';
 *
 * @function login
 */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthenticationService {
   constructor(
     private httpClient: HttpClient,

@@ -103,7 +103,9 @@ import { UtilsService } from './utils.service';
 * @function setChatRoom
 * @function getChatRoom
 */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class LocalStorageService {
 
   constructor(

@@ -1,14 +1,14 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 /**
  * MDBOOTSTRAP
@@ -17,10 +17,7 @@ import { MDBBootstrapModules } from 'ng-mdb-pro';
 import { MDBSpinningPreloader } from 'ng-mdb-pro';
 import { ToastModule } from 'ng-mdb-pro/pro/alerts';
 
-// MY SERVICES - Register for global reference
-import { AppConfig } from './app.config';
-import { GlobalState } from './global.state';
-
+// MY SERVICES - Register for global reference (Deprecated since Ng6)
 import { NgaModule } from './_system/nga.module';
 
 // NGRX STORE
@@ -30,12 +27,11 @@ import { EffectsModule } from '@ngrx/effects';
 
 import { TopNotificationsReducers } from './ngrx/notification/notifications.reducers';
 import { NotificationsEffects } from './ngrx/notification/notifications.effects';
-import { NotificationsServices } from './ngrx/notification/notifications.services';
+// import { NotificationsServices } from './ngrx/notification/notifications.services';
 
 /**
  * _SYSTEM
  */
-// import { TranslateModule } from '@ngx-translate/core';
 import { AppTranslationModule } from './_system/app.translation.module';
 
 // Layouts
@@ -63,6 +59,8 @@ import { AppRoutes } from './app.routes';
     // Service Worker
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),    
 
+    LazyLoadImageModule,
+
     // MDBootstrap
     MDBBootstrapModules.forRoot(),
     ToastModule.forRoot({maxOpened: 10}),
@@ -76,7 +74,6 @@ import { AppRoutes } from './app.routes';
       logOnly: environment.production // Restrict extension to log-only mode
     }),
 
-    // TranslateModule.forRoot(),
     AppTranslationModule,
 
     AppRoutes
@@ -86,7 +83,6 @@ import { AppRoutes } from './app.routes';
     ...APP_LAYOUTS,
   ],
   exports: [
-    // TranslateModule,
     AppTranslationModule
   ],
   providers: [
@@ -98,10 +94,8 @@ import { AppRoutes } from './app.routes';
     // MDBootstrap
     MDBSpinningPreloader,
 
-    AppConfig,
-    GlobalState,
-
-    NotificationsServices
+    // Deprecated since Ng6
+    // NotificationsServices
   ],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]

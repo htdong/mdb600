@@ -15,7 +15,9 @@ import { LocalStorageService } from './localStorage.service';
 * @function getMenuFromJSONFile
 * @function changeMenu
 */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class MenuService {
 
   private menu = new Subject<any>();

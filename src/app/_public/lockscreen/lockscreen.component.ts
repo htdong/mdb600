@@ -31,14 +31,12 @@ export class LockscreenComponent implements OnInit, OnDestroy {
   public password: AbstractControl;
   public submitted = false;
 
-  model: any = {};
   loading = false;
   returnUrl: string;
   message: string;
 
   name;
   avatar;
-  email;
   token;
 
   constructor(
@@ -57,20 +55,8 @@ export class LockscreenComponent implements OnInit, OnDestroy {
     // Initialize language
     translate.use(localStorageService.getLang());
 
-    this.form = fb.group({
-      'password': ['', Validators.compose([Validators.required, Validators.minLength(8)])]
-    });
-
-    this.password = this.form.controls['password'];
-  }
-
-  ngOnInit() {
-    const element = document.getElementsByTagName('body')[0];
-    element.className = this.bodySkin;
-
+    const token = this.securityService.getToken();
     const savedSession = this.securityService.getSavedSession();
-
-    this.email = savedSession.email;
 
     if (savedSession.name) {
       this.name = savedSession.name;
@@ -85,6 +71,20 @@ export class LockscreenComponent implements OnInit, OnDestroy {
     } else {
       this.avatar = savedSession.gravatar;
     }
+
+    this.form = fb.group({
+      'email': [savedSession.email, Validators.compose([Validators.required]) ],
+      'password': ['', Validators.compose([Validators.required, Validators.minLength(8)])],
+      'token': [token, Validators.compose([Validators.required])]
+
+    });
+
+    this.password = this.form.controls['password'];
+  }
+
+  ngOnInit() {
+    const element = document.getElementsByTagName('body')[0];
+    element.className = this.bodySkin;
   }
 
   ngOnDestroy() {
@@ -105,31 +105,32 @@ export class LockscreenComponent implements OnInit, OnDestroy {
   * Reinstate the session after user logged in
   */
   returnSession() {
-    const token = this.securityService.getToken();
+    console.log(this.form.valid, this.form.value);
 
-    console.log(this.email, this.password.value);
-    
-    if (this.password) {
-      this.authenticationService.login(this.email, this.password.value, token)
-        .subscribe(
-          data => {
-            if (this.navigationService.canReturn()) {
-              this.navigationService.returnPrevious();
-            } else {
-              this.router.navigate(['/home']);
-            }
-          },
-          error => {
-            console.log(error);
-            this.message = 'incorrect_password';
-            this.loading = false;
+    if (this.form.valid) {
 
-            setTimeout(() => {
-              this.message = '';
-            }, 3000);
-          });
+      if (this.form.value.password) {
+        this.authenticationService.login(this.form.value.email, this.form.value.password, this.form.value.token)
+          .subscribe(
+            data => {
+              if (this.navigationService.canReturn()) {
+                this.navigationService.returnPrevious();
+              } else {
+                this.router.navigate(['/home']);
+              }
+            },
+            error => {
+              console.log(error);
+              this.message = 'incorrect_password';
+              this.loading = false;
+
+              setTimeout(() => {
+                this.message = '';
+              }, 3000);
+            });
       }
     }
+  }
 
   /**
   * @function gotoPage

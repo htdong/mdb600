@@ -6,7 +6,9 @@ import { HttpClientService } from '../../_system/services/httpClient.service';
 import { SecurityService } from '../../_system/services/security.service';
 import { Notification } from './notification.model';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class NotificationsServices {
 
   suffixUrl = '/notifications/';

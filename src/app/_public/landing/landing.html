@@ -571,17 +571,17 @@
 
                       <div class="col-md-6">
                         <div class="md-form">
-                          <input type="text" [formControl]="name" [(ngModel)]="model.name" id="name" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
+                          <input type="text" [formControl]="name" id="name" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
                           <label for="name">{{'name'|translate}}</label>
-                          <span *ngIf="name.invalid && (name.dirty || name.touched)" class="inputVal text-danger">{{'required'|translate}}</span>
+                          <span *ngIf="form.get('name').invalid && (form.get('name').dirty || form.get('name').touched)" class="inputVal text-danger">{{'required'|translate}}</span>
                         </div>
                       </div>
 
                       <div class="col-md-6">
                         <div class="md-form">
-                          <input type="text" [formControl]="email" [(ngModel)]="model.email" id="email" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
+                          <input type="text" [formControl]="email" id="email" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
                           <label for="email">{{'email'|translate}}</label>
-                          <span *ngIf="email.invalid && (email.dirty || email.touched)" class="inputVal text-danger">{{'invalid_email'|translate}}</span>
+                          <span *ngIf="form.get('email').invalid && (form.get('email').dirty || form.get('email').touched)" class="inputVal text-danger">{{'invalid_email'|translate}}</span>
                         </div>
                       </div>
                     </div>
@@ -589,15 +589,15 @@
                     <div class="row mb-3">
                       <div class="col-md-6">
                         <div class="md-form">
-                          <input type="text" [formControl]="phone" [(ngModel)]="model.phone" id="phone" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
+                          <input type="text" [formControl]="phone" id="phone" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
                           <label for="phone" class="">{{'phone'|translate}}</label>
-                          <span *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="inputVal text-danger">{{'numeric'|translate}}</span>
+                          <span *ngIf="form.get('phone').invalid && (form.get('phone').dirty || form.get('phone').touched)" class="inputVal text-danger">{{'numeric'|translate}}</span>
                         </div>
                       </div>
 
                       <div class="col-md-6">
                         <div class="md-form">
-                          <input type="text" [formControl]="company" [(ngModel)]="model.company" id="company" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
+                          <input type="text" [formControl]="company" id="company" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
                           <label for="company" class="">{{'company'|translate}}</label>
                         </div>
                       </div>
@@ -607,7 +607,7 @@
                       <div class="col-md-12">
 
                         <div class="md-form">
-                          <textarea type="text" [formControl]="message" [(ngModel)]="model.message" id="message" class="form-control md-textarea" rows="3"></textarea>
+                          <textarea type="text" [formControl]="message" id="message" class="form-control md-textarea" rows="3"></textarea>
                           <label for="message" class="">{{'message'|translate}}</label>
                           <a [disabled]="!form.valid" class="btn-floating btn-lg blue waves-light" mdbWavesEffect (click)="onSubmit()"><i class="fa fa-send-o"></i></a>
                         </div>

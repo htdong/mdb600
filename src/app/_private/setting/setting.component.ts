@@ -4,6 +4,7 @@ import { FormGroup, FormControl, AbstractControl, FormBuilder, Validators } from
 import { TranslateService } from '@ngx-translate/core';
 
 import { GlobalState } from '../../global.state';
+import { HelpService } from '../../_system/services/help.service';
 import { LocalStorageService } from '../../_system/services/localStorage.service';
 import { NavigationService } from '../../_system/services/navigation.service';
 import { MenuService } from '../../_system/services/menu.service';
@@ -25,16 +26,15 @@ export class SettingComponent extends BaseComponent implements OnInit, OnDestroy
   myScope = 'setting';
 
   // Override Base class properties
-  pageTitle = 'setting';
 
   sidebarMenuJSONFile = 'home.menu.mdb.json';
+
+  helpFile = 'home';
 
   globalConfig = {
     language: true,
     trackHistory: true
   };
-
-  helpFile = 'home';
 
   // Derive class properties
   public form: FormGroup;
@@ -56,6 +56,7 @@ export class SettingComponent extends BaseComponent implements OnInit, OnDestroy
     // Base class services
     public translateService: TranslateService,
     public globalState: GlobalState,
+    public helpService: HelpService,
     public localStorageService: LocalStorageService,
     public navigationService: NavigationService,
     public menuService: MenuService,
@@ -66,7 +67,7 @@ export class SettingComponent extends BaseComponent implements OnInit, OnDestroy
     private fb: FormBuilder,
   ) {
     // Base class constructor: Re-injection for inheritance
-    super(translateService, globalState, localStorageService, menuService, navigationService);
+    super(translateService, globalState, helpService, localStorageService, menuService, navigationService);
 
     // Derive class constructor
     this.localeList = TimezonesService.data.map((d, i) => {
@@ -93,15 +94,15 @@ export class SettingComponent extends BaseComponent implements OnInit, OnDestroy
   ngOnInit() {
     /* Base class initialization */
     super.ngOnInit();
-    this.subscribeGlobalState();
+    // this.subscribeGlobalState();
 
     /* Derive class initialization */
 
     // Initialize sidebar menu
-    this.initSidebarMenu();
+    // this.initSidebarMenu();
 
     // Initialize help modal content
-    this.globalState.notifyMyDataChanged('help', '', this.helpFile);
+    // this.globalState.notifyMyDataChanged('help', '', this.helpFile);
   }
 
   ngOnDestroy() {

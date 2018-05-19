@@ -4,6 +4,7 @@ import { FormGroup, FormControl, AbstractControl, FormBuilder, Validators } from
 import { TranslateService } from '@ngx-translate/core';
 
 import { GlobalState } from '../../global.state';
+import { HelpService } from '../../_system/services/help.service';
 import { LocalStorageService } from '../../_system/services/localStorage.service';
 import { NavigationService } from '../../_system/services/navigation.service';
 import { MenuService } from '../../_system/services/menu.service';
@@ -21,9 +22,10 @@ export class ThemesComponent extends BaseComponent implements OnInit, OnDestroy 
   myScope = 'theme';
 
   // Override Base class properties
-  pageTitle = 'theme';
 
   sidebarMenuJSONFile = '';
+
+  helpFile = 'home';
 
   globalConfig = {
     language: true,
@@ -54,12 +56,11 @@ export class ThemesComponent extends BaseComponent implements OnInit, OnDestroy 
   // button_shape = '';
   debug: boolean;
 
-  helpFile = 'home';
-
   constructor(
     // Base class services
     public translateService: TranslateService,
     public globalState: GlobalState,
+    public helpService: HelpService,
     public localStorageService: LocalStorageService,
     public navigationService: NavigationService,
     public menuService: MenuService,
@@ -69,7 +70,7 @@ export class ThemesComponent extends BaseComponent implements OnInit, OnDestroy 
     private fb: FormBuilder,
   ) {
     // Base class constructor: Re-injection for inheritance
-    super(translateService, globalState, localStorageService, menuService, navigationService);
+    super(translateService, globalState, helpService, localStorageService, menuService, navigationService);
 
     // Derive class constructor
 
@@ -103,15 +104,15 @@ export class ThemesComponent extends BaseComponent implements OnInit, OnDestroy 
   ngOnInit() {
     /* Base class initialization */
     super.ngOnInit();
-    this.subscribeGlobalState();
+    // this.subscribeGlobalState();
 
     /* Derive class initialization */
 
     // Initialize sidebar menu
-    this.initSidebarMenu();
+    // this.initSidebarMenu();
 
     // Initialize help modal content
-    this.globalState.notifyMyDataChanged('help', '', this.helpFile);
+    // this.globalState.notifyMyDataChanged('help', '', this.helpFile);
 
     // const element = document.getElementsByTagName('body')[0];
     // element.classList.add('landing-body');

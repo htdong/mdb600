@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-// import { AppTranslationModule } from './app.translation.module';
-
 /**
 * NGA contains global accessible module to
 * - Directives
@@ -45,63 +43,27 @@ const NGA_PIPES = [
 
 // SERVICES
 import {
-  APIResultHandlingService,
   ArrayService,
-  AuthGuard,
-  AuthenticationService,
-  BodyBackgroundService,
-  // ChatService,
   ColorService,
   DashboardHelperService,
   FileService,
-  HelpService,
   HelperService,
-  HttpClientService,
-  LanguageService,
-  LoaderService,
-  LocalStorageService,
-  MenuService,
-  NavigationService,
   ObjectService,
   PaginationService,
-  SecurityService,
   SessionService,
-  StateManagementService,
-  TcodeGuard,
-  TcodeService,
-  ThemeService,
   UtilsService,
-  // WebsocketService,
 } from './services';
 
 const NGA_SERVICES = [
-  APIResultHandlingService,
   ArrayService,
-  AuthGuard,
-  AuthenticationService,
-  BodyBackgroundService,
-  // ChatService,
   ColorService,
   DashboardHelperService,
   FileService,
-  HelpService,
   HelperService,
-  HttpClientService,
-  LanguageService,
-  LoaderService,
-  LocalStorageService,
-  MenuService,
-  NavigationService,
   ObjectService,
   PaginationService,
-  SecurityService,
   SessionService,
-  StateManagementService,
-  TcodeGuard,
-  TcodeService,
-  ThemeService,
   UtilsService,
-  // WebsocketService,
 ];
 
 // VALIDATORS
@@ -117,26 +79,15 @@ const NGA_VALIDATORS = [
 
 @NgModule({
   declarations: [
-    // ...NGA_COMPONENTS,
     ...NGA_DIRECTIVES,
     ...NGA_PIPES,
   ],
   imports: [
     CommonModule,
-    // RouterModule,
-    // FormsModule,
-    // ReactiveFormsModule,
-    // AppTranslationModule,
-
-    // ...PRIMENG_MODULES,
   ],
   exports: [
-    // AppTranslationModule,
-    // ...NGA_COMPONENTS,
     ...NGA_DIRECTIVES,
     ...NGA_PIPES,
-
-    // ...PRIMENG_MODULES,
   ],
 })
 export class NgaModule {
@@ -146,8 +97,6 @@ export class NgaModule {
       providers: [
         ...NGA_VALIDATORS,
         ...NGA_SERVICES,
-
-        // ...PRIMENG_SERVICES,
       ],
     };
   }

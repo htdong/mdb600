@@ -8,7 +8,9 @@ import { Router, CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterSt
 * @function canActivate
 * @function canActivateChild
 */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthGuard implements CanActivate, CanActivateChild {
 
   constructor(private router: Router) { }

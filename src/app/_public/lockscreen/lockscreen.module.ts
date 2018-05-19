@@ -2,6 +2,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { MDBBootstrapModules } from 'ng-mdb-pro';
@@ -15,6 +16,7 @@ import { LockscreenComponent } from './lockscreen.component';
     FormsModule,
     ReactiveFormsModule,
 
+    LazyLoadImageModule,
     TranslateModule,
 
     MDBBootstrapModules,

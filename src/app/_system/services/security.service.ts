@@ -25,7 +25,9 @@ import { TcodeService } from './tcode.service';
 * @function getDecodedMana
 * @function logOut
 */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class SecurityService {
 
   constructor(

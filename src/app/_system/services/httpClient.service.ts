@@ -72,7 +72,9 @@ import { ObjectService } from './object.service';
 * @function attachHeader
 * @function getFullUrl
 */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class HttpClientService extends HttpClient {
 
   apiUrl = '';

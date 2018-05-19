@@ -3,6 +3,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 import { GlobalState } from '../../global.state';
+import { HelpService } from '../../_system/services/help.service';
 import { LocalStorageService } from '../../_system/services/localStorage.service';
 import { NavigationService } from '../../_system/services/navigation.service';
 import { MenuService } from '../../_system/services/menu.service';
@@ -18,16 +19,15 @@ export class PolicyComponent extends BaseComponent implements OnInit, OnDestroy 
   myScope = 'policy';
 
   // Override Base class properties
-  pageTitle = 'policy';
 
   sidebarMenuJSONFile = 'home.menu.mdb.json';
+
+  helpFile = 'home';
 
   globalConfig = {
     language: true,
     trackHistory: true
   };
-
-  helpFile = 'home';
 
   cardColors;
 
@@ -35,6 +35,7 @@ export class PolicyComponent extends BaseComponent implements OnInit, OnDestroy 
     // Base class services
     public translateService: TranslateService,
     public globalState: GlobalState,
+    public helpService: HelpService,
     public localStorageService: LocalStorageService,
     public navigationService: NavigationService,
     public menuService: MenuService,
@@ -42,7 +43,7 @@ export class PolicyComponent extends BaseComponent implements OnInit, OnDestroy 
     // Derive class services
   ) {
     // Base class constructor: Re-injection for inheritance
-    super(translateService, globalState, localStorageService, menuService, navigationService);
+    super(translateService, globalState, helpService, localStorageService, menuService, navigationService);
 
     // Derive class constructor
     const env = this.localStorageService.getEnv();
@@ -52,16 +53,15 @@ export class PolicyComponent extends BaseComponent implements OnInit, OnDestroy 
   ngOnInit() {
     /* Base class initialization */
     super.ngOnInit();
-    this.subscribeGlobalState();
+    // this.subscribeGlobalState();
 
     /* Derive class initialization */
 
     // Initialize sidebar menu
-    this.initSidebarMenu();
+    // this.initSidebarMenu();
 
     // Initialize help modal content
-    this.globalState.notifyMyDataChanged('help', '', this.helpFile);
-
+    // this.globalState.notifyMyDataChanged('help', '', this.helpFile);
 
     // const element = document.getElementsByTagName('body')[0];
     // element.classList.add('landing-body');

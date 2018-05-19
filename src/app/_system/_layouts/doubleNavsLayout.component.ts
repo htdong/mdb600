@@ -6,6 +6,7 @@
 import { Component, OnInit, OnDestroy, AfterViewInit, Renderer2, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { FormGroup } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import 'rxjs/add/operator/filter';
 
 import { ToastService } from 'ng-mdb-pro/pro/alerts';
@@ -13,9 +14,7 @@ import { ToastService } from 'ng-mdb-pro/pro/alerts';
 import { TranslateService } from '@ngx-translate/core';
 
 import { Store, select } from '@ngrx/store';
-import {
-  getTopNotificationsAction,
-} from '../../ngrx/notification/notifications.actions';
+import { getTopNotificationsAction } from '../../ngrx/notification/notifications.actions';
 
 // GK - Alphabet
 import { AppConfig } from '../../app.config';
@@ -24,7 +23,7 @@ import { HelpService } from '../services/help.service';
 import { LocalStorageService } from '../services/localStorage.service';
 import { NavigationService } from '../services/navigation.service';
 import { SecurityService } from '../services/security.service';
-import { TcodeService } from '../services';
+import { TcodeService } from '../services/tcode.service';
 
 @Component({
   selector: 'app-double-navs-layout',
@@ -34,9 +33,6 @@ import { TcodeService } from '../services';
 export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterViewInit {
 
   myScope = 'app-double-navs-layout';
-
-  menu = [];
-  selectedMenu: any;
 
   /**
    * DOUBLE NAVIGATION
@@ -50,43 +46,8 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
    */
 
   bodySkin = 'mdb-skin';
-   // fixed-sn
   sideNavBg = 'sn-bg-2';
-  textColor = 'brown-text';
   isFixed = true;
-
-  @ViewChild('sidenav') public sidenav;
-
-  name;
-  email;
-  avatar;
-
-  public form: FormGroup;
-  public tcodeExecution = '';
-
-  notification: any;
-  notificationCount = 0;
-  notificationsList = [];
-
-  message: any;
-  messageCount = 0;
-  messagesList = [];
-
-  lang;
-  currentWkBarStatus;
-
-  wkBarStatus = true;
-
-  lges: any[];
-  years: any[];
-
-  selectedLge: any;
-  selectedYear: any;
-
-  breadcrumbs: Array<Object>;
-
-  helpFile: String = 'intro';
-  helpContext: String;
 
   effects = [
     'bounceIn',
@@ -99,19 +60,57 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
     'fadeInLeft',
     'fadeInRight',
     'fadeInUp',
-    'zoomIn',
-    'zoomInDown',
-    'zoomInLeft',
-    'zoomInRight',
-    'zoomInUp'
+    'flip',
+    'flipInX',
+    'flipInY',
+    'sideInUp',
+    'sideInDown',
+    'sideInLeft',
+    'sideInRight',
+    'zoomIn'
   ];
   selectedEffect;
+
+  @ViewChild('sidenav') public sidenav;
+
+  name;
+  email;
+  avatar;
+
+  enableTcode = true;
+  public form: FormGroup;
+  public tcodeExecution = '';
+
+  menu = [];
+  selectedMenu: any;
+
+  breadcrumbs: Array<Object>;
+
+  notification: any;
+  notificationCount = 0;
+  notificationsList = [];
+
+  message: any;
+  messageCount = 0;
+  messagesList = [];
+
+  lang;
+
+  wkBarStatus = true;
+  lges: any[];
+  years: any[];
+  selectedLge: any;
+  selectedYear: any;
+
+  helpFile: String = 'intro';
+  helpContext: String;
 
   toasty: any;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
+    private titleService: Title,
 
     private toastrService: ToastService,
 
@@ -131,7 +130,7 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
   ) {
     this.subscribeLocalState();
 
-    this.selectedEffect = Math.floor(Math.random() * 14);
+    this.selectedEffect = Math.floor(Math.random() * 17);
     // console.log(this.selectedEffect);
 
     // USER APP STATE
@@ -143,7 +142,7 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
     this.selectedYear = env.wk.year;
     this.selectedLge = env.wk.lge;
     this.toasty = env['pref']['toasty'];
-    console.log(this.toasty);
+    // console.log(this.toasty);
 
     // LANGUAGE
     this.globalState.notifyMyDataChanged('language', '', this.lang);
@@ -204,6 +203,14 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
     const element = document.getElementsByTagName('body')[0];
     element.className = this.bodySkin;
 
+    // Initialize Title
+    const title = this.breadcrumbs[this.breadcrumbs.length - 1]['label']['title'];
+    this.translateService.get([title])
+      .subscribe((res) => {
+        this.titleService.setTitle(res[title]);
+        console.log(this.breadcrumbs);
+      });
+
     const user = this.securityService.getCurrentUser();
     this.email = user.email;
 
@@ -220,7 +227,6 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
     } else {
       this.avatar = user.gravatar;
     }
-
   }
 
   ngOnDestroy() {
@@ -228,16 +234,15 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
   }
 
   /* LOCAL STATE */
-
   subscribeLocalState() {
 
-    // SIDE BAR MENU
+    // Sidebar Menu
     this.globalState.subscribeEvent('sidebarMenu', this.myScope, (menu) => {
-      console.log(menu);
       this.menu = menu;
+      // console.log(menu);
     });
 
-    // HELP MODAL
+    // Help Modal
     this.globalState.subscribeEvent('help', this.myScope, (helpFile) => {
       this.helpFile = helpFile;
       this.helpService.getHelpFromHTMLFile(helpFile)
@@ -247,13 +252,25 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
         });
     });
 
-    // LANGUAGE
+    // Language
     this.globalState.subscribeEvent('language', this.myScope, (lang) => {
       this.lang = lang;
       // console.log(this.lang);
 
       this.translateService.use(this.lang);
       this.localStorageService.setLang(lang);
+
+      let title = 'GKC';
+
+      if (this.breadcrumbs) {
+        title = (this.breadcrumbs.length > 1) ? (this.breadcrumbs[this.breadcrumbs.length - 1]['label']['title']) : 'GKC' ;
+      }
+
+      this.translateService.get([title])
+        .subscribe((res) => {
+          this.titleService.setTitle(res[title]);
+          // console.log(this.breadcrumbs);
+        });
 
       this.helpService.getHelpFromHTMLFile(this.helpFile)
         .subscribe((helpContext) => {
@@ -385,10 +402,11 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
 
   /**
    * [THEMES FUNCTIONS]
+   * @function toggleMode
    * @function setStaticMode
    * @function setOverlayMode
+   * @function showSideNav
    * @function changeSkin
-   * @function changeColor
    */
   toggleMode() {
     if (this.isFixed) {
@@ -440,13 +458,11 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
     }
   }
 
-  changeColor(color) {
-    this.textColor = color;
-  }
-
   /**
    * [NOTIFICATIONS FUNCTION]
    * @function openNotification
+   * @function openMessage
+   * @function changeLanguage
    */
   openNotification(item) {
     console.log(item);
@@ -455,10 +471,6 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
     return false; // prevent a href automatically link
   }
 
-  /**
-   * [MESSAGES FUNCTION]
-   * @function openMessage
-   */
   openMessage(item) {
     console.log(item);
     const target = item.id ? item.id : item._id;
@@ -485,7 +497,6 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
    * @function keyDownFunction
    * @function gotoTcode
    */
-
   public keyDownFunction(event) {
     if ((event.keyCode === 13) && (this.tcodeExecution.trim())) {
       const url: string = this.tcodeService.urlLead(this.tcodeExecution);
@@ -499,33 +510,6 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
     console.log(tcode);
     this.tcodeService.executeTcode(tcode);
     return false; // prevent a href automatically link
-  }
-
-  /**
-   * [RETURN PREVIOUS]
-   * @function returnPrevious
-   */
-  returnPrevious() {
-    console.log('Return previous');
-    if (this.navigationService.canReturn()) {
-      this.navigationService.returnPrevious();
-    } else {
-      this.translateService.get([
-        'navigation',
-        'top_of_history'
-      ])
-        .subscribe((res) => {
-          console.log(res.top_notifications, res.navigation);
-
-          const data = {
-            type: 'info',
-            message: res.top_of_history,
-            title: res.navigation
-          };
-          this.globalState.notifyMyDataChanged('toast', '', data);
-        });
-    }
-    return false;
   }
 
   /**
@@ -555,6 +539,33 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
     return false; // To prevent href work automatically
   }
 
+  /**
+   * [RETURN PREVIOUS]
+   * @function returnPrevious
+   */
+  returnPrevious() {
+    console.log('Return previous');
+    if (this.navigationService.canReturn()) {
+      this.navigationService.returnPrevious();
+    } else {
+      this.translateService.get([
+        'navigation',
+        'top_of_history'
+      ])
+        .subscribe((res) => {
+          console.log(res.top_notifications, res.navigation);
+
+          const data = {
+            type: 'info',
+            message: res.top_of_history,
+            title: res.navigation
+          };
+          this.globalState.notifyMyDataChanged('toast', '', data);
+        });
+    }
+    return false;
+  }
+  
   /**
    * [WORKING BAR FUNCTIONS]
    * @function toggleWkBar

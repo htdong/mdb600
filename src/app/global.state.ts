@@ -5,7 +5,7 @@ import { Subject } from 'rxjs/Subject';
 * @class GlobalState
 * A service store manages state of key events at system wide level
 * @example
-* - Langugage Translation
+* - Language Translation
 * - Context based help
 *
 * Philosophy
@@ -15,7 +15,7 @@ import { Subject } from 'rxjs/Subject';
 * 4. When a component, service, module, etc... is destroyed then the registered (callback) for (event) and (scope)
 *    is removed out the registry
 *    Note: that callback can be function or value
-* The reason to have register by scope is to deregister correctly component
+* The reason to have register by scope is to de-register correctly component
 *
 * @param {Subject<Object>}  _myData         Subject could serve as Observer or Observable
 * @param {Observable}       _myDataStream   subscribe to the stream of events
@@ -32,7 +32,9 @@ import { Subject } from 'rxjs/Subject';
 * @function getMySubscriptionItemByEventAndScope  It's very rare to happen, just in case
 */
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class GlobalState {
 
   private _myData                 = new Subject<Object>();
@@ -49,7 +51,7 @@ export class GlobalState {
   *
   * @param {string} event        Name of event
   * @param {string} scope        Name of module, component...
-  * @param {function} callback   Function to be excuted when event is triggered
+  * @param {function} callback   Function to be executed when event is triggered
   */
   subscribeEvent(event: string, scope: string, callback: Function) {
     this._mySubscriptions.push({
@@ -95,7 +97,7 @@ export class GlobalState {
 
   /**
   * @function getMySubscriptionItemByEvent
-  * Filter from event registry all subsciptions that match event triggered
+  * Filter from event registry all subscriptions that match event triggered
   *
   * @returns {array} The array of subsciptions that have event name matched
   */
@@ -107,9 +109,9 @@ export class GlobalState {
 
   /**
   * @function getMySubscriptionItemByEventAndScope
-  * Filter from event registry all subsciptions that match event triggered in specific scope
+  * Filter from event registry all subscriptions that match event triggered in specific scope
   *
-  * @returns {array} The array of subsciptions that have event and scope name matched
+  * @returns {array} The array of subscriptions that have event and scope name matched
   */
   getMySubscriptionItemByEventAndScope(event, scope) {
     return this._mySubscriptions.filter((element) => {
@@ -119,7 +121,7 @@ export class GlobalState {
 
   /**
   * @function unsubscribeEvent
-  * A service that unscribe/remove subscription item from event registry
+  * A service that unsubscribe/remove subscription item from event registry
   *
   * @param {string} event   Name of event
   * @param {string} scope   Name of scope
@@ -131,6 +133,7 @@ export class GlobalState {
         break;
       }
     }
+    // DEBUG
     // console.log(this._mySubscriptions);
   }
 

@@ -7,14 +7,15 @@ import {
   AppDoubleNavLayoutComponent
 } from './_system/_layouts';
 
-import { AuthGuard, TcodeGuard } from './_system/services';
+import { AuthGuard } from './_system/services/auth.guard';
+import { TcodeGuard } from './_system/services/tcode.guard';
 
 /**
  * @const Routes
  * Lazy loading routes are secured by levels and sorted by alphabet order
  */
 export const routes: Routes = [
-  
+
   // Public Area - No security restriction
   {
     path: '',

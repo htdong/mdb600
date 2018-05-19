@@ -12,7 +12,8 @@
 
                 <div class="modal-content">
                   <div class="modal-header">
-                    <img class="rounded-circle img-responsive" [src]="avatar">
+                    <img class="rounded-circle img-responsive" [lazyLoad]="avatar" [defaultImage]="'http://via.placeholder.com/130x130'">
+                    <!-- [src]="avatar" -->
                     <!-- src="./assets/images/test-avatar.jpg" -->
                     <!-- [src]="avatar" -->
                   </div>
@@ -22,12 +23,12 @@
                     <span *ngIf="message" class="message text-danger">{{message|translate}}</span>
                     <span *ngIf="!message" class="message grey-text">{{'retrieve_session'|translate}}</span>
 
-                    <form class="lockscreen-credentials" (keydown)="keyDownFunction($event)">
+                    <form [formGroup]="form" class="lockscreen-credentials" (keydown)="keyDownFunction($event)">
                       <div class="md-form ml-0 mr-0 text-left">
-                        <input type="password" [formControl]="password" [(ngModel)]="model.password" id="password" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="new-password">
+                        <input type="password" [formControl]="password" id="password" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="new-password">
                         <label class="ml-0 grey-text" for="password">{{'password'|translate}}</label>
 
-                        <span *ngIf="password.invalid && (password.dirty || password.touched)" class="inputVal ml-0 text-danger text-left">{{'invalid_min_char'|translate:"{value: 8}" }}</span>
+                        <span *ngIf="form.get('password').invalid && (form.get('password').dirty || form.get('password').touched)" class="inputVal ml-0 text-danger text-left">{{'invalid_min_char'|translate:"{value: 8}" }}</span>
                       </div>
 
                       <div class="text-center action-corner">

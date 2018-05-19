@@ -2,13 +2,14 @@
 <header>
 
   <!-- Sidebar navigation -->
-  <mdb-sidenav #sidenav class="{{sideNavBg}} {{textColor}}" [fixed]="isFixed" [ngClass]="{'fixed': isFixed}" [fixed]="isFixed">
-    <!-- fixed -->
+  <mdb-sidenav #sidenav class="{{sideNavBg}}" [fixed]="isFixed" [ngClass]="{'fixed': isFixed}" [fixed]="isFixed">
 
     <logo>
       <li>
         <div class="logo-wrapper waves-light">
-          <a href="#" (click)="toggleMode(); false"><img src="/assets/images/mdb/landing/mdb-transparent.png" class="img-fluid flex-center"></a>
+          <a href="#" (click)="toggleMode(); false">
+            <img [lazyLoad]="'/assets/images/mdb/landing/mdb-transparent.png'" [defaultImage]="'http://via.placeholder.com/250x90'" class="img-fluid flex-center">
+          </a>
         </div>
       </li>
     </logo>
@@ -19,8 +20,7 @@
       <div class="container">
         <div class="row mt-4 ">
           <div class="col-lg-12 flex-center">
-            <img [src]="avatar" class="rounded-circle img-thumbnail" style="max-width:130px;"/>
-            <!-- [src="../../assets/images/test-avatar.jpg"] -->
+            <img class="rounded-circle img-thumbnail" [lazyLoad]="avatar" [defaultImage]="'http://via.placeholder.com/130x130'" style="max-width:130px;"/>
           </div>
         </div>
 
@@ -37,23 +37,22 @@
           <li mdbTooltip="{{'setting'|translate}}" placement="left"><a class="icons-sm" (click)="gotoTcode('setting')"><i class="fa fa-cogs"> </i></a></li>
           <li mdbTooltip="{{'lock_system'|translate}}" placement="left"><a class="icons-sm" (click)="gotoTcode('lockscreen')"><i class="fa fa-lock"> </i></a></li>
           <li mdbTooltip="{{'logout'|translate}}" placement="left"><a class="icons-sm" (click)="logOut(); false"><i class="fa fa-sign-out"> </i></a></li>
-        </ul>
-      </li>
-
+        </ul>        
+      </li>      
+            
       <!--Transaction Form-->
-      <li>
+      <li *ngIf="enableTcode">
         <form class="search-form" role="search" (keydown)="keyDownFunction($event)">
           <div class="form-group md-form mt-0 pt-1 waves-light" mdbWavesEffect>
             <input type="text" class="form-control" placeholder="{{'transactionCode'|translate}}" [(ngModel)]="tcodeExecution" name="tcode">
           </div>
         </form>
-      </li>
-
+      </li>    
+      
       <!-- Menu items -->
-      <li>
+      <li *ngIf="menu">
         <ul class="collapsible collapsible-accordion">
           <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
-            <!-- *ngIf="menu"  -->
             <mdb-item *ngFor="let item of menu" [ngClass]="{'no-collase': !item.children}">
               <mdb-item-head (click)="selectMenu($event, item)" mdbWavesEffect><i class="fa fa-{{item.data.icon}}"></i> {{item.data.label|translate}}</mdb-item-head>
               <mdb-item-body>
@@ -68,6 +67,15 @@
         </ul>
       </li>
 
+      <!-- Switch -->
+      <li>
+        <ul class="switch">
+          <li mdbTooltip="{{'returnPrevious'|translate}}" placement="right"><a (click)="returnPrevious(); false"><i class="fa fa-arrow-circle-left"> </i></a></li>
+          <li mdbTooltip="{{'help'|translate}}" placement="bottom"><a (click)="helpModal.show(); false"><i class="fa fa-question-circle-o"> </i></a></li>
+          <li mdbTooltip="{{'working_bar_status'|translate}}" placement="bottom"><a (click)="toggleWkBar(); false"><i class="fa fa-folder-open-o"> </i></a></li>          
+        </ul>        
+      </li>
+
     </links>
 
     <div class="sidenav-bg mask-strong"></div>
@@ -76,7 +84,7 @@
 
 
   <!-- Navbar -->
-  <mdb-navbar SideClass="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav  wow fadeInDown" [containerInside]="false">
+  <mdb-navbar SideClass="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav wow fadeInDown" [containerInside]="false">
 
     <!-- SideNav slide-out button -->
     <navlinks class="navbar-container">
@@ -102,12 +110,13 @@
     <!-- Menu bar = Notifications + Messages + Language -->
     <navlinks>
       <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav">
+        <!-- Notifications -->
         <li class="nav-item dropdown btn-group" dropdown>
           <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-            <i class="fa fa-comments-o"></i> <span class="clearfix d-none d-sm-inline-block"> {{'notifications'|translate}}</span>
-            <span class="badge badge-danger btn-rounded">{{notificationCount}}</span>
+            <i class="fa fa-bell-o"></i> <span class="clearfix d-none d-sm-inline-block"> {{'notifications'|translate}}</span>
+            <span class="badge badge-danger btn-rounded ml-1">{{notificationCount}}</span>
           </a>
-          <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+          <div class="dropdown-menu dropdown-danger dropdown-menu-right" role="menu">
             <ng-container *ngFor="let item of notificationsList">
               <a class="dropdown-item text-truncate" (click)="openNotification(item);">{{item.desc}}</a>
             </ng-container>
@@ -115,12 +124,13 @@
           </div>
         </li>
 
+        <!-- Messages -->
         <li class="nav-item dropdown btn-group" dropdown>
           <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-            <i class="fa fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block"> {{'messages'|translate}}</span>
-            <span class="badge badge-danger btn-rounded">{{notificationCount}}</span>
+            <i class="fa fa-comments-o"></i> <span class="clearfix d-none d-sm-inline-block"> {{'messages'|translate}}</span>
+            <span class="badge badge-warning btn-rounded ml-1">{{notificationCount}}</span>
           </a>
-          <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+          <div class="dropdown-menu dropdown-warning dropdown-menu-right" role="menu">
             <ng-container *ngFor="let item of notificationsList">
               <a class="dropdown-item text-truncate" (click)="openNotification(item);">{{item.desc}}</a>
             </ng-container>
@@ -128,9 +138,11 @@
           </div>
         </li>
 
+        <!-- Language -->
         <li class="nav-item dropdown btn-group" dropdown>
           <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
             <i class="fa fa-language"></i> <span class="clearfix d-none d-sm-inline-block"> {{'language'|translate}}</span>
+            <span class="badge badge-primary btn-rounded ml-1">{{lang | uppercase}}</span>
           </a>
           <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
             <a class="dropdown-item" (click)="changeLanguage('en'); false">{{'langEnglish'|translate}}</a>
@@ -140,20 +152,21 @@
             <a class="dropdown-item" (click)="changeLanguage('ch'); false">{{'langChinese'|translate}}</a>
             <a class="dropdown-item" (click)="changeLanguage('fr'); false">{{'langFrench'|translate}}</a>
           </div>
-        </li>
+        </li>        
       </ul>
     </navlinks>
   </mdb-navbar>
 
 </header>
 
-<!-- HELP -->
+<!-- Switch -->
 <div class="switch-version d-none d-md-block text-center">
   <li><a href="#" (click)="returnPrevious(); false"><i class="fa fa-2x fa-arrow-circle-left mt-2"></i></a></li>
-  <li><a href="#" (click)="helpModal.show(); false"><i class="fa fa-2x fa-question-circle mt-2"></i></a></li>
-  <li><a href="#" (click)="toggleWkBar(); false"><i class="fa fa-2x fa-wordpress mt-2 mb-2"></i></a></li>
+  <li><a href="#" (click)="helpModal.show(); false"><i class="fa fa-2x fa-question-circle-o mt-2"></i></a></li>
+  <li><a href="#" (click)="toggleWkBar(); false"><i class="fa fa-2x fa-folder-open-o mt-2 mb-2"></i></a></li>
 </div>
 
+<!-- HELP -->
 <div mdbModal #helpModal="mdb-modal" class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
     <div class="modal-content">
@@ -165,7 +178,7 @@
       </div>
       <div class="modal-body" [innerHTML]="helpContext"></div>
       <div class="modal-footer justify-content-center">
-          <a type="button" class="btn btn-primary waves-light" mdbWavesEffect>Get it now <i class="fa fa-diamond ml-1"></i></a>
+          <!-- <a type="button" class="btn btn-primary waves-light" mdbWavesEffect>Get it now <i class="fa fa-diamond ml-1"></i></a> -->
           <a type="button" class="btn btn-outline-secondary" data-dismiss="modal" (click)="helpModal.hide()" mdbWavesEffect>{{'close'|translate}}</a>
       </div>
     </div>
