@@ -70,7 +70,8 @@
       <!-- Switch -->
       <li>
         <ul class="switch">
-          <li mdbTooltip="{{'returnPrevious'|translate}}" placement="right"><a (click)="returnPrevious(); false"><i class="fa fa-arrow-circle-left"> </i></a></li>
+          <li mdbTooltip="{{'home'|translate}}" placement="bottom"><a [routerLink]="['/home']"><i class="fa fa-home"> </i></a></li>
+          <li mdbTooltip="{{'returnPrevious'|translate}}" placement="bottom"><a (click)="returnPrevious(); false"><i class="fa fa-arrow-circle-left"> </i></a></li>
           <li mdbTooltip="{{'help'|translate}}" placement="bottom"><a (click)="helpModal.show(); false"><i class="fa fa-question-circle-o"> </i></a></li>
           <li mdbTooltip="{{'working_bar_status'|translate}}" placement="bottom"><a (click)="toggleWkBar(); false"><i class="fa fa-folder-open-o"> </i></a></li>          
         </ul>        

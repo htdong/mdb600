@@ -1,4 +1,10 @@
 {
+	"inbox_desc": "承認または承認のために受信者に送信されたリクエスト。 受取人は委任された権限の範囲内で職務を遂行して決定する",
+	"outbox_desc": "要求は受信者によって決定されました。 決定が下されると、バリデータまたは承認者によって取り消すことはできません",
+	"draft_desc": "検証または承認のために送信する前に、現在のユーザーのドラフト要求",
+	"in_progress_desc": "現在のユーザーのリクエストが送信され、まだ処理されるのを待っています",
+	"completed_desc": "現在のユーザーのリクエストが処理され、ライフサイクルが完了しました",
+
 	"about_1": "財務のマスタービジネス（UTS、オーストラリア）、ACCA、CPAA、VNCPAのメンバー",	
 	"about_2": "17年以上",
 	"about_3": "戦略コンサルティング、リスク管理、財務、会計、内部統制、監査、システムおよびマスタデータ",
@@ -417,7 +423,7 @@
 	"repeat": "Repeat",
 	"reports": "Reports",
 	"reportsSubtitle": "",
-	"requests": "Requests",
+	"requests": "リクエスト",
 	"required": "必須",
 	"reset": "リセット",
 	"retrieve_session": "セッションを取得するためのパスワードを入力してください",
@@ -458,7 +464,7 @@
 	"system": "",
 	"systemSubtitle": "",
 	"systems": "システム",
-	"tasks": "Tasks",
+	"tasks": "タスク",
 	"tcode": "",
 	"tcodes": "Tcodes",
 	"tcodesAssignment": "",

@@ -1,4 +1,10 @@
 {
+	"inbox_desc": "확인 또는 승인을 위해 수신자에게 전송 된 요청입니다. 수령자는 위임 된 권한 내에서 직무를 수행하여 결정해야합니다.",
+	"outbox_desc": "요청은 수신자가 자신의 결정을 통해 처리했습니다. 결정이 내려지면 유효성 검사기 또는 승인자가 취소 할 수 없습니다.",
+	"draft_desc": "유효성 확인 또는 승인을 위해 보내기 전에 현재 사용자의 초안 요청",
+	"in_progress_desc": "현재 사용자의 요청이 전송되었지만 여전히 처리 대기 중입니다.",
+	"completed_desc": "현재 사용자의 요청을 처리하고 수명주기를 완료했습니다.",
+
 	"about_1": "금융 마스터 비즈니스 (UTS, 호주), ACCA, CPAA, VNCPA 회원",	
 	"about_2": "17 년 이상",
 	"about_3": "전략 컨설팅, 리스크 관리, 재무, 회계, 내부 통제, 감사, 시스템 및 마스터 데이터",
@@ -416,7 +422,7 @@
 	"repeat": "Repeat",
 	"reports": "Reports",
 	"reportsSubtitle": "",
-	"requests": "Requests",
+	"requests": "요청",
 	"required": "필수",
 	"reset": "다시 놓기",
 	"retrieve_session": "세션을 검색하려면 비밀번호를 입력하십시오.",
@@ -457,7 +463,7 @@
 	"system": "",
 	"systemSubtitle": "",
 	"systems": "시스템",
-	"tasks": "Tasks",
+	"tasks": "할 일 목록",
 	"tcode": "",
 	"tcodes": "Tcodes",
 	"tcodesAssignment": "",

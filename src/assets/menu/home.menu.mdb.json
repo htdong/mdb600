@@ -2,7 +2,7 @@
   {"data": { "label": "my_tasks", "icon": "tasks", "url": ""},
     "children": [
       { "data": { "label": "inbox", "icon": "inbox", "url": "/inbox" }},
-      { "data": { "label": "outbox", "icon": "check", "url": "/outbox" }}
+      { "data": { "label": "outbox", "icon": "paper-plane-o", "url": "/outbox" }}
     ]
   },
   { "data": { "label": "my_documents", "icon": "briefcase", "url": ""},
@@ -12,11 +12,32 @@
       { "data": { "label": "completed", "icon": "check", "url": "/completed" }}
     ]
   },
-  { "data": { "label": "systems", "icon": "window-maximize", "url": "" },
+  { "data": { "label": "requests", "icon": "copy", "url": "" },
     "children": [
-      { "data": { "label": "workflows", "icon": "exchange", "url": "/tray/tray00" }},
-      { "data": { "label": "modules", "icon": "cubes", "url": "/systems" }},
-      { "data": { "label": "master_data", "icon": "database", "url": "/masterdata" }}
+      { "data": { "label": "request1", "icon": "file-o", "url": "/request1" }},
+      { "data": { "label": "request2", "icon": "file-o", "url": "/request2" }},
+      { "data": { "label": "request3", "icon": "file-o", "url": "/request3" }}
+    ]
+  },
+  { "data": { "label": "tasks", "icon": "cubes", "url": "" },
+    "children": [
+      { "data": { "label": "tasks1", "icon": "cube", "url": "/tasks1" }},
+      { "data": { "label": "tasks2", "icon": "cube", "url": "/tasks2" }},
+      { "data": { "label": "tasks3", "icon": "cube", "url": "/tasks3" }}      
+    ]
+  },
+  { "data": { "label": "master_data", "icon": "database", "url": "" },
+    "children": [
+      { "data": { "label": "masterdata1", "icon": "circle-o", "url": "/md1" }},
+      { "data": { "label": "masterdata2", "icon": "circle-o", "url": "/md2" }},
+      { "data": { "label": "masterdata3", "icon": "circle-o", "url": "/md3" }}      
+    ]
+  },
+  { "data": { "label": "settings", "icon": "cogs", "url": "" },
+    "children": [
+      { "data": { "label": "setting1", "icon": "cog", "url": "/setting1" }},
+      { "data": { "label": "setting1", "icon": "cog", "url": "/setting2" }},
+      { "data": { "label": "setting1", "icon": "cog", "url": "/setting3" }}      
     ]
   },
   { "data": { "label": "application", "icon": "desktop", "url": "" },

@@ -1,4 +1,10 @@
 {
+	"inbox_desc": "Demandes envoyées au destinataire pour validation ou approbation. Le séquestre devrait prendre une décision en accomplissant des tâches dans les limites des pouvoirs qui lui sont délégués",
+	"outbox_desc": "Les demandes ont été traitées par le destinataire dans sa décision. Une fois la décision prise, elle ne peut pas être révoquée par le validateur ou l'approbateur",
+	"draft_desc": "Rédiger les demandes de l'utilisateur actuel avant de l'envoyer pour validation ou approbation",
+	"in_progress_desc": "Les demandes de l'utilisateur actuel sont envoyées et attendent toujours d'être traitées",
+	"completed_desc": "Les demandes de l'utilisateur actuel ont été traitées et ont complété leur cycle de vie",
+
 	"about_1": "Master Business en Finance (Université de Technologie de Sydney, Australie), Membre de l'ACCA, CPAA, VNCPA",	
 	"about_2": "Plus de 17 ans dans",
 	"about_3": "Conseil stratégique, gestion des risques, finances, comptabilité, contrôles internes, audit, système et données de base",
@@ -417,7 +423,7 @@
 	"repeat": "Repeat",
 	"reports": "Reports",
 	"reportsSubtitle": "",
-	"requests": "Requests",
+	"requests": "Requêtes",
 	"required": "Requis",
 	"reset": "Réinitialiser",
 	"retrieve_session": "Entrez votre mot de passe pour récupérer votre session",
@@ -458,7 +464,7 @@
 	"system": "",
 	"systemSubtitle": "",
 	"systems": "Systèmes",
-	"tasks": "Tasks",
+	"tasks": "Les tâches",
 	"tcode": "",
 	"tcodes": "Tcodes",
 	"tcodesAssignment": "",

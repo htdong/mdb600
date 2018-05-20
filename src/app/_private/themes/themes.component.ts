@@ -54,7 +54,10 @@ export class ThemesComponent extends BaseComponent implements OnInit, OnDestroy 
 
   // button_fill = 'btn';
   // button_shape = '';
+
   debug: boolean;
+
+  tasks: any[];
 
   constructor(
     // Base class services
@@ -107,7 +110,7 @@ export class ThemesComponent extends BaseComponent implements OnInit, OnDestroy 
     // this.subscribeGlobalState();
 
     /* Derive class initialization */
-
+    this.initTasks();
     // Initialize sidebar menu
     // this.initSidebarMenu();
 
@@ -205,6 +208,60 @@ export class ThemesComponent extends BaseComponent implements OnInit, OnDestroy 
         children: [
           { data: { label: 'btn_fill', icon: 'tint', command: (event) => this.change_button_fill() }},
           { data: { label: 'btn_shape', icon: 'square', command: (event) => this.change_button_shape() }},
+        ]
+      },
+      {
+        data: {label: 'shape', icon: 'lemon-o'},
+        children: [
+          { data: {label: 'circle_shape', icon: 'circle-o',
+            command: (event) => {this.globalState.notifyMyDataChanged('navType', '', 'circle'); }}},
+          { data: {label: 'square_shape', icon: 'square-o',
+            command: (event) => {this.globalState.notifyMyDataChanged('navType', '', 'square'); }}},          
+        ]
+      },
+      {
+        data: {label: 'shape_effect', icon: 'sliders'},
+        children: [
+          { data: {label: 'Effect 1', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect1'); }}},
+          { data: {label: 'Effect 2', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect2'); }}},
+          { data: {label: 'Effect 3', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect3'); }}},
+          { data: {label: 'Effect 4', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect4'); }}},
+          { data: {label: 'Effect 5', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect5'); }}},
+          { data: {label: 'Effect 6', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect6'); }}},
+          { data: {label: 'Effect 7', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect7'); }}},
+          { data: {label: 'Effect 8', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect8'); }}},
+          { data: {label: 'Effect 9', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect9'); }}},
+          { data: {label: 'Effect 10', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect10'); }}},
+          { data: {label: 'Effect 11', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect11'); }}},
+          { data: {label: 'Effect 12', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect12'); }}},
+          { data: {label: 'Effect 13', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect13'); }}},
+          { data: {label: 'Effect 14', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect14'); }}},
+          { data: {label: 'Effect 15', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect15'); }}},
+          { data: {label: 'Effect 16 (Circle only)', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect16'); }}},
+          { data: {label: 'Effect 17 (Circle only)', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect17'); }}},
+          { data: {label: 'Effect 18 (Circle only)', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect18'); }}},
+          { data: {label: 'Effect 19 (Circle only)', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect19'); }}},
+          { data: {label: 'Effect 20 (Circle only)', icon: 'adjust',
+            command: (event) => { this.globalState.notifyMyDataChanged('navEffect', '', 'effect20'); }}},
         ]
       },
       {
@@ -337,4 +394,44 @@ export class ThemesComponent extends BaseComponent implements OnInit, OnDestroy 
     }
   }
 
+  initTasks() {
+    const orgImagePath = 'org/';
+    this.tasks = [
+      {
+        tcode:  'task01',
+        title:  'task 01',
+        url:    '/task01',
+        img: orgImagePath + 'circle/x1.svg',
+        squareImg: orgImagePath + 'square/x1.svg',
+      },
+      {
+        tcode:  'task02',
+        title:  'task 02',
+        url:    '/task02',
+        img: orgImagePath + 'circle/x1.svg',
+        squareImg: orgImagePath + 'square/x1.svg',
+      },
+      {
+        tcode:  'task03',
+        title:  'task 03',
+        url:    '/task03',
+        img: orgImagePath + 'circle/x1.svg',
+        squareImg: orgImagePath + 'square/x1.svg',
+      },
+      {
+        tcode:  'task04',
+        title:  'task 04',
+        url:    '/task04',
+        img: orgImagePath + 'circle/x1.svg',
+        squareImg: orgImagePath + 'square/x1.svg',
+      },
+      {
+        tcode:  'task05',
+        title:  'task 05',
+        url:    '/task05',
+        img: orgImagePath + 'circle/x1.svg',
+        squareImg: orgImagePath + 'square/x1.svg',
+      }
+    ];
+  }
 }

@@ -1,4 +1,10 @@
 {
+	"inbox_desc": "请求发送给接收方进行验证或批准。 接受者应该在授权范围内履行工作职责来做出决定",
+	"outbox_desc": "请求由接收者通过他/她的决定进行处理。 一旦做出决定，验证者或批准者不能撤销",
+	"draft_desc": "在发送验证或批准之前草拟当前用户的请求",
+	"in_progress_desc": "当前用户的请求被发送并且仍然在等待处理",
+	"completed_desc": "处理当前用户的请求并完成其生命周期",
+
 	"about_1": "金融硕士学位（澳大利亚悉尼科技大学），ACCA，CPAA，VNCPA会员",	
 	"about_2": "超过17年",
 	"about_3": "战略咨询，风险管理，财务，会计，内部控制，审计，系统和主数据",
@@ -414,7 +420,7 @@
 	"repeat": "Repeat",
 	"reports": "Reports",
 	"reportsSubtitle": "",
-	"requests": "Requests",
+	"requests": "要求",
 	"required": "需要",
 	"reset": "重启",
 	"retrieve_session": "输入您的密码来检索您的会话",
@@ -453,7 +459,7 @@
 	"system": "",
 	"systemSubtitle": "",
 	"systems": "系统",
-	"tasks": "Tasks",
+	"tasks": "任务",
 	"tcode": "",
 	"tcodes": "Tcodes",
 	"tcodesAssignment": "",

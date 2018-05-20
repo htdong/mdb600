@@ -6,6 +6,8 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { MDBBootstrapModules } from 'ng-mdb-pro';
 
+import { IconBoardModule } from './../../_components/mdb/iconBoard/iconBoard.module';
+
 import { ThemesRoutingModule } from './themes-routing.module';
 import { ThemesComponent } from './themes.component';
 
@@ -18,6 +20,8 @@ import { ThemesComponent } from './themes.component';
     TranslateModule,
 
     MDBBootstrapModules,
+
+    IconBoardModule,
 
     ThemesRoutingModule,
   ],
