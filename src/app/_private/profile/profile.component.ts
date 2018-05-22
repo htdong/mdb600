@@ -3,8 +3,8 @@ import { FormGroup, FormControl, AbstractControl, FormBuilder, Validators } from
 
 import { TranslateService } from '@ngx-translate/core';
 
-import { UploadFile, UploadInput, UploadOutput } from 'ng-mdb-pro/pro/file-input';
-import { humanizeBytes } from 'ng-mdb-pro/pro/file-input';
+import { UploadFile, UploadInput, UploadOutput } from 'ng-uikit-pro-standard';
+import { humanizeBytes } from 'ng-uikit-pro-standard';
 
 import { EmailValidator, EqualPasswordsValidator } from '../../_system/validators';
 
@@ -93,7 +93,7 @@ export class ProfileComponent extends BaseComponent implements OnInit, OnDestroy
     public sanitizer: DomSanitizer
   ) {
     // Base class constructor: Re-injection for inheritance
-    super(translateService, globalState, helpService, localStorageService, menuService, navigationService);    
+    super(translateService, globalState, helpService, localStorageService, menuService, navigationService);
 
     // Derive class constructor
     const env = this.localStorageService.getEnv();
@@ -243,7 +243,7 @@ export class ProfileComponent extends BaseComponent implements OnInit, OnDestroy
     this.formData.append('file', file);
 
     console.log(this.formData);
-    
+
   //   for (const value of this.formData.values()) {
   //     console.log(value);
   //  }

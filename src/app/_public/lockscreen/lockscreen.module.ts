@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { MDBBootstrapModules } from 'ng-mdb-pro';
+import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 
 import { LockscreenRoutingModule } from './lockscreen-routing.module';
 import { LockscreenComponent } from './lockscreen.component';
@@ -19,7 +19,7 @@ import { LockscreenComponent } from './lockscreen.component';
     LazyLoadImageModule,
     TranslateModule,
 
-    MDBBootstrapModules,
+    MDBBootstrapModulesPro,
 
     LockscreenRoutingModule,
   ],

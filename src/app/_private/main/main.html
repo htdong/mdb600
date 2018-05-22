@@ -1,0 +1,204 @@
+<mdb-tabset #staticTabs buttonClass="nav-tabs tabs-3 {{cardColors.color}} {{cardColors.ext}}" [contentClass]="''">
+
+  <!-- 1.Workflows -->
+  <mdb-tab heading="<i class='fa fa-exchange'></i> {{'workflows'|translate}}">
+    <div class="row mt-2">
+
+      <div class="col-lg-12 mt-4 blue-text">
+        <h3><i class="fa fa-tasks"></i> {{'my_tasks'|translate}}</h3>
+      </div>
+
+      <!-- Inbox  -->
+      <div class="col-lg-6 col-md-12 my-2">
+        <div mdbWavesEffect (click)="gotoTcode('inbox');" class="card card-image mb-3" style="background-image: url(assets/images/mdb/landing/test-project-8.jpg);">
+          <div class="text-white text-center d-flex align-items-center rgba-purple-strong py-5 px-4">
+            <div>
+              <h5 class="white-text"><i class="fa fa-3x fa-inbox"></i></h5>
+              <h3 class="card-title pt-2"><strong>{{'inbox'|translate}}</strong></h3>
+              <p>{{'inbox_desc'|translate}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outbox  -->
+      <div class="col-lg-6 col-md-12 my-2">
+        <div mdbWavesEffect (click)="gotoTcode('outbox');" class="card card-image mb-3" style="background-image: url(assets/images/mdb/landing/test-project-8.jpg);">
+          <div class="text-white text-center d-flex align-items-center rgba-indigo-strong py-5 px-4">
+            <div>
+              <h5 class="white-text"><i class="fa fa-3x fa-paper-plane-o"></i></h5>
+              <h3 class="card-title pt-2"><strong>{{'outbox'|translate}}</strong></h3>
+              <p>{{'outbox_desc'|translate}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-12 mt-4 blue-text">
+        <h3><i class="fa fa-briefcase"></i> {{'my_documents'|translate}}</h3>
+      </div>
+
+      <!-- Draft  -->
+      <div class="col-lg-4 col-md-12 my-2">
+        <div mdbWavesEffect (click)="gotoTcode('draft');" class="card card-image mb-3" style="background-image: url(assets/images/mdb/landing/test-project-8.jpg);">
+          <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+            <div>
+              <h5 class="white-text"><i class="fa fa-3x fa-file"></i></h5>
+              <h3 class="card-title pt-2"><strong>{{'draft'|translate}}</strong></h3>
+              <p>{{'draft_desc'|translate}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- In progress  -->
+      <div class="col-lg-4 col-md-12 my-2">
+        <div mdbWavesEffect (click)="gotoTcode('inprogress');" class="card card-image mb-3" style="background-image: url(assets/images/mdb/landing/test-project-8.jpg);">
+          <div class="text-white text-center d-flex align-items-center rgba-stylish-strong py-5 px-4">
+            <div>
+              <h5 class="white-text"><i class="fa fa-3x fa-spinner"></i></h5>
+              <h3 class="card-title pt-2"><strong>{{'in_progress'|translate}}</strong></h3>
+              <p>{{'in_progress_desc'|translate}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Completed  -->
+      <div class="col-lg-4 col-md-12 my-2">
+        <div mdbWavesEffect (click)="gotoTcode('completed');" class="card card-image mb-3" style="background-image: url(assets/images/mdb/landing/test-project-8.jpg);">
+          <div class="text-white text-center d-flex align-items-center rgba-cyan-strong py-5 px-4">
+            <div>
+              <h5 class="white-text"><i class="fa fa-3x fa-check"></i></h5>
+              <h3 class="card-title pt-2"><strong>{{'completed'|translate}}</strong></h3>
+              <p>{{'completed_desc'|translate}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-12 mt-4 blue-text">
+        <h3><i class="fa fa-copy"></i> {{'requests'|translate}}</h3>
+      </div>
+
+      <div class="col-lg-12 mt-2">
+        <app-icon-board [title]="'requests'" [data]="requests"></app-icon-board>
+      </div>
+
+    </div>
+  </mdb-tab>
+
+  <!-- 2.Modules -->
+  <mdb-tab heading="<i class='fa fa-cubes'></i> {{'modules'|translate}}">
+    <div class="row mt-4">
+      <div class="col-12">
+        <app-icon-board [title]="'modules'" [data]="modules" maxHeight="200px"></app-icon-board>
+          <!-- <br>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+          <div class="ui-g ui-g-12">
+            <p-dataView
+              #dv
+              [value]="cars"
+              [paginator]="true"
+              [rows]="10"
+              paginatorPosition="both"
+              filterBy="brand"
+              [sortField]="sortField"
+              [sortOrder]="sortOrder">
+              <p-header>
+                <div class="ui-helper-clearfix">
+                  <div class="ui-g">
+                    <div class="ui-g-12 ui-md-4">
+                      <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By" (onChange)="onSortChange($event)" [autoWidth]="false" [style]="{'min-width':'15em'}"></p-dropdown>
+                    </div>
+                    <div class="ui-g-6 ui-md-4 filter-container">
+                      <div style="position:relative">
+                        <input type="search" pInputText placeholder="Search by brand" (keyup)="dv.filter($event.target.value)">
+                      </div>
+                    </div>
+                    <div class="ui-g-6 ui-md-4" style="text-align:right">
+                      <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+                    </div>
+                  </div>
+                </div>
+              </p-header>
+              <ng-template let-car pTemplate="listItem">
+                <div class="ui-g" style="padding: 2em;border-bottom: 1px solid #d9d9d9">
+                  <div class="ui-g-12 ui-md-3" style="text-align:center">
+                    <img src="assets/showcase/images/demo/car/{{car.brand}}.png">
+                  </div>
+                  <div class="ui-g-12 ui-md-8 car-details">
+                    <div class="ui-g">
+                      <div class="ui-g-2 ui-sm-6">Vin: </div>
+                      <div class="ui-g-10 ui-sm-6"><b>{{car.vin}}</b></div>
+
+                      <div class="ui-g-2 ui-sm-6">Year: </div>
+                      <div class="ui-g-10 ui-sm-6"><b>{{car.year}}</b></div>
+
+                      <div class="ui-g-2 ui-sm-6">Brand: </div>
+                      <div class="ui-g-10 ui-sm-6"><b>{{car.brand}}</b></div>
+
+                      <div class="ui-g-2 ui-sm-6">Color: </div>
+                      <div class="ui-g-10 ui-sm-6"><b>{{car.color}}</b></div>
+                    </div>
+                  </div>
+                  <div class="ui-g-12 ui-md-1 search-icon">
+                    <button pButton type="button" icon="fa-search" (click)="selectCar($event, car)"></button>
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template let-car pTemplate="gridItem">
+                <div style="padding:.5em" class="ui-g-12 ui-md-3">
+                  <p-panel [header]="car.vin" [style]="{'text-align':'center'}">
+                    <img src="assets/showcase/images/demo/car/{{car.brand}}.png" width="60">
+                    <div class="car-detail">{{car.year}} - {{car.color}}</div>
+                    <hr class="ui-widget-content" style="border-top:0">
+                    <button pButton type="button" icon="fa-search" (click)="selectCar($event, car)" style="margin-top:0"></button>
+                  </p-panel>
+                </div>
+              </ng-template>
+            </p-dataView>
+            <p-dialog header="Car Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" width="225" (onAfterHide)="onDialogHide()">
+                <div class="ui-g" *ngIf="selectedCar">
+                    <div class="ui-g-12" style="text-align:center">
+                        <img src="assets/showcase/images/demo/car/{{selectedCar.brand}}.png">
+                    </div>
+                    <div class="ui-g-4">Vin: </div>
+                    <div class="ui-g-8">{{selectedCar.vin}}</div>
+
+                    <div class="ui-g-4">Brand: </div>
+                    <div class="ui-g-8">{{selectedCar.brand}}</div>
+
+                    <div class="ui-g-4">Year: </div>
+                    <div class="ui-g-8">{{selectedCar.year}}</div>
+
+                    <div class="ui-g-4">Color: </div>
+                    <div class="ui-g-8">{{selectedCar.color}}</div>
+                </div>
+            </p-dialog>
+          </div> -->
+
+      </div>
+  </div>
+  </mdb-tab>
+
+  <!-- 3.Master Data -->
+  <mdb-tab heading="<i class='fa fa-database'></i> {{'master_data'|translate}}">
+    <div class="row mt-4">
+      <div class="col-12">
+        <app-icon-board [title]="'master_data'" [data]="mData" maxHeight="200px"></app-icon-board>
+      </div>
+    </div>
+  </mdb-tab>
+
+  <!-- 4.Settings -->
+  <mdb-tab heading="<i class='fa fa-cogs'></i> {{'settings'|translate}}">
+    <div class="row mt-4">
+      <div class="col-12">
+        <app-icon-board [title]="'settings'" [data]="settings" maxHeight="200px"></app-icon-board>
+      </div>
+    </div>
+</mdb-tab>
+</mdb-tabset>
+
+<div style="height: 200px"></div>

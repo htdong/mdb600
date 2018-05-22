@@ -1,11 +1,13 @@
 {
+	"third_parties": "Bên thứ ba",
+	"main_page": "Trang chính",
 	"inbox_desc": "Các yêu cầu được gửi đến cho người nhận để xác minh hoặc phê duyệt. Người nhận cần đưa ra các quyết định xử lý theo trách nhiệm công việc và trong phạm vi quyền hạn được giao",
 	"outbox_desc": "Các yêu cầu đã được người nhận xử lý. Một khi đã đưa ra quyết định, người xác minh hoặc người phê duyệt yêu cầu sẽ không thể tự huỷ những quyết định xử lý của mình",
 	"draft_desc": "Là bản dự thảo các yêu cầu của người đang sử dụng hệ thống trước khi gửi đi xác minh hoặc phê duyệt",
 	"in_progress_desc": "Là các yêu cầu của người đang sử dụng hệ thống đã gửi đi và đang trong quá trình chờ đợi xử lý",
 	"completed_desc": "Là các yêu cầu của người đang sử dụng hệ thống đã được xử lý và hoàn tất vòng đời quy trình của yêu cầu",
 
-	"about_1": "Thạc sỹ tài chính (Công nghệ Sydney, Úc), Thành viên Hiệp hội kiểm toán viên công chứng Anh, Úc, Việt Nam",		
+	"about_1": "Thạc sỹ tài chính (Công nghệ Sydney, Úc), Thành viên Hiệp hội kiểm toán viên công chứng Anh, Úc, Việt Nam",
 	"about_2": "Hơn 17 năm",
 	"about_3": "Tư vấn chiến lược, Quản trị rủi ro, Tài chính, Kế toán, Kiểm soát, Kiểm toán, Hệ thống và Dữ liệu gốc.",
 	"about_4": "Dịch vụ tài chính, Ngân hàng, Ngành hàng tiêu dùng, Dược phẩm, Dầu khí, Bất động sản ...",

@@ -17,7 +17,9 @@ OK  global.state.ts
 
 OK  src/app/_private
 OK  about
-
+OK  home
+OK  main
+-   policy
 
 OK  src/app/_system/
 OK  app.translation
@@ -47,7 +49,7 @@ OK  src/app/_system/services/
 OK  apiResultHandlingService    {To handle API results}
 OK  auth.guard                  {Middleware, to check user authenticity}
 OK  authentication              {To authenticate user}
-OK  help                        {To serve help content}    
+OK  help                        {To serve help content}
 OK  httpClient                  {To handle HTTP request}
 OK  language                    {To handle language for app}
 OK  loader                      {To handle infinite loading when interacting with server}
@@ -62,4 +64,3 @@ OK  user                        {To manage user once login, logout}
 OK  src/app/_systems/_validators
 OK  email
 OK  equalPasswords
-

@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { TranslateModule } from '@ngx-translate/core';
 
-import { MDBBootstrapModules } from 'ng-mdb-pro';
+import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 
 import { P401RoutingModule } from './401-routing.module';
 import { P401Component } from './401.component';
@@ -17,7 +17,7 @@ import { P401Component } from './401.component';
 
     TranslateModule,
 
-    MDBBootstrapModules,
+    MDBBootstrapModulesPro,
 
     P401RoutingModule,
   ],

@@ -119,7 +119,7 @@
                           <div class="row">
 
                             <div class="col-md-6">
-                              <div class="md-form">                                
+                              <div class="md-form">
                                 <input type="text" formControlName="email" id="email" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
                                 <label for="email">{{'email'|translate}}</label>
                               </div>
@@ -265,7 +265,7 @@
               </a>
             </div>
 
-            
+
           </div>
 
         </div>
@@ -280,7 +280,7 @@
   <div class="modal-dialog cascading-modal modal-avatar modal-md" role="document">
     <div class="modal-content">
       <div class="modal-header">
-          <img class="rounded-circle img-responsive" [lazyLoad]="croppedImage" [defaultImage]="'http://via.placeholder.com/130x130'"/>                  
+          <img class="rounded-circle img-responsive" [lazyLoad]="croppedImage" [defaultImage]="'http://via.placeholder.com/130x130'"/>
       </div>
 
       <div class="modal-body text-center">
@@ -294,7 +294,7 @@
           (imageLoaded)="imageLoaded()"
           (loadImageFailed)="loadImageFailed()">
         </image-cropper>
-        
+
         <form>
           <div class="file-field md-form">
             <div class="btn btn-primary btn-sm waves-light" mdbWavesEffect>
@@ -303,11 +303,11 @@
               <!--   -->
             </div>
             <div class="file-path-wrapper">
-              <input class="file-path" type="text" placeholder="Upload your file" [value]="showFiles()">                      
+              <input class="file-path" type="text" placeholder="Upload your file" [value]="showFiles()">
             </div>
           </div>
         </form>
-        
+
         <div class="text-center">
             <button type="button" (click)="startUpload()" class="btn blue-gradient {{buttonStyle.shape}} waves-light" mdbWavesEffect>{{'save'|translate}}</button>
         </div>
@@ -316,5 +316,5 @@
     </div>
   </div>
 </div>
-                
+
 <div style="height: 300px"></div>

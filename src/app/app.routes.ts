@@ -46,6 +46,7 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'home',  pathMatch: 'full' },
       { path: 'home', loadChildren: './_private/home/home.module#HomeModule' },
+      { path: 'main', loadChildren: './_private/main/main.module#MainModule' },
       { path: 'profile', loadChildren: './_private/profile/profile.module#ProfileModule' },
       { path: 'about', loadChildren: './_private/about/about.module#AboutModule' },
       { path: 'policy', loadChildren: './_private/policy/policy.module#PolicyModule' },

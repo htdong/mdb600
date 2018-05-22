@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { IconBoard } from './iconBoard.component';
 
-import { MDBBootstrapModules } from 'ng-mdb-pro';
+import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { MDBBootstrapModules } from 'ng-mdb-pro';
 
     TranslateModule,
 
-    MDBBootstrapModules
+    MDBBootstrapModulesPro
   ],
   exports: [
     IconBoard

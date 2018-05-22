@@ -202,8 +202,6 @@ export class LocalStorageService {
             shape: ''
           },
 
-          'home': '',
-
           // Deprecated
           'toastyTheme': 'default',
           'toastyTimeOut': 5000,
@@ -362,6 +360,7 @@ export class LocalStorageService {
   getSettings(lsEnv = null) {
     const env = this.selectEnv(lsEnv);
     return (env.pref.settings || {
+      home: 'main',
       style: true,
       locale: '',
       locale_value: ''

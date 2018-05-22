@@ -14,8 +14,8 @@ import { BaseComponent } from '../../_system/_base/base.component';
 import { AppDoubleNavLayoutComponent } from '../../_system/_layouts/doubleNavsLayout.component';
 
 import { TimezonesService } from '../../_system/_static/timezones.service';
-import { CompleterService } from 'ng-mdb-pro/pro';
-import { CompleterData } from 'ng-mdb-pro/pro/autocomplete';
+import { CompleterService } from 'ng-uikit-pro-standard';
+import { CompleterData } from 'ng-uikit-pro-standard';
 
 @Component({
   templateUrl: 'setting.html',
@@ -85,6 +85,7 @@ export class SettingComponent extends BaseComponent implements OnInit, OnDestroy
     this.settings = this.localStorageService.getSettings(env);
 
     this.form = fb.group({
+      'home': [this.settings.home, Validators.compose([Validators.required])],
       'style': [this.settings.style, Validators.compose([Validators.required])],
       'locale': [this.settings.locale, Validators.compose([Validators.required])],
       'locale_value': [this.settings.locale_value, Validators.compose([Validators.required])]

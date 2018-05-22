@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { TranslateModule } from '@ngx-translate/core';
 
-import { MDBBootstrapModules } from 'ng-mdb-pro';
+import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 
 import { PolicyRoutingModule } from './policy-routing.module';
 import { PolicyComponent } from './policy.component';
@@ -17,7 +17,7 @@ import { PolicyComponent } from './policy.component';
 
     TranslateModule,
 
-    MDBBootstrapModules,
+    MDBBootstrapModulesPro,
 
     PolicyRoutingModule,
   ],

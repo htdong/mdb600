@@ -9,7 +9,7 @@ import { FormGroup } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import 'rxjs/add/operator/filter';
 
-import { ToastService } from 'ng-mdb-pro/pro/alerts';
+import { ToastService } from 'ng-uikit-pro-standard';
 
 import { TranslateService } from '@ngx-translate/core';
 
@@ -25,8 +25,11 @@ import { NavigationService } from '../services/navigation.service';
 import { SecurityService } from '../services/security.service';
 import { TcodeService } from '../services/tcode.service';
 
+import { routerTransition } from './router.animations';
+
 @Component({
   selector: 'app-double-navs-layout',
+  animations: [ routerTransition ],
   templateUrl: './doubleNavsLayout.component.html',
   styleUrls: ['./layout.scss'],
 })
@@ -50,26 +53,35 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
   isFixed = true;
 
   effects = [
-    'bounceIn',
+    // 'bounceIn',
     'bounceInDown',
     'bounceInLeft',
     'bounceInRight',
-    'bounceUp',
-    'fadeIn',
+    'bounceInUp',
+    // 'fadeIn',
     'fadeInDown',
     'fadeInLeft',
     'fadeInRight',
     'fadeInUp',
-    'flip',
+    // 'flip',
     'flipInX',
     'flipInY',
-    'sideInUp',
-    'sideInDown',
-    'sideInLeft',
-    'sideInRight',
+    'slideInDown',
+    'slideInLeft',
+    'slideInRight',
+    'slideInUp',
     'zoomIn'
   ];
+
+  effectsOut = [
+    'fadeOut',
+    'fadeOutDown',
+    'fadeOutLeft',
+    'fadeOutRight',
+    'fadeOutUp'
+  ];
   selectedEffect;
+  applyEffect;
 
   @ViewChild('sidenav') public sidenav;
 
@@ -130,8 +142,9 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
   ) {
     this.subscribeLocalState();
 
-    this.selectedEffect = Math.floor(Math.random() * 17);
-    // console.log(this.selectedEffect);
+    this.selectedEffect = Math.floor(Math.random() * 15);
+    this.applyEffect = this.effects[this.selectedEffect];
+    console.log(this.applyEffect);
 
     // USER APP STATE
     const env = this.localStorageService.getEnv();
@@ -230,6 +243,8 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
   }
 
   ngOnDestroy() {
+    // this.selectedEffect = Math.floor(Math.random() * 17);
+    // this.applyEffect = this.effectsOut[this.selectedEffect];
     this.unsubscribeLocalState();
   }
 
@@ -400,6 +415,11 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
 
   /* COMPONENT OPERATION */
 
+  getState(outlet) {
+    console.log(outlet);
+    return outlet.activatedRouteData.state;
+  }
+
   /**
    * [THEMES FUNCTIONS]
    * @function toggleMode
@@ -565,7 +585,7 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
     }
     return false;
   }
-  
+
   /**
    * [WORKING BAR FUNCTIONS]
    * @function toggleWkBar

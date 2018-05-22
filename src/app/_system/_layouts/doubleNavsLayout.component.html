@@ -37,9 +37,9 @@
           <li mdbTooltip="{{'setting'|translate}}" placement="left"><a class="icons-sm" (click)="gotoTcode('setting')"><i class="fa fa-cogs"> </i></a></li>
           <li mdbTooltip="{{'lock_system'|translate}}" placement="left"><a class="icons-sm" (click)="gotoTcode('lockscreen')"><i class="fa fa-lock"> </i></a></li>
           <li mdbTooltip="{{'logout'|translate}}" placement="left"><a class="icons-sm" (click)="logOut(); false"><i class="fa fa-sign-out"> </i></a></li>
-        </ul>        
-      </li>      
-            
+        </ul>
+      </li>
+
       <!--Transaction Form-->
       <li *ngIf="enableTcode">
         <form class="search-form" role="search" (keydown)="keyDownFunction($event)">
@@ -47,8 +47,8 @@
             <input type="text" class="form-control" placeholder="{{'transactionCode'|translate}}" [(ngModel)]="tcodeExecution" name="tcode">
           </div>
         </form>
-      </li>    
-      
+      </li>
+
       <!-- Menu items -->
       <li *ngIf="menu">
         <ul class="collapsible collapsible-accordion">
@@ -73,8 +73,8 @@
           <li mdbTooltip="{{'home'|translate}}" placement="bottom"><a [routerLink]="['/home']"><i class="fa fa-home"> </i></a></li>
           <li mdbTooltip="{{'returnPrevious'|translate}}" placement="bottom"><a (click)="returnPrevious(); false"><i class="fa fa-arrow-circle-left"> </i></a></li>
           <li mdbTooltip="{{'help'|translate}}" placement="bottom"><a (click)="helpModal.show(); false"><i class="fa fa-question-circle-o"> </i></a></li>
-          <li mdbTooltip="{{'working_bar_status'|translate}}" placement="bottom"><a (click)="toggleWkBar(); false"><i class="fa fa-folder-open-o"> </i></a></li>          
-        </ul>        
+          <li mdbTooltip="{{'working_bar_status'|translate}}" placement="bottom"><a (click)="toggleWkBar(); false"><i class="fa fa-folder-open-o"> </i></a></li>
+        </ul>
       </li>
 
     </links>
@@ -153,7 +153,7 @@
             <a class="dropdown-item" (click)="changeLanguage('ch'); false">{{'langChinese'|translate}}</a>
             <a class="dropdown-item" (click)="changeLanguage('fr'); false">{{'langFrench'|translate}}</a>
           </div>
-        </li>        
+        </li>
       </ul>
     </navlinks>
   </mdb-navbar>
@@ -213,9 +213,14 @@
   </section>
 
   <!-- Content -->
-  <div id="gkOutlet" class="container-fluid mt-5 pl-5 pr-5 wow {{effects[selectedEffect]}}" >
+
+  <div id="gkOutlet" class="container-fluid mt-5 pl-5 pr-5 wow {{applyEffect}}">
     <router-outlet></router-outlet>
   </div>
+
+  <!-- <div id="gkOutlet" class="container-fluid mt-5 pl-5 pr-5" [@routerTransition]="getState(o)">
+     <router-outlet #o="outlet"></router-outlet>
+  </div> -->
 
   <!-- <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
     <a class="btn-floating btn-large red waves-light" mdbWavesEffect (click)="fixed.toggle($event)">

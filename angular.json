@@ -37,10 +37,10 @@
                 "input": "node_modules/primeng/resources/primeng.min.css"
               },
               {
-                "input": "node_modules/ng-mdb-pro/assets/scss/bootstrap/bootstrap.scss"
+                "input": "node_modules/ng-uikit-pro-standard/assets/scss/bootstrap/bootstrap.scss"
               },
               {
-                "input": "node_modules/ng-mdb-pro/assets/scss/mdb.scss"
+                "input": "node_modules/ng-uikit-pro-standard/assets/scss/mdb.scss"
               },
               {
                 "input": "src/styles.scss"

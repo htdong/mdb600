@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MDBSpinningPreloader } from 'ng-mdb-pro';
+import { MDBSpinningPreloader } from 'ng-uikit-pro-standard';
 
 import { LocalStorageService } from './_system/services/localStorage.service';
 

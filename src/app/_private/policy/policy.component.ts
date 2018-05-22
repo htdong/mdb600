@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
+
+import { Observable } from 'rxjs/Observable';
 
 import { GlobalState } from '../../global.state';
 import { HelpService } from '../../_system/services/help.service';
@@ -25,11 +27,14 @@ export class PolicyComponent extends BaseComponent implements OnInit, OnDestroy 
   helpFile = 'home';
 
   globalConfig = {
-    language: true,
+    language: false,
     trackHistory: true
   };
 
   cardColors;
+
+  license: String;
+  thirdPartiesLicenses: String;
 
   constructor(
     // Base class services
@@ -41,6 +46,7 @@ export class PolicyComponent extends BaseComponent implements OnInit, OnDestroy 
     public menuService: MenuService,
 
     // Derive class services
+    private httpClient: HttpClient,
   ) {
     // Base class constructor: Re-injection for inheritance
     super(translateService, globalState, helpService, localStorageService, menuService, navigationService);
@@ -48,61 +54,72 @@ export class PolicyComponent extends BaseComponent implements OnInit, OnDestroy 
     // Derive class constructor
     const env = this.localStorageService.getEnv();
     this.cardColors = this.localStorageService.getCardColors(env);
+
+    // Help Modal
+    const lang = this.localStorageService.getLang();
+    const file = 'assets/licenses/license.' + lang + '.html';
+
+    this.getLicenseFile(file)
+      .subscribe((license) => {
+        this.license = license;
+        console.log(license);
+      });
+
+    const licensesfile = 'assets/licenses/all.html';
+    this.getLicenseFile(licensesfile)
+      .subscribe((licenses) => {
+        this.thirdPartiesLicenses = licenses;
+        console.log(licenses);
+      });
+
   }
 
   ngOnInit() {
     /* Base class initialization */
     super.ngOnInit();
-    // this.subscribeGlobalState();
 
     /* Derive class initialization */
-
-    // Initialize sidebar menu
-    // this.initSidebarMenu();
-
-    // Initialize help modal content
-    // this.globalState.notifyMyDataChanged('help', '', this.helpFile);
-
-    // const element = document.getElementsByTagName('body')[0];
-    // element.classList.add('landing-body');
+    this.subscribeLocalState();
   }
 
   ngOnDestroy() {
     /* Base class destroy */
     super.ngOnDestroy();
 
-    // const element = document.getElementsByTagName('body')[0];
-    // element.classList.remove('landing-body');
+    /* Derive class initialization */
+    this.unsubscribeLocalState();
   }
 
-  /**
-   *  [COMPONENT FUNCTIONS]
-   * @function changeLanguage
-   */
+  /* LOCAL STATE */
+  subscribeLocalState() {
+    // Language
+    this.globalState.subscribeEvent('language', this.myScope, (lang) => {
+      this.translateService.use(lang);
 
-  public changeLanguage(lang: string) {
-    this.localStorageService.setLang(lang);
-    this.translateService.use(lang);
+      const file = 'assets/licenses/license.' + lang + '.html';
+      this.getLicenseFile(file)
+        .subscribe((license) => {
+          this.license = license;
+          console.log(license);
+        });
+
+    });
   }
 
-  showSuccess() {
-    const data = {
-      type: 'success',
-      message: 'Messages',
-      title: 'Info'
-    };
-
-    this.globalState.notifyMyDataChanged('toast', '', data);
+  unsubscribeLocalState() {
+    this.globalState.unsubscribeEvent('language', this.myScope);
   }
 
-  showError() {
-    const data = {
-      type: 'error',
-      message: 'Messages',
-      title: 'Info'
-    };
+  /* COMPONENT FUNCTIONS */
 
-    this.globalState.notifyMyDataChanged('toast', '', data);
+  getLicenseFile(file): Observable<any> {
+    return this.httpClient.get(file, { responseType: 'text' })
+      .map((res) => {
+        return res;
+      })
+      .catch((error) => {
+        console.log(error);
+        return Promise.resolve(error);
+      });
   }
-
 }

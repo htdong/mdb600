@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { TranslateModule } from '@ngx-translate/core';
 
-import { MDBBootstrapModules } from 'ng-mdb-pro';
+import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 
 import { ForgotRoutingModule } from './forgot-routing.module';
 import { ForgotComponent } from './forgot.component';
@@ -17,7 +17,7 @@ import { UserService } from '../../_system/services/user.service';
     FormsModule,
     ReactiveFormsModule,
 
-    MDBBootstrapModules,
+    MDBBootstrapModulesPro,
 
     TranslateModule,
 

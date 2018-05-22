@@ -1,10 +1,12 @@
 {
+	"third_parties": "Third parties",
+	"main_page": "Main page",
 	"inbox_desc": "Requests sent to receiver for validation or approval. Receiver should make decision by performing job duties within delegated authority",
 	"outbox_desc": "Requests were processed by receiver through his/ her decision. Once decision is made, it can not be revoked by the validator or approver",
 	"draft_desc": "Draft requests of current user before sending for validation or approval",
 	"in_progress_desc": "Requests of current user are sent and still await for being processed",
 	"completed_desc": "Requests of current user were processed and completed the life cycle",
-	"about_1": "MBus in Finance (UTS), FCCA, CPAA, VNCPA",	
+	"about_1": "MBus in Finance (UTS), FCCA, CPAA, VNCPA",
 	"about_2": "17+ years in",
 	"about_3": "Strategic Consulting, Risk Management, Finance, Accounting, Internal Controls, Audit, System and Master Data.",
 	"about_4": "Financial Services, Banking, FMCG, Pharmaceutical, Oil & Gas, Real Estate ...",

@@ -13,9 +13,9 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 /**
  * MDBOOTSTRAP
  */
-import { MDBBootstrapModules } from 'ng-mdb-pro';
-import { MDBSpinningPreloader } from 'ng-mdb-pro';
-import { ToastModule } from 'ng-mdb-pro/pro/alerts';
+import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
+import { MDBSpinningPreloader } from 'ng-uikit-pro-standard';
+import { ToastModule } from 'ng-uikit-pro-standard';
 
 // MY SERVICES - Register for global reference (Deprecated since Ng6)
 import { NgaModule } from './_system/nga.module';
@@ -57,12 +57,12 @@ import { AppRoutes } from './app.routes';
     ReactiveFormsModule,
 
     // Service Worker
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),    
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
 
     LazyLoadImageModule,
 
     // MDBootstrap
-    MDBBootstrapModules.forRoot(),
+    MDBBootstrapModulesPro.forRoot(),
     ToastModule.forRoot({maxOpened: 10}),
 
     NgaModule.forRoot(),

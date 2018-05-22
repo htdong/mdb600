@@ -6,7 +6,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { ImageCropperModule } from 'ngx-image-cropper';
-import { MDBBootstrapModules } from 'ng-mdb-pro';
+import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 
 import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
@@ -21,7 +21,7 @@ import { ProfileComponent } from './profile.component';
     TranslateModule,
 
     ImageCropperModule,
-    MDBBootstrapModules,
+    MDBBootstrapModulesPro,
 
     ProfileRoutingModule,
   ],

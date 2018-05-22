@@ -216,7 +216,7 @@ export class ThemesComponent extends BaseComponent implements OnInit, OnDestroy 
           { data: {label: 'circle_shape', icon: 'circle-o',
             command: (event) => {this.globalState.notifyMyDataChanged('navType', '', 'circle'); }}},
           { data: {label: 'square_shape', icon: 'square-o',
-            command: (event) => {this.globalState.notifyMyDataChanged('navType', '', 'square'); }}},          
+            command: (event) => {this.globalState.notifyMyDataChanged('navType', '', 'square'); }}},
         ]
       },
       {
@@ -356,7 +356,7 @@ export class ThemesComponent extends BaseComponent implements OnInit, OnDestroy 
       closeButton: toast.closeButton,
       progressBar: toast.progressBar,
       tapToDismiss: toast.tapToDismiss,
-      title: this.form.valid ? toast.info : 'Missing info!',
+      title: this.form.valid ? toast.title : 'Missing info!',
       message: this.form.valid ? toast.message : 'Complete all information!',
     };
 

@@ -2,7 +2,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MDBBootstrapModules } from 'ng-mdb-pro';
+import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 
 import { TranslateModule } from '@ngx-translate/core';
 // import { AppTranslationModule } from '../../_system/app.translation.module';
@@ -16,7 +16,7 @@ import { LandingComponent } from './landing.component';
     FormsModule,
     ReactiveFormsModule,
 
-    MDBBootstrapModules,
+    MDBBootstrapModulesPro,
 
     TranslateModule,
     // AppTranslationModule,
