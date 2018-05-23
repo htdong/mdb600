@@ -40,18 +40,9 @@ export class ProfileComponent extends BaseComponent implements OnInit, OnDestroy
   };
 
   public form: FormGroup;
-  // firstname: AbstractControl;
-  // lastname: AbstractControl;
-  // address_first: AbstractControl;
-  // city: AbstractControl;
-  // country: AbstractControl;
-  // alt_email: AbstractControl;
-  // phone: AbstractControl;
-  // alt_phone: AbstractControl;
 
   public formPassword: FormGroup;
-  // public password: AbstractControl;
-  // public repeatPassword: AbstractControl;
+
   public submitted = false;
 
   model: any = {};
@@ -135,14 +126,6 @@ export class ProfileComponent extends BaseComponent implements OnInit, OnDestroy
       'alt_ism': ['', Validators.compose([])],
       'contact': ['', Validators.compose([])]
     });
-    // this.firstname = this.form.controls['firstname'];
-    // this.lastname = this.form.controls['lastname'];
-    // this.address_first = this.form.controls['address_first'];
-    // this.city = this.form.controls['city'];
-    // this.country = this.form.controls['country'];
-    // this.alt_email = this.form.controls['alt_email'];
-    // this.phone = this.form.controls['phone'];
-    // this.alt_phone = this.form.controls['alt_phone'];
 
     this.formPassword = fbPassword.group(
       {
@@ -153,8 +136,6 @@ export class ProfileComponent extends BaseComponent implements OnInit, OnDestroy
         validator: EqualPasswordsValidator.validate('password', 'repeatPassword'),
       }
     );
-    // this.password = this.formPassword.controls['password'];
-    // this.repeatPassword = this.formPassword.controls['repeatPassword'];
 
     this.files = [];
     this.uploadInput = new EventEmitter<UploadInput>();
@@ -173,18 +154,11 @@ export class ProfileComponent extends BaseComponent implements OnInit, OnDestroy
 
     // Initialize help modal content
     this.globalState.notifyMyDataChanged('help', '', this.helpFile);
-
-
-    // const element = document.getElementsByTagName('body')[0];
-    // element.classList.add('landing-body');
   }
 
   ngOnDestroy() {
     /* Base class destroy */
     super.ngOnDestroy();
-
-    // const element = document.getElementsByTagName('body')[0];
-    // element.classList.remove('landing-body');
   }
 
   /**
@@ -243,23 +217,6 @@ export class ProfileComponent extends BaseComponent implements OnInit, OnDestroy
     this.formData.append('file', file);
 
     console.log(this.formData);
-
-  //   for (const value of this.formData.values()) {
-  //     console.log(value);
-  //  }
-    // const outputLog = {};
-    // const iterator = this.formData.values();
-    // let end = false;
-
-    // while (end === false) {
-    //   const item = iterator.next();
-    //   if (item.value !== undefined) {
-    //       outputLog[item.value[0]] = item.value[1];
-    //   } else if (item.done === true) {
-    //       end = true;
-    //   }
-    //     }
-    // console.log(outputLog);
   }
   imageLoaded() {
       // show cropper

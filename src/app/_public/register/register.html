@@ -70,28 +70,28 @@
 
                         <div class="md-form">
                           <i class="fa fa-envelope prefix dark-grey-text"></i>
-                          <input type="text" [formControl]="email" [(ngModel)]="model.email" id="email" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
+                          <input type="text" [formControl]="email" id="email" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
                           <label for="email">{{'email'|translate}}</label>
                           <span *ngIf="email.invalid && (email.dirty || email.touched)" class="inputVal text-danger">{{'invalid_email'|translate}}</span>
                         </div>
 
                         <div class="md-form">
                           <i class="fa fa-lock prefix dark-grey-text"></i>
-                          <input type="password" [formControl]="password" [(ngModel)]="model.password" id="password" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="new-password">
+                          <input type="password" [formControl]="password" id="password" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="new-password">
                           <label for="password">{{'password'|translate}}</label>
                           <span *ngIf="password.invalid && (password.dirty || password.touched)" class="inputVal text-danger">{{'invalid_min_char'|translate:"{value: 8}" }}</span>
                         </div>
 
                         <div class="md-form">
                           <i class="fa fa-lock prefix dark-grey-text"></i>
-                          <input type="password" [formControl]="repeatPassword" [(ngModel)]="model.repeatPassword" id="repeatPassword" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="new-password">
+                          <input type="password" [formControl]="repeatPassword" id="repeatPassword" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="new-password">
                           <label for="repeatPassword">{{'password'|translate}}</label>
                           <span *ngIf="repeatPassword.invalid && (repeatPassword.dirty || repeatPassword.touched)" class="inputVal text-danger">{{'invalid_repeat_password'|translate}}</span>
                         </div>
 
                         <div class="md-form">
                           <i class="fa fa-key prefix dark-grey-text"></i>
-                          <input type="text" [formControl]="token" [(ngModel)]="model.token" id="token" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
+                          <input type="text" [formControl]="token" id="token" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
                           <label for="token">{{'token'|translate}}</label>
                           <span *ngIf="token.invalid && (token.dirty || token.touched)" class="inputVal text-danger">{{'invalid_min_char'|translate:"{value: 4}" }}</span>
                         </div>

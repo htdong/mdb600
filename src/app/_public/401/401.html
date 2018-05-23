@@ -11,9 +11,9 @@
 	            <div class="card-body">
 
 	              <div class="form-header blue-gradient">
-                  <p class="mr-auto ml-auto z-depth-5" id="icon" style="text-shadow: rgb(29, 127, 172) 0px 0px 0px, rgb(29, 130, 176) 1px 1px 0px, rgb(30, 133, 180) 2px 2px 0px, rgb(31, 136, 183) 3px 3px 0px, rgb(31, 138, 187) 4px 4px 0px, rgb(32, 141, 191) 5px 5px 0px, rgb(32, 144, 194) 6px 6px 0px, rgb(33, 147, 198) 7px 7px 0px, rgb(34, 149, 202) 8px 8px 0px, rgb(34, 152, 205) 9px 9px 0px, rgb(35, 155, 209) 10px 10px 0px, rgb(35, 157, 213) 11px 11px 0px, rgb(36, 160, 216) 12px 12px 0px, rgb(37, 163, 220) 13px 13px 0px, rgb(37, 166, 224) 14px 14px 0px, rgb(38, 168, 228) 15px 15px 0px, rgb(39, 171, 231) 16px 16px 0px, rgb(39, 174, 235) 17px 17px 0px, rgb(40, 177, 239) 18px 18px 0px, rgb(40, 179, 242) 19px 19px 0px; font-size: 90px; color: rgb(255, 255, 255); height: 200px; width: 200px; line-height: 200px; border-radius: 50%; text-align: center; background-color: rgb(41, 182, 246);"> 401 </p>
-	                <h3><i class="fa fa-user mt-2 mb-2"></i> {{'401'|translate}}</h3>
-                  <p *ngIf="!message" class="white-text">{{'401Msg'|translate}}</p>
+                  <p class="mr-auto ml-auto z-depth-5 wow rollIn" data-wow-delay="1s" id="icon" style="text-shadow: rgb(29, 127, 172) 0px 0px 0px, rgb(29, 130, 176) 1px 1px 0px, rgb(30, 133, 180) 2px 2px 0px, rgb(31, 136, 183) 3px 3px 0px, rgb(31, 138, 187) 4px 4px 0px, rgb(32, 141, 191) 5px 5px 0px, rgb(32, 144, 194) 6px 6px 0px, rgb(33, 147, 198) 7px 7px 0px, rgb(34, 149, 202) 8px 8px 0px, rgb(34, 152, 205) 9px 9px 0px, rgb(35, 155, 209) 10px 10px 0px, rgb(35, 157, 213) 11px 11px 0px, rgb(36, 160, 216) 12px 12px 0px, rgb(37, 163, 220) 13px 13px 0px, rgb(37, 166, 224) 14px 14px 0px, rgb(38, 168, 228) 15px 15px 0px, rgb(39, 171, 231) 16px 16px 0px, rgb(39, 174, 235) 17px 17px 0px, rgb(40, 177, 239) 18px 18px 0px, rgb(40, 179, 242) 19px 19px 0px; font-size: 90px; color: rgb(255, 255, 255); height: 200px; width: 200px; line-height: 200px; border-radius: 50%; text-align: center; background-color: rgb(41, 182, 246);"> 401 </p>
+	                <h3 class="wow zoomIn" data-wow-delay="1.5s"><i class="fa fa-user mt-2 mb-2"></i> {{'401'|translate}}</h3>
+                  <p *ngIf="!message" class="white-text wow fadeInUp" data-wow-delay="2s">{{'401Msg'|translate}}</p>
 	              </div>
 
                 <form (keydown)="keyDownFunction($event)">

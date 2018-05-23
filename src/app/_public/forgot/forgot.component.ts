@@ -27,14 +27,9 @@ import { UserService } from '../../_system/services/user.service';
 })
 export class ForgotComponent implements OnInit, OnDestroy {
 
-  // bodySkin = 'mdb-skin bg-skin-lp fixed-sn';
-
   public form: FormGroup;
-  public email: AbstractControl;
-  public token: AbstractControl;
   public submitted = false;
 
-  model: any = {};
   loading = false;
   message: string;
 
@@ -54,16 +49,13 @@ export class ForgotComponent implements OnInit, OnDestroy {
     translate.use(localStorageService.getLang());
 
     // get token
-    this.model.token = this.securityService.getToken();
+    const token = this.securityService.getToken();
 
     this.form = fb.group(
       {
         'email': ['', Validators.compose([Validators.required, EmailValidator.validate])],
-        'token': [this.model.token, Validators.compose([Validators.required, Validators.minLength(4)])],
+        'token': [token, Validators.compose([Validators.required, Validators.minLength(4)])],
     });
-
-    this.email = this.form.controls['email'];
-    this.token = this.form.controls['token'];
   }
 
   ngOnInit() {
@@ -78,10 +70,11 @@ export class ForgotComponent implements OnInit, OnDestroy {
   * @function onSubmit
   * Track if form is submitted or not to set up message
   */
-  public onSubmit(values: Object): void {
+  public onSubmit(): void {
     this.submitted = true;
     if (this.form.valid) {
-      // console.log(values);
+      console.log(this.form.value);
+
       this.forgot();
     }
   }
@@ -92,12 +85,11 @@ export class ForgotComponent implements OnInit, OnDestroy {
   */
   forgot() {
     this.loading = true;
-    this.securityService.setToken(this.model.token);
-    // console.log(this.model);
+    this.securityService.setToken(this.form.value.token);
 
     this.message = 'deferral'
 
-    this.userService.forgot(this.model)
+    this.userService.forgot(this.form.value)
       .subscribe(
           data => {
             // console.log(data);

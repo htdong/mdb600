@@ -29,7 +29,7 @@ export class SettingComponent extends BaseComponent implements OnInit, OnDestroy
 
   sidebarMenuJSONFile = 'home.menu.mdb.json';
 
-  helpFile = 'home';
+  helpFile = 'setting';
 
   globalConfig = {
     language: true,
@@ -98,20 +98,11 @@ export class SettingComponent extends BaseComponent implements OnInit, OnDestroy
     // this.subscribeGlobalState();
 
     /* Derive class initialization */
-
-    // Initialize sidebar menu
-    // this.initSidebarMenu();
-
-    // Initialize help modal content
-    // this.globalState.notifyMyDataChanged('help', '', this.helpFile);
   }
 
   ngOnDestroy() {
     /* Base class destroy */
     super.ngOnDestroy();
-
-    // const element = document.getElementsByTagName('body')[0];
-    // element.classList.remove('landing-body');
   }
 
   /**

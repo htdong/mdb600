@@ -27,7 +27,7 @@ export class IconBoard implements OnInit, OnDestroy {
 
   @Input() title: string;
   @Input() data: any[];
-  @Input() maxHeight = '600px';
+  @Input() cardHeight = '';
 
   displayType = 'grid';
 
@@ -104,7 +104,7 @@ export class IconBoard implements OnInit, OnDestroy {
 
   toggleNavType() {
     console.log(this.navType);
-    
+
     if (this.navType != 'circle') {
       this.navType = 'circle';
     } else {

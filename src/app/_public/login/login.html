@@ -21,23 +21,23 @@
 
                   <div class="md-form">
                     <i class="fa fa-envelope prefix white-text"></i>
-                    <input type="text" [formControl]="email" [(ngModel)]="model.email" id="email" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
+                    <input type="text" formControlName="email" id="email" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
                     <label for="email">{{'email'|translate}}</label>
-                    <span *ngIf="email.invalid && (email.dirty || email.touched)" class="inputVal text-danger">{{'invalid_min_char'|translate:"{value: 4}" }}</span>
+                    <span *ngIf="form.get('email').invalid && (form.get('email').dirty || form.get('email').touched)" class="inputVal text-danger">{{'invalid_min_char'|translate:"{value: 4}" }}</span>
                   </div>
 
                   <div class="md-form">
                     <i class="fa fa-lock prefix white-text"></i>
-                    <input type="password" [formControl]="password" [(ngModel)]="model.password" id="password" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="new-password">
+                    <input type="password" formControlName="password" id="password" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="new-password">
                     <label for="password">{{'password'|translate}}</label>
-                    <span *ngIf="password.invalid && (password.dirty || password.touched)" class="inputVal text-danger">{{'invalid_min_char'|translate:"{value: 8}" }}</span>
+                    <span *ngIf="form.get('password').invalid && (form.get('password').dirty || form.get('password').touched)" class="inputVal text-danger">{{'invalid_min_char'|translate:"{value: 8}" }}</span>
                   </div>
 
                   <div class="md-form">
                     <i class="fa fa-key prefix white-text"></i>
-                    <input type="text" id="token" [formControl]="token" [(ngModel)]="model.token" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
+                    <input type="text" id="token" formControlName="token" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="off">
                     <label for="token">{{'token'|translate}}</label>
-                    <span *ngIf="token.invalid && (token.dirty || token.touched)" class="inputVal text-danger">{{'invalid_min_char'|translate:"{value: 4}" }}</span>
+                    <span *ngIf="form.get('token').invalid && (form.get('token').dirty || form.get('token').touched)" class="inputVal text-danger">{{'invalid_min_char'|translate:"{value: 4}" }}</span>
                   </div>
 
                   <div class="text-center action-corner">

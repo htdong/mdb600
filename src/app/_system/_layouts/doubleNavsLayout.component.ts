@@ -114,7 +114,7 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
   selectedLge: any;
   selectedYear: any;
 
-  helpFile: String = 'intro';
+  helpFile: String = 'blank';
   helpContext: String;
 
   toasty: any;

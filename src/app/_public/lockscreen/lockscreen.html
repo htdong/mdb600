@@ -25,7 +25,7 @@
 
                     <form [formGroup]="form" class="lockscreen-credentials" (keydown)="keyDownFunction($event)">
                       <div class="md-form ml-0 mr-0 text-left">
-                        <input type="password" [formControl]="password" id="password" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="new-password">
+                        <input type="password" formControlName="password" id="password" class="form-control" [mdbValidate]="false" mdbInputDirective autocomplete="new-password">
                         <label class="ml-0 grey-text" for="password">{{'password'|translate}}</label>
 
                         <span *ngIf="form.get('password').invalid && (form.get('password').dirty || form.get('password').touched)" class="inputVal ml-0 text-danger text-left">{{'invalid_min_char'|translate:"{value: 8}" }}</span>

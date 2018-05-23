@@ -1,9 +1,9 @@
 .img-square {
   height: 100%;
 }
-  
+
 .navItem {
-  display: inline-flex;     // one item issue  
+  display: inline-flex;     // one item issue
   align-items: center;      //vertical
   justify-content: center;  //horizontal
   margin-bottom: 30px;
@@ -11,9 +11,18 @@
 
 .card-body {
   display: block;
-  max-height: 600px; 
   overflow-y: auto;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
-  
+.card-sm {
+  max-height: 270px;
+}
+
+.card-md {
+  max-height: 520px;
+}
+
+.card-lg {
+  max-height: 760px;
+}

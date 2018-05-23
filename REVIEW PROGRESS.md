@@ -19,7 +19,21 @@ OK  src/app/_private
 OK  about
 OK  home
 OK  main
--   policy
+-   policy              TODO: Review & translate
+OK  profile
+OK  setting
+OK  themes
+
+OK  src/app/_public
+OK  401
+OK  403
+OK  404
+OK  500
+OK  forgot
+-   landing             TODO: Restructure for standard app landing page
+OK  lockscreen
+OK  login
+OK  register
 
 OK  src/app/_system/
 OK  app.translation

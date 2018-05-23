@@ -27,8 +27,6 @@ import { UserService } from '../../_system/services/user.service';
 })
 export class RegisterComponent implements OnInit, OnDestroy {
 
-  // bodySkin = 'mdb-skin bg-skin-lp fixed-sn';
-
   public form: FormGroup;
   public email: AbstractControl;
   public password: AbstractControl;
@@ -109,7 +107,15 @@ export class RegisterComponent implements OnInit, OnDestroy {
   register() {
     this.loading = true;
     // this.securityService.setToken(this.model.token);
-    // console.log(this.model);
+
+    this.model = {
+      email: this.form.value.email,
+      password: this.form.value.passwords.password,
+      repeatPassword: this.form.value.passwords.repeatPassword,
+      token: this.form.value.token
+    }
+    console.log(this.model);
+
     this.userService.create(this.model)
       .subscribe(
         data => {

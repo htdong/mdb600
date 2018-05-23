@@ -1,24 +1,24 @@
 <div class="card card-cascade narrower">
   <div class="view gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
     <div></div>
-    
+
     <a class="white-text mx-3" href="">{{title|translate}}</a>
-    
+
     <div>
       <button *ngIf="(displayType == 'grid')" (click)="toggleNavType()" class="btn btn-outline-white btn-rounded btn-sm px-2" type="button">
         <i class="fa fa-refresh mt-0"></i>
-      </button>      
+      </button>
       <button (click)="setDisplayType('grid')" class="btn btn-outline-white btn-rounded btn-sm px-2" type="button">
         <i class="fa fa-th-large mt-0"></i>
       </button>
       <button (click)="setDisplayType('non-grid')" class="btn btn-outline-white btn-rounded btn-sm px-2" type="button">
         <i class="fa fa-bars mt-0"></i>
-      </button>      
-    </div>  
+      </button>
+    </div>
   </div>
 
-  <div *ngIf="(displayType !== 'grid')" class="card-body">
-                
+  <div *ngIf="(displayType !== 'grid')" class="card-body {{cardHeight}}">
+
       <div *ngFor="let item of data; let i=index" class="row mt-3">
         <div class="col-lg-3 mb-4">
           <div class="view overlay z-depth-1">
@@ -36,18 +36,18 @@
               <strong> Tcode</strong>
             </h6>
           </a>
-    
-          <h4 class="mb-4">                
+
+          <h4 class="mb-4">
             <strong>{{item.tcode}}</strong>
           </h4>
-          <p>{{item.title|translate}}</p>          
+          <p>{{item.title|translate}}</p>
         </div>
-      </div>  
-     
+      </div>
+
   </div>
 
-  <div *ngIf="(displayType == 'grid')" class="card-body">
-    
+  <div *ngIf="(displayType == 'grid')" class="card-body {{cardHeight}}">
+
     <section *ngIf="(displayType == 'grid') && (navType=='circle') && (navEffect!=='effect8')" style="width: 100%">
       <div class="navItem col-lg-4" *ngFor="let item of data; let i=index">
         <div class="ih-item circle {{(i+1)%2==0? 'colored':''}} {{navEffect}} {{navAnimate[navDirection][(i+1)%navAnimateLength]}}">
@@ -69,7 +69,7 @@
 
     <section *ngIf="(displayType == 'grid') && (navType=='circle') && (navEffect=='effect8')" [ngClass]="{'no-bg': !bgStatus, 'with-bg': bgStatus}">
             <div class="navItem col-lg-4" *ngFor="let item of data; let i=index">
-        <div class="ih-item circle {{(i+1)%2==0? 'colored':''}} {{navEffect}} {{navAnimate[navDirection][(i+1)%navAnimateLength]}}">          
+        <div class="ih-item circle {{(i+1)%2==0? 'colored':''}} {{navEffect}} {{navAnimate[navDirection][(i+1)%navAnimateLength]}}">
           <div class="ih-item circle {{(i+1)%2==0? 'colored':''}} {{navEffect}} {{navAnimate[navDirection][(i+1)%navAnimateLength]}}">
             <a href routerLink="{{item.url}}">
               <div class="img-container">
@@ -87,10 +87,10 @@
           </div>
         </div>
       </div>
-    </section>        
-    
+    </section>
+
     <section *ngIf="(displayType == 'grid') && (navType=='square')">
-      <div class="navItem col-lg-4" *ngFor="let item of data; let i=index">        
+      <div class="navItem col-lg-4" *ngFor="let item of data; let i=index">
         <div class="ih-item square {{(i+1)%2==0? 'colored':''}} {{navEffect}} {{navAnimate[navDirection][(i+1)%navAnimateLength]}}">
           <a href routerLink="{{item.url}}">
             <div class="spinner"></div>
@@ -106,7 +106,7 @@
           </a>
         </div>
       </div>
-    </section>    
+    </section>
 
   </div>
 </div>

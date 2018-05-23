@@ -39,6 +39,7 @@ export class ThemesComponent extends BaseComponent implements OnInit, OnDestroy 
 
   toast: any;
   favTopPosition: boolean;
+
   cardColors = {
     color: 'mdb-color',
     ext: ''
@@ -111,22 +112,11 @@ export class ThemesComponent extends BaseComponent implements OnInit, OnDestroy 
 
     /* Derive class initialization */
     this.initTasks();
-    // Initialize sidebar menu
-    // this.initSidebarMenu();
-
-    // Initialize help modal content
-    // this.globalState.notifyMyDataChanged('help', '', this.helpFile);
-
-    // const element = document.getElementsByTagName('body')[0];
-    // element.classList.add('landing-body');
   }
 
   ngOnDestroy() {
     /* Base class destroy */
     super.ngOnDestroy();
-
-    // const element = document.getElementsByTagName('body')[0];
-    // element.classList.remove('landing-body');
   }
 
   initMenu() {
@@ -289,10 +279,8 @@ export class ThemesComponent extends BaseComponent implements OnInit, OnDestroy 
   change_button_fill() {
     if (this.buttonStyle.fill =='btn') {
       this.buttonStyle.fill = 'btn-outline';
-      // this.button_fill = 'btn-outline';
     } else {
       this.buttonStyle.fill = 'btn';
-      // this.button_fill = 'btn';
     }
     this.localStorageService.setButtonStyle(this.buttonStyle);
   }
@@ -300,10 +288,8 @@ export class ThemesComponent extends BaseComponent implements OnInit, OnDestroy 
   change_button_shape() {
     if (this.buttonStyle.shape =='') {
       this.buttonStyle.shape = 'btn-rounded';
-      // this.button_shape = 'btn-rounded';
     } else {
       this.buttonStyle.shape = '';
-      // this.button_shape = '';
     }
     this.localStorageService.setButtonStyle(this.buttonStyle);
   }
@@ -395,42 +381,63 @@ export class ThemesComponent extends BaseComponent implements OnInit, OnDestroy 
   }
 
   initTasks() {
-    const orgImagePath = 'org/';
+    const orgImagePath = 'settings/';
     this.tasks = [
       {
-        tcode:  'task01',
-        title:  'task 01',
-        url:    '/task01',
-        img: orgImagePath + 'circle/x1.svg',
-        squareImg: orgImagePath + 'square/x1.svg',
+        tcode:  'Flower01',
+        title:  'Flower 01',
+        url:    '/theme',
+        img: orgImagePath + 'circle/1.jpg',
+        squareImg: orgImagePath + 'square/1.jpg',
       },
       {
-        tcode:  'task02',
-        title:  'task 02',
-        url:    '/task02',
-        img: orgImagePath + 'circle/x1.svg',
-        squareImg: orgImagePath + 'square/x1.svg',
+        tcode:  'Flower02',
+        title:  'Flower 02',
+        url:    '/theme',
+        img: orgImagePath + 'circle/2.jpg',
+        squareImg: orgImagePath + 'square/2.jpg',
       },
       {
-        tcode:  'task03',
-        title:  'task 03',
-        url:    '/task03',
-        img: orgImagePath + 'circle/x1.svg',
-        squareImg: orgImagePath + 'square/x1.svg',
+        tcode:  'Flower03',
+        title:  'Flower 03',
+        url:    '/theme',
+        img: orgImagePath + 'circle/3.jpg',
+        squareImg: orgImagePath + 'square/3.jpg',
       },
       {
-        tcode:  'task04',
-        title:  'task 04',
-        url:    '/task04',
-        img: orgImagePath + 'circle/x1.svg',
-        squareImg: orgImagePath + 'square/x1.svg',
+        tcode:  'Flower04',
+        title:  'Flower 04',
+        url:    '/theme',
+        img: orgImagePath + 'circle/4.jpg',
+        squareImg: orgImagePath + 'square/4.jpg',
       },
       {
-        tcode:  'task05',
-        title:  'task 05',
-        url:    '/task05',
-        img: orgImagePath + 'circle/x1.svg',
-        squareImg: orgImagePath + 'square/x1.svg',
+        tcode:  'Flower05',
+        title:  'Flower 05',
+        url:    '/theme',
+        img: orgImagePath + 'circle/5.jpg',
+        squareImg: orgImagePath + 'square/5.jpg',
+      },
+      {
+        tcode:  'Flower06',
+        title:  'Flower 06',
+        url:    '/theme',
+        img: orgImagePath + 'circle/6.jpg',
+        squareImg: orgImagePath + 'square/6.jpg',
+      },
+      {
+        tcode:  'Flower07',
+        title:  'Flower 07',
+        url:    '/theme',
+        img: orgImagePath + 'circle/7.jpg',
+        squareImg: orgImagePath + 'square/7.jpg',
+      },
+      {
+        tcode:  'Flower08',
+        title:  'Flower 08',
+        url:    '/theme',
+        img: orgImagePath + 'circle/8.jpg',
+        squareImg: orgImagePath + 'square/8.jpg',
       }
     ];
   }

@@ -17,16 +17,10 @@ import { TcodeService } from '../../_system/services/tcode.service';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  // bodySkin = 'mdb-skin bg-skin-lp fixed-sn';
-
   public form: FormGroup;
-  // public username: AbstractControl;
-  public email: AbstractControl;
-  public password: AbstractControl;
-  public token: AbstractControl;
+
   public submitted = false;
 
-  model: any = {};
   loading = false;
   returnUrl: string;
   message: string;
@@ -46,7 +40,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     translate.use(localStorageService.getLang());
 
     // get token
-    this.model.token = this.securityService.getToken();
+    const token = this.securityService.getToken();
 
     // reset login status
     this.securityService.logOut();
@@ -58,19 +52,12 @@ export class LoginComponent implements OnInit, OnDestroy {
       // 'username': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'email': ['', Validators.compose([Validators.required, EmailValidator.validate])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(8)])],
-      'token': [this.model.token, Validators.compose([Validators.required, Validators.minLength(4)])],
+      'token': [token, Validators.compose([Validators.required, Validators.minLength(4)])],
     });
 
-    // this.username = this.form.controls['username'];
-    this.email = this.form.controls['email'];
-    this.password = this.form.controls['password'];
-    this.token = this.form.controls['token'];
   }
 
-  ngOnInit() {
-    // const element = document.getElementsByTagName('body')[0];
-    // element.className = this.bodySkin;
-  }
+  ngOnInit() { }
 
   ngOnDestroy() {}
 
@@ -93,9 +80,12 @@ export class LoginComponent implements OnInit, OnDestroy {
   login() {
     this.loading = true;
     this.message = '';
-    this.securityService.setToken(this.model.token);
-    this.authenticationService.login(this.model.email, this.model.password, this.model.token)
-      .subscribe(
+    this.securityService.setToken(this.form.value.token);
+    this.authenticationService.login(
+      this.form.value.email,
+      this.form.value.password,
+      this.form.value.token
+    ).subscribe(
         data => {
           // console.log(this.returnUrl);
           this.router.navigate([this.returnUrl]);

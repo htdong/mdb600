@@ -25,10 +25,7 @@ import { TcodeService } from '../../_system/services/tcode.service';
 })
 export class LockscreenComponent implements OnInit, OnDestroy {
 
-  bodySkin = 'mdb-skin bg-skin-lp fixed-sn';
-
   public form: FormGroup;
-  public password: AbstractControl;
   public submitted = false;
 
   loading = false;
@@ -78,17 +75,11 @@ export class LockscreenComponent implements OnInit, OnDestroy {
       'token': [token, Validators.compose([Validators.required])]
 
     });
-
-    this.password = this.form.controls['password'];
   }
 
-  ngOnInit() {
-    const element = document.getElementsByTagName('body')[0];
-    element.className = this.bodySkin;
-  }
+  ngOnInit() { }
 
-  ngOnDestroy() {
-  }
+  ngOnDestroy() { }
 
   /**
   * @function keyDownFunction
