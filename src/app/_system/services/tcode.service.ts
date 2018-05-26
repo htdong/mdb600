@@ -53,22 +53,15 @@ export class TcodeService {
   // Below Tcodes shall not be under any module
   // then tcode shall be executed in vanilla mode
   baseTcodes = [
-    'blank',
-    'intro', 'login', 'lockscreen', 'register', 'forgot',
-    'about',
-    'profile', 'policy', 'help', 'dict',
-    'fav', 'terminal', 'setting', 'theme',
-    '401', '403', '404', '500', 'chat',
-    'debug', 'notification', 'ntfct', 'download',
-    'home', 'news', 'main',
-    'mine', 'tray',
-    'inbox', 'ibx',
-    'outbox', 'obx',
-    'draft', 'drf',
-    'inprogress', 'progress', 'ipg',
-    'completed', 'clt',
-    'gkm', 'gkcln', 'gksol', 'gktcd',
-    'prime',
+    'landing', 'posts',
+    'login', 'lockscreen', 'lock', 'register', 'forgot',
+    '401', '403', '404', '500', 'blank',
+
+    'home', 'main',
+    'tray', 'inbox', 'ibx', 'outbox', 'obx', 'draft', 'drf', 'inprogress', 'progress', 'ipg', 'completed', 'clt',
+    'incident', 'icd', 'change',
+    'about', 'profile', 'policy', 'maintenance', 'fav', 'terminal', 'theme', 'themes', 'setting',
+    'debug', 'notification', 'ntfct', 'download'
   ];
 
   private url = '/';        // Home of application Tcode

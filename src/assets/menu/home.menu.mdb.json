@@ -23,7 +23,7 @@
     "children": [
       { "data": { "label": "module1", "icon": "cube", "url": "/module1" }},
       { "data": { "label": "module2", "icon": "cube", "url": "/module2" }},
-      { "data": { "label": "module3", "icon": "cube", "url": "/module3" }}      
+      { "data": { "label": "module3", "icon": "cube", "url": "/module3" }}
     ]
   },
   { "data": { "label": "master_data", "icon": "database", "url": "" },
@@ -45,6 +45,7 @@
       { "data": { "label": "about", "icon": "info-circle", "url": "/about" }},
       { "data": { "label": "profile", "icon": "user-circle", "url": "/profile" }},
       { "data": { "label": "policy", "icon": "universal-access", "url": "/policy" }},
+      { "data": { "label": "maintenance", "icon": "wrench", "url": "/maintenance" }},
       { "data": { "label": "my_favourites", "icon": "heart", "url": "/fav" }},
       { "data": { "label": "themes", "icon": "paint-brush", "url": "/theme" }},
       { "data": { "label": "settings", "icon": "cogs", "url": "/setting" }},

@@ -1,4 +1,7 @@
 {
+	"change_request": "변경 요청",
+	"incident_report": "사고 보고서",
+	"maintenance": "유지",
 	"third_parties": "제 3 자",
 	"main_page": "메인 페이지",
 	"inbox_desc": "확인 또는 승인을 위해 수신자에게 전송 된 요청입니다. 수령자는 위임 된 권한 내에서 직무를 수행하여 결정해야합니다.",
@@ -441,7 +444,7 @@
 	"selectFile": "",
 	"selectItemToExecute": "",
 	"seq": "",
-	"services": "Services",
+	"services": "서비스",
 	"setting": "환경",
 	"settings": "설정",
 	"settingsSubtitle": "",

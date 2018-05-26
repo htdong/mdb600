@@ -1,4 +1,7 @@
 {
+	"change_request": "Yêu cầu thay đổi",
+	"incident_report": "Báo cáo sự cố",
+	"maintenance": "Bảo trì",
 	"third_parties": "Bên thứ ba",
 	"main_page": "Trang chính",
 	"inbox_desc": "Các yêu cầu được gửi đến cho người nhận để xác minh hoặc phê duyệt. Người nhận cần đưa ra các quyết định xử lý theo trách nhiệm công việc và trong phạm vi quyền hạn được giao",

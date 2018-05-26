@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { IconBoardModule } from '../../_components/mdb/iconBoard';
-
+import { TrayComponentModule } from '../../_components/mdb/trayComponent';
 // import {InputTextModule} from 'primeng/inputtext';
 // import {ButtonModule} from 'primeng/button';
 // import {DialogModule} from 'primeng/dialog';
@@ -27,7 +27,7 @@ import { MainComponent } from './main.component';
     TranslateModule,
 
     IconBoardModule,
-
+    TrayComponentModule,
     // DialogModule,
     // DropdownModule,
     // InputTextModule,

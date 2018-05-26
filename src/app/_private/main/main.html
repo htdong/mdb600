@@ -2,81 +2,9 @@
 
   <!-- 1.Workflows -->
   <mdb-tab heading="<i class='fa fa-exchange'></i> {{'workflows'|translate}}">
+    <app-tray-component></app-tray-component>
+
     <div class="row mt-2">
-
-      <div class="col-lg-12 mt-4 blue-text">
-        <h3><i class="fa fa-tasks"></i> {{'my_tasks'|translate}}</h3>
-      </div>
-
-      <!-- Inbox  -->
-      <div class="col-lg-6 col-md-12 my-2">
-        <div mdbWavesEffect (click)="gotoTcode('inbox');" class="card card-image mb-3" style="background-image: url(assets/images/mdb/landing/test-project-8.jpg);">
-          <div class="text-white text-center d-flex align-items-center rgba-purple-strong py-5 px-4">
-            <div>
-              <h5 class="white-text"><i class="fa fa-3x fa-inbox"></i></h5>
-              <h3 class="card-title pt-2"><strong>{{'inbox'|translate}}</strong></h3>
-              <p>{{'inbox_desc'|translate}}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Outbox  -->
-      <div class="col-lg-6 col-md-12 my-2">
-        <div mdbWavesEffect (click)="gotoTcode('outbox');" class="card card-image mb-3" style="background-image: url(assets/images/mdb/landing/test-project-8.jpg);">
-          <div class="text-white text-center d-flex align-items-center rgba-indigo-strong py-5 px-4">
-            <div>
-              <h5 class="white-text"><i class="fa fa-3x fa-paper-plane-o"></i></h5>
-              <h3 class="card-title pt-2"><strong>{{'outbox'|translate}}</strong></h3>
-              <p>{{'outbox_desc'|translate}}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-12 mt-4 blue-text">
-        <h3><i class="fa fa-briefcase"></i> {{'my_documents'|translate}}</h3>
-      </div>
-
-      <!-- Draft  -->
-      <div class="col-lg-4 col-md-12 my-2">
-        <div mdbWavesEffect (click)="gotoTcode('draft');" class="card card-image mb-3" style="background-image: url(assets/images/mdb/landing/test-project-8.jpg);">
-          <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-            <div>
-              <h5 class="white-text"><i class="fa fa-3x fa-file"></i></h5>
-              <h3 class="card-title pt-2"><strong>{{'draft'|translate}}</strong></h3>
-              <p>{{'draft_desc'|translate}}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- In progress  -->
-      <div class="col-lg-4 col-md-12 my-2">
-        <div mdbWavesEffect (click)="gotoTcode('inprogress');" class="card card-image mb-3" style="background-image: url(assets/images/mdb/landing/test-project-8.jpg);">
-          <div class="text-white text-center d-flex align-items-center rgba-stylish-strong py-5 px-4">
-            <div>
-              <h5 class="white-text"><i class="fa fa-3x fa-spinner"></i></h5>
-              <h3 class="card-title pt-2"><strong>{{'in_progress'|translate}}</strong></h3>
-              <p>{{'in_progress_desc'|translate}}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Completed  -->
-      <div class="col-lg-4 col-md-12 my-2">
-        <div mdbWavesEffect (click)="gotoTcode('completed');" class="card card-image mb-3" style="background-image: url(assets/images/mdb/landing/test-project-8.jpg);">
-          <div class="text-white text-center d-flex align-items-center rgba-cyan-strong py-5 px-4">
-            <div>
-              <h5 class="white-text"><i class="fa fa-3x fa-check"></i></h5>
-              <h3 class="card-title pt-2"><strong>{{'completed'|translate}}</strong></h3>
-              <p>{{'completed_desc'|translate}}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="col-lg-12 mt-4 blue-text">
         <h3><i class="fa fa-copy"></i> {{'requests'|translate}}</h3>
       </div>

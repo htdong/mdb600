@@ -1,4 +1,7 @@
 {
+	"change_request": "改变请求",
+	"incident_report": "事件报告",
+	"maintenance": "保养",
 	"third_parties": "第三方",
 	"main_page": "主页",
 	"inbox_desc": "请求发送给接收方进行验证或批准。 接受者应该在授权范围内履行工作职责来做出决定",
@@ -439,7 +442,7 @@
 	"selectFile": "",
 	"selectItemToExecute": "",
 	"seq": "",
-	"services": "Services",
+	"services": "服务",
 	"setting": "设置",
 	"settings": "设置",
 	"settingsSubtitle": "",

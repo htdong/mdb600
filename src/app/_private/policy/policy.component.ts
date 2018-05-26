@@ -55,18 +55,11 @@ export class PolicyComponent extends BaseComponent implements OnInit, OnDestroy 
     const env = this.localStorageService.getEnv();
     this.cardColors = this.localStorageService.getCardColors(env);
 
-    // Help Modal
-    const lang = this.localStorageService.getLang();
-    const file = 'assets/licenses/license.' + lang + '.html';
-
-    this.getLicenseFile(file)
-      .subscribe((license) => {
-        this.license = license;
-        console.log(license);
-      });
+    // Agreements
+    this.refreshAgreementFile();
 
     const licensesfile = 'assets/licenses/all.html';
-    this.getLicenseFile(licensesfile)
+    this.getAgreementFile(licensesfile)
       .subscribe((licenses) => {
         this.thirdPartiesLicenses = licenses;
         console.log(licenses);
@@ -96,12 +89,7 @@ export class PolicyComponent extends BaseComponent implements OnInit, OnDestroy 
     this.globalState.subscribeEvent('language', this.myScope, (lang) => {
       this.translateService.use(lang);
 
-      const file = 'assets/licenses/license.' + lang + '.html';
-      this.getLicenseFile(file)
-        .subscribe((license) => {
-          this.license = license;
-          console.log(license);
-        });
+      this.refreshAgreementFile();
 
     });
   }
@@ -112,7 +100,7 @@ export class PolicyComponent extends BaseComponent implements OnInit, OnDestroy 
 
   /* COMPONENT FUNCTIONS */
 
-  getLicenseFile(file): Observable<any> {
+  getAgreementFile(file): Observable<any> {
     return this.httpClient.get(file, { responseType: 'text' })
       .map((res) => {
         return res;
@@ -120,6 +108,19 @@ export class PolicyComponent extends BaseComponent implements OnInit, OnDestroy 
       .catch((error) => {
         console.log(error);
         return Promise.resolve(error);
+      });
+  }
+
+  refreshAgreementFile() {
+    const lang = this.localStorageService.getLang();
+    const lang1 = lang=='vn' ? lang : 'en';
+
+    const file = 'assets/licenses/license.' + lang1 + '.html';
+
+    this.getAgreementFile(file)
+      .subscribe((license) => {
+        this.license = license;
+        console.log(license);
       });
   }
 }

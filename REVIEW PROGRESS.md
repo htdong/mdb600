@@ -19,7 +19,7 @@ OK  src/app/_private
 OK  about
 OK  home
 OK  main
--   policy              TODO: Review & translate
+OK   policy
 OK  profile
 OK  setting
 OK  themes

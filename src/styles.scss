@@ -1,1 +1,90 @@
 /* You can add global styles to this file, and also import other style files */
+.hover {
+  -webkit-transition: transform 1s; /* For Safari 3.1 to 6.0 */
+  transition: transform 1s;
+  cursor: pointer;
+}
+
+.hover-up:hover {
+  transform: translate(0,-15px);
+  -webkit-transform: translate(0,-15px);
+  -o-transform: translate(0,-15px);
+  -moz-transform: translate(0,-15px);
+}
+
+.hover-down:hover {
+  transform: translate(0,15px);
+  -webkit-transform: translate(0,15px);
+  -o-transform: translate(0,15px);
+  -moz-transform: translate(0,15px);
+}
+
+.hover-left:hover {
+  transform: translate(-15px,0);
+  -webkit-transform: translate(-15px,0);
+  -o-transform: translate(-15px,0);
+  -moz-transform: translate(-15px,0);
+}
+
+.hover-right:hover {
+  transform: translate(15px,0);
+  -webkit-transform: translate(15px,0);
+  -o-transform: translate(15px,0);
+  -moz-transform: translate(15px,0);
+}
+
+.hover-up-left:hover {
+  transform: translate(-15px,-15px);
+  -webkit-transform: translate(-15px,-15px);
+  -o-transform: translate(-15px,-15px);
+  -moz-transform: translate(-15px,-15px);
+}
+
+.hover-up-right:hover {
+  transform: translate(15px,-15px);
+  -webkit-transform: translate(15px,-15px);
+  -o-transform: translate(15px,-15px);
+  -moz-transform: translate(15px,-15px);
+}
+
+.hover-down-left:hover {
+  transform: translate(-15px,15px);
+  -webkit-transform: translate(-15px,15px);
+  -o-transform: translate(-15px,15px);
+  -moz-transform: translate(-15px,15px);
+}
+
+.hover-down-right:hover {
+  transform: translate(15px,15px);
+  -webkit-transform: translate(15px,15px);
+  -o-transform: translate(15px,15px);
+  -moz-transform: translate(15px,15px);
+}
+
+.hover-scale-in:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+}
+
+.hover-scale-out:hover {
+  transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  -o-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+}
+
+.hover-rotate-right:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+}
+
+.hover-rotate-left:hover {
+  transform: rotate(-360deg);
+  -webkit-transform: rotate(-360deg);
+  -o-transform: rotate(-360deg);
+  -moz-transform: rotate(-360deg);
+}

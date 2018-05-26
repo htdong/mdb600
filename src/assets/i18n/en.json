@@ -1,4 +1,7 @@
 {
+	"change_request": "Change Request",
+	"incident_report": "Incident Report",
+	"maintenance": "Maintenance",
 	"third_parties": "Third parties",
 	"main_page": "Main page",
 	"inbox_desc": "Requests sent to receiver for validation or approval. Receiver should make decision by performing job duties within delegated authority",

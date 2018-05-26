@@ -1,0 +1,43 @@
+<mdb-tabset #staticTabs buttonClass="nav-tabs tabs-3 {{cardColors.color}} {{cardColors.ext}}" [contentClass]="'card'">
+  <!--Panel 1-->
+  <mdb-tab heading="<i class='fa fa-hand-paper-o'></i> {{'services'|translate}}">
+      <div class="row mt-4 mb-4 pl-5 pr-5">
+
+        <!-- Incident Report  -->
+        <div class="col-lg-6 col-md-12 my-2">
+          <div mdbWavesEffect (click)="gotoTcode('incident');" class="card card-image mb-3 hover hover-scale-in" style="background-image: url(assets/images/mdb/landing/test-project-8.jpg);">
+            <div class="text-white flex-center text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+              <div>
+                <h5 class="white-text"><i class="fa fa-3x fa-file"></i></h5>
+                <h3 class="card-title pt-2"><strong>{{'incident_report'|translate}}</strong></h3>
+                <!-- <p>{{'draft_desc'|translate}}</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Change Request  -->
+        <div class="col-lg-6 col-md-12 my-2">
+          <div mdbWavesEffect (click)="gotoTcode('change');" class="card card-image mb-3 hover hover-scale-in" style="background-image: url(assets/images/mdb/landing/test-project-8.jpg);">
+            <div class="text-white flex-center text-center d-flex align-items-center rgba-stylish-strong py-5 px-4">
+              <div>
+                <h5 class="white-text"><i class="fa fa-3x fa-legal"></i></h5>
+                <h3 class="card-title pt-2"><strong>{{'change_request'|translate}}</strong></h3>
+                <!-- <p>{{'in_progress_desc'|translate}}</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </mdb-tab>
+
+  <!--Panel 2-->
+  <mdb-tab heading="<i class='fa fa-link'></i> {{'policy'|translate}}">
+    <div class="row mt-4 mb-4">
+      <div class="col-12 pl-5 pr-5" innerHTML = "{{license}}"></div>
+    </div>
+  </mdb-tab>
+</mdb-tabset>
+
+<div style="height: 100px"></div>

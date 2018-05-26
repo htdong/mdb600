@@ -1,4 +1,7 @@
 {
+	"change_request": "Changer de requête",
+	"incident_report": "Rapport d'incident",
+	"maintenance": "Entretien",
 	"third_parties":"Tiers",
 	"main_page": "Page d'accueil",
 	"inbox_desc": "Demandes envoyées au destinataire pour validation ou approbation. Le séquestre devrait prendre une décision en accomplissant des tâches dans les limites des pouvoirs qui lui sont délégués",
@@ -442,7 +445,7 @@
 	"selectFile": "",
 	"selectItemToExecute": "",
 	"seq": "",
-	"services": "Services",
+	"services": "Prestations de service",
 	"setting": "Réglage",
 	"settings": "Paramètres",
 	"settingsSubtitle": "",
