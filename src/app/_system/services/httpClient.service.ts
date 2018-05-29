@@ -110,13 +110,13 @@ export class HttpClientService extends HttpClient {
   * @return {Observable}
   */
   get(url: string, options?: any | {}): Observable<any> {
-    console.log(options);
+    // console.log(options);
     const reqOptions = this.handleShowLoader(options);
 
     return super.get(this.getFullUrl(url), this.attachHeader(reqOptions))
       .catch(this.onCatch)
       .do((res: Response) => {
-          console.log(options, this.getFullUrl(url));
+          // console.log(options, this.getFullUrl(url));
           this.handleSuccess(res, options);
       }, (error: any) => {
         this.onError(error);
@@ -325,7 +325,7 @@ export class HttpClientService extends HttpClient {
   */
   handleSuccess(res, options) {
     // console.log(res);
-    console.log(options);
+    // console.log(options);
 
     if (!options) {
       this.onSuccess(res, true);

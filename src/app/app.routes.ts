@@ -53,6 +53,15 @@ export const routes: Routes = [
       { path: 'home', loadChildren: './_private/home/home.module#HomeModule' },
       { path: 'main', loadChildren: './_private/main/main.module#MainModule' },
 
+      { path: 'notifications', loadChildren: './_private/notifications/notifications.module#NotificationsModule' },
+      { path: 'ntfcts', loadChildren: './_private/notifications/notifications.module#NotificationsModule' },
+      { path: 'notification', loadChildren: './_private/notification/notification.module#NotificationModule' },
+      { path: 'ntfct', loadChildren: './_private/notification/notification.module#NotificationModule' },
+      { path: 'messages', loadChildren: './_private/messages/messages.module#MessagesModule' },
+      { path: 'msgs', loadChildren: './_private/messages/messages.module#MessagesModule' },
+      { path: 'message', loadChildren: './_private/message/message.module#MessageModule' },
+      { path: 'msg', loadChildren: './_private/message/message.module#MessageModule' },
+
       { path: 'about', loadChildren: './_private/about/about.module#AboutModule' },
       { path: 'profile', loadChildren: './_private/profile/profile.module#ProfileModule' },
       { path: 'policy', loadChildren: './_private/policy/policy.module#PolicyModule' },
@@ -79,6 +88,17 @@ export const routes: Routes = [
       { path: 'incident', loadChildren: './_private/incident/incident.module#IncidentModule' },
       { path: 'icd', loadChildren: './_private/incident/incident.module#IncidentModule' },
       { path: 'change', loadChildren: './_private/change/change.module#ChangeModule' },
+    ]
+  },
+
+  // Module Area - Secured
+  {
+    path: '',
+    component: AppDoubleNavLayoutComponent,
+    canActivateChild: [AuthGuard],
+    data: { title: 'modules' },
+    children: [
+      { path: 'user', loadChildren: './modules/user/user.module#UserModule' },
     ]
   },
 

@@ -1,0 +1,4 @@
+[
+  { "value": "user", "label": "User" },
+  { "value": "role", "label": "Role" }
+]

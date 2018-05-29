@@ -30,7 +30,8 @@ import {
  SafeResourceURLPipe,
  SafeScriptPipe,
  SafeStylePipe,
- SafeURLPipe
+ SafeURLPipe,
+ TruncatePipe
 } from './pipes';
 
 const NGA_PIPES = [
@@ -38,7 +39,8 @@ const NGA_PIPES = [
   SafeResourceURLPipe,
   SafeScriptPipe,
   SafeStylePipe,
-  SafeURLPipe
+  SafeURLPipe,
+  TruncatePipe
 ];
 
 // SERVICES

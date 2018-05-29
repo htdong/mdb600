@@ -1,8 +1,3 @@
-/**
- * FIXME
- * https://mdbootstrap.com/support/scroll-not-workin-in-sidenav/
- */
-
 import { Component, OnInit, OnDestroy, AfterViewInit, Renderer2, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { FormGroup } from '@angular/forms';
@@ -20,6 +15,7 @@ import { getTopNotificationsAction } from '../../ngrx/notification/notifications
 import { AppConfig } from '../../app.config';
 import { GlobalState } from '../../global.state';
 import { HelpService } from '../services/help.service';
+import { JSONFileService } from '../services/JSONFile.service';
 import { LocalStorageService } from '../services/localStorage.service';
 import { NavigationService } from '../services/navigation.service';
 import { SecurityService } from '../services/security.service';
@@ -108,6 +104,12 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
 
   lang;
 
+  tcodeBarStatus = true;
+  prefixList: any[];
+  actionList: any[];
+  selectedPrefix: any;
+  selectedAction: any;
+
   wkBarStatus = true;
   lges: any[];
   years: any[];
@@ -132,6 +134,7 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
     private appConfig: AppConfig,
     private globalState: GlobalState,
     private helpService: HelpService,
+    private jsonFileService: JSONFileService,
     private localStorageService: LocalStorageService,
     private navigationService: NavigationService,
     private securityService: SecurityService,
@@ -144,7 +147,7 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
 
     this.selectedEffect = Math.floor(Math.random() * 15);
     this.applyEffect = this.effects[this.selectedEffect];
-    console.log(this.applyEffect);
+    // console.log(this.applyEffect);
 
     // USER APP STATE
     const env = this.localStorageService.getEnv();
@@ -159,6 +162,17 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
 
     // LANGUAGE
     this.globalState.notifyMyDataChanged('language', '', this.lang);
+
+    // SAMPLE TCODE DATA
+    this.jsonFileService.getJSONData('data/prefix.list.json')
+      .subscribe(res => {
+        this.prefixList = res;
+      });
+
+    this.jsonFileService.getJSONData('data/action.list.json')
+      .subscribe(res => {
+        this.actionList = res;
+      });
 
     // SAMPLE WORKING DATA
     const thisYear = new Date().getFullYear();
@@ -175,6 +189,7 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
 
     // NOTIFICATIONS
     this.notification = this.store.pipe(select('top_notifications'));
+
     this.notification.subscribe(res => {
       this.notificationCount = res.data.total || 0;
       this.notificationsList = res.data.data || [];
@@ -221,7 +236,7 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
     this.translateService.get([title])
       .subscribe((res) => {
         this.titleService.setTitle(res[title]);
-        console.log(this.breadcrumbs);
+        // console.log(this.breadcrumbs);
       });
 
     const user = this.securityService.getCurrentUser();
@@ -592,6 +607,25 @@ export class AppDoubleNavLayoutComponent implements OnInit, OnDestroy, AfterView
    * @function changeLge
    * @function changeYear
    */
+  toggleTcodeBar() {
+    this.tcodeBarStatus = !this.tcodeBarStatus;
+    // this.localStorageService.setWkBar(this.wkBarStatus);
+    return false; // prevent a href automatically link
+  }
+
+  changePrefix() {
+    console.log(this.selectedPrefix);
+  }
+
+  changeAction() {
+    console.log(this.selectedAction);
+  }
+
+  execute() {
+    if (this.selectedPrefix && this.selectedAction) {
+      console.log(this.selectedPrefix + this.selectedAction);
+    }
+  }
 
   toggleWkBar() {
     this.wkBarStatus = !this.wkBarStatus;

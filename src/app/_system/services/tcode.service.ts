@@ -60,8 +60,8 @@ export class TcodeService {
     'home', 'main',
     'tray', 'inbox', 'ibx', 'outbox', 'obx', 'draft', 'drf', 'inprogress', 'progress', 'ipg', 'completed', 'clt',
     'incident', 'icd', 'change',
-    'about', 'profile', 'policy', 'maintenance', 'fav', 'terminal', 'theme', 'themes', 'setting',
-    'debug', 'notification', 'ntfct', 'download'
+    'about', 'profile', 'policy', 'maintenance', 'fav', 'terminal', 'debug', 'theme', 'themes', 'setting',
+    'notifications', 'ntfcts', 'notification', 'ntfct', 'messages', 'msgs', 'message', 'msg', 'download'
   ];
 
   private url = '/';        // Home of application Tcode

@@ -1,0 +1,12 @@
+[
+  { "value": "11", "label": "Create" },
+  { "value": "12", "label": "View" },
+  { "value": "13", "label": "Edit" },
+  { "value": "14", "label": "Disable"  },
+  { "value": "15", "label": "Enable" },
+  { "value": "16", "label": "Mark" },
+  { "value": "17", "label": "Unmark" },
+  { "value": "18", "label": "Delete" },
+  { "value": "19", "label": "View Change" },
+  { "value": "1x", "label": "Master List" }
+]

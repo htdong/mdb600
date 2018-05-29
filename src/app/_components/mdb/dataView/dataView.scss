@@ -1,0 +1,17 @@
+.card-body {
+  display: block;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.card-sm {
+  max-height: 270px;
+}
+
+.card-md {
+  max-height: 520px;
+}
+
+.card-lg {
+  max-height: 760px;
+}

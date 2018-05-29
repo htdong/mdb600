@@ -30,7 +30,7 @@ export class NotificationsEffects {
     .pipe(
       ofType(TopNotificationsActionTypes.GET_TOP_NOTIFICATIONS),
       switchMap(action => {
-        // console.log(action);
+        console.log(action);
         return this.notificationsServices.action1x(
           action['payload']['filter'],
           action['payload']['sort'],
@@ -76,7 +76,7 @@ export class NotificationsEffects {
     .pipe(
       ofType(NotificationsActionTypes.GET_NOTIFICATIONS),
       switchMap(action => {
-        // console.log(action);
+        console.log(action);
         return this.notificationsServices.action1x(
           action['payload']['filter'],
           action['payload']['sort'],

@@ -32,6 +32,8 @@ export class NotificationsServices {
       params: pagination
     };
 
+    // console.log(reqOptions);
+
     return this.httpClientService.get(this.suffixUrl, reqOptions)
       .map((res) => {
         /* res {

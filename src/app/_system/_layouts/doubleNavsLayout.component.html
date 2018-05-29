@@ -8,7 +8,8 @@
       <li>
         <div class="logo-wrapper waves-light">
           <a href="#" (click)="toggleMode(); false">
-            <img [lazyLoad]="'/assets/images/mdb/landing/mdb-transparent.png'" [defaultImage]="'http://via.placeholder.com/250x90'" class="img-fluid flex-center">
+            <img [lazyLoad]="'/assets/images/gkconsult-plain-white.svg'" [defaultImage]="'http://via.placeholder.com/250x90'" class="img-fluid flex-center">
+            <!-- mdb/landing/mdb-transparent.png -->
           </a>
         </div>
       </li>
@@ -83,7 +84,6 @@
 
   </mdb-sidenav>
 
-
   <!-- Navbar -->
   <mdb-navbar SideClass="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav wow fadeInDown" [containerInside]="false">
 
@@ -121,7 +121,7 @@
             <ng-container *ngFor="let item of notificationsList">
               <a class="dropdown-item text-truncate" (click)="openNotification(item);">{{item.desc}}</a>
             </ng-container>
-            <a class="dropdown-item text-center" (click)="gotoTcode('notification');"><b>{{'view_all'|translate}}</b></a>
+            <a class="dropdown-item text-center" (click)="gotoTcode('notifications');"><b>{{'view_all'|translate}}</b></a>
           </div>
         </li>
 
@@ -135,7 +135,7 @@
             <ng-container *ngFor="let item of notificationsList">
               <a class="dropdown-item text-truncate" (click)="openNotification(item);">{{item.desc}}</a>
             </ng-container>
-            <a class="dropdown-item text-center" (click)="gotoTcode('notification');"><b>{{'view_all'|translate}}</b></a>
+            <a class="dropdown-item text-center" (click)="gotoTcode('messages');"><b>{{'view_all'|translate}}</b></a>
           </div>
         </li>
 
@@ -156,15 +156,16 @@
         </li>
       </ul>
     </navlinks>
-  </mdb-navbar>
 
+  </mdb-navbar>
 </header>
 
 <!-- Switch -->
 <div class="switch-version d-none d-md-block text-center">
   <li><a href="#" (click)="returnPrevious(); false"><i class="fa fa-2x fa-arrow-circle-left mt-2"></i></a></li>
   <li><a href="#" (click)="helpModal.show(); false"><i class="fa fa-2x fa-question-circle-o mt-2"></i></a></li>
-  <li><a href="#" (click)="toggleWkBar(); false"><i class="fa fa-2x fa-folder-open-o mt-2 mb-2"></i></a></li>
+  <li><a href="#" (click)="toggleWkBar(); false"><i class="fa fa-2x fa-folder-open-o mt-2"></i></a></li>
+  <li><a href="#" (click)="toggleTcodeBar(); false"><i class="fa fa-2x fa-paper-plane-o mt-2 mb-2"></i></a></li>
 </div>
 
 <!-- HELP -->
@@ -188,6 +189,29 @@
 
 <!-- MAIN -->
 <main>
+
+  <!-- Tcode -->
+  <section id="tcodeBar" *ngIf="tcodeBarStatus" class="wow fadeInDown mb-5">
+    <div class="card z-depth-5">
+      <div class="card-body pb-4">
+        <form>
+          <div class="row mt-2">
+            <div class="col-lg-5 col-md-5 mb-3">
+              <mdb-select [options]="prefixList" [(ngModel)]="selectedPrefix" [ngModelOptions]="{standalone: true}" (selected)="changePrefix()" placeholder="{{'module_select'|translate}}" class="colorful-select dropdown-primary"></mdb-select>
+              <label>{{'module'|translate}}</label>
+            </div>
+            <div class="col-lg-4 col-md-4 mb-3">
+              <mdb-select [options]="actionList" [(ngModel)]="selectedAction" [ngModelOptions]="{standalone: true}" (selected)="changeAction()" placeholder="{{'action_select'|translate}}" class="colorful-select dropdown-danger"></mdb-select>
+              <label>{{'action'|translate}}</label>
+            </div>
+            <div class="col-lg-3 col-md-3 mb-3">
+                <a type="button" class="btn btn-outline-secondary btn-sm" (click)="execute()" mdbWavesEffect>{{'execute'|translate}}</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <!-- Working -->
   <section id="workingBar" *ngIf="wkBarStatus" class="wow fadeInDown mb-5">

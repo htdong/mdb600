@@ -1,0 +1,7 @@
+<app-data-view
+  title="notifications"
+  [body]="notifications | async"
+  (onPageChange)="doPageChange($event)">
+</app-data-view>
+
+<div style="height: 500px"></div>
